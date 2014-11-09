@@ -19,10 +19,10 @@
                             <TableColumn prefWidth="226.0" text="ชื่อ" />
                             <TableColumn minWidth="0.0" prefWidth="188.0" text="นามสกุล" />
                               <TableColumn minWidth="0.0" prefWidth="157.0" text="รหัสคนไข้" />
-                              <TableColumn prefWidth="167.0" text="รายละเอียด" />
+                              <TableColumn prefWidth="167.0" text="โรคที่พบ" />
                           </columns>
                         </TableView>
-                        <MenuButton layoutX="22.0" layoutY="14.0" mnemonicParsing="false" text="ระบบบัญชี">
+                        <MenuButton layoutX="22.0" layoutY="14.0" mnemonicParsing="false" text="สถิติโรค">
                           <items>
                             <MenuItem mnemonicParsing="false" text="เรียงข้อมูลจาก..." />
                             <MenuItem mnemonicParsing="false" text="ตั้งค่า" />
@@ -41,7 +41,14 @@
                <content>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0">
                      <children>
-                        <PieChart layoutX="14.0" layoutY="14.0" prefHeight="542.0" prefWidth="773.0" />
+                        <BarChart layoutX="14.0" layoutY="14.0" prefHeight="541.0" prefWidth="773.0">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </BarChart>
                      </children>
                   </AnchorPane>
                </content>
