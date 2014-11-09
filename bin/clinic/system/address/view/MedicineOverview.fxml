@@ -9,10 +9,10 @@
    <children>
       <TableView layoutX="21.0" layoutY="72.0" prefHeight="499.0" prefWidth="757.0">
         <columns>
-          <TableColumn prefWidth="316.0" text="ชื่อเวชภัณฑ์" />
-          <TableColumn minWidth="0.0" prefWidth="187.0" text="รหัสเวชภัณฑ์" />
-            <TableColumn minWidth="0.0" prefWidth="133.0" text="จำนวนเวชภัณฑ์" />
-            <TableColumn prefWidth="120.0" text="ราคา (บาท)" />
+          <TableColumn fx:id="name" prefWidth="316.0" text="ชื่อเวชภัณฑ์" />
+          <TableColumn fx:id="code" minWidth="0.0" prefWidth="187.0" text="รหัสเวชภัณฑ์" />
+            <TableColumn fx:id="qulity" minWidth="0.0" prefWidth="133.0" text="จำนวนเวชภัณฑ์" />
+            <TableColumn fx:id="price" prefWidth="120.0" text="ราคา (บาท)" />
         </columns>
       </TableView>
       <MenuButton layoutX="21.0" layoutY="27.0" mnemonicParsing="false" text="ระบบเวชภัณฑ์">
@@ -24,7 +24,7 @@
       <Button layoutX="637.0" layoutY="27.0" mnemonicParsing="false" text="Add" />
       <Button layoutX="682.0" layoutY="27.0" mnemonicParsing="false" text="Edit" />
       <Button layoutX="727.0" layoutY="27.0" mnemonicParsing="false" text="Delete" />
-      <TextField layoutX="133.0" layoutY="27.0" prefHeight="25.0" prefWidth="213.0" />
+      <TextField fx:id="search" layoutX="133.0" layoutY="27.0" prefHeight="25.0" prefWidth="213.0" />
       <Button layoutX="354.0" layoutY="27.0" mnemonicParsing="false" text="Search" />
    </children>
 </AnchorPane>
