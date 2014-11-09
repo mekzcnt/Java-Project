@@ -10,38 +10,38 @@
    <children>
       <TabPane prefHeight="600.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
-          <Tab text="Table View">
+          <Tab fx:id="TableViewTab" text="Table View">
                <content>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0">
                      <children>
-                        <TableView layoutX="22.0" layoutY="47.0" prefHeight="512.0" prefWidth="757.0">
+                        <TableView fx:id="DiseaseTable" layoutX="22.0" layoutY="47.0" prefHeight="512.0" prefWidth="757.0">
                           <columns>
-                            <TableColumn prefWidth="226.0" text="ชื่อ" />
-                            <TableColumn minWidth="0.0" prefWidth="188.0" text="นามสกุล" />
-                              <TableColumn minWidth="0.0" prefWidth="157.0" text="รหัสคนไข้" />
-                              <TableColumn prefWidth="167.0" text="โรคที่พบ" />
+                            <TableColumn fx:id="PatientName" prefWidth="226.0" text="ชื่อ" />
+                            <TableColumn fx:id="PatientSurname" minWidth="0.0" prefWidth="188.0" text="นามสกุล" />
+                              <TableColumn fx:id="PatientID" minWidth="0.0" prefWidth="157.0" text="รหัสคนไข้" />
+                              <TableColumn fx:id="PatientDetails" prefWidth="167.0" text="โรคที่พบ" />
                           </columns>
                         </TableView>
-                        <MenuButton layoutX="22.0" layoutY="14.0" mnemonicParsing="false" text="สถิติโรค">
+                        <MenuButton fx:id="MainMenuDisease" layoutX="22.0" layoutY="14.0" mnemonicParsing="false" text="สถิติโรค">
                           <items>
                             <MenuItem mnemonicParsing="false" text="เรียงข้อมูลจาก..." />
                             <MenuItem mnemonicParsing="false" text="ตั้งค่า" />
                           </items>
                         </MenuButton>
-                        <TextField fx:id="search" layoutX="111.0" layoutY="14.0" prefHeight="25.0" prefWidth="213.0" />
-                        <Button layoutX="331.0" layoutY="14.0" mnemonicParsing="false" text="Search" />
-                        <Button layoutX="637.0" layoutY="14.0" mnemonicParsing="false" text="Add" />
-                        <Button layoutX="684.0" layoutY="14.0" mnemonicParsing="false" text="Edit" />
-                        <Button layoutX="728.0" layoutY="14.0" mnemonicParsing="false" text="Delete" />
+                        <TextField fx:id="SearchBox" layoutX="111.0" layoutY="14.0" prefHeight="25.0" prefWidth="213.0" />
+                        <Button fx:id="SearchButton" layoutX="331.0" layoutY="14.0" mnemonicParsing="false" text="Search" />
+                        <Button fx:id="AddButton" layoutX="637.0" layoutY="14.0" mnemonicParsing="false" text="Add" />
+                        <Button fx:id="EditButton" layoutX="684.0" layoutY="14.0" mnemonicParsing="false" text="Edit" />
+                        <Button fx:id="DeleteButton" layoutX="728.0" layoutY="14.0" mnemonicParsing="false" text="Delete" />
                      </children>
                   </AnchorPane>
                </content>
             </Tab>
-          <Tab text="Chart View">
+          <Tab fx:id="ChartViewTab" text="Chart View">
                <content>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0">
                      <children>
-                        <BarChart layoutX="14.0" layoutY="14.0" prefHeight="541.0" prefWidth="773.0">
+                        <BarChart fx:id="DisplayChart" layoutX="14.0" layoutY="14.0" prefHeight="541.0" prefWidth="773.0">
                           <xAxis>
                             <CategoryAxis side="BOTTOM" />
                           </xAxis>
