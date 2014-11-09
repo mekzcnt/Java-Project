@@ -2,7 +2,9 @@ package clinic.system.address;
 
 import java.io.IOException;
 
+import clinic.system.address.view.DiseaseOverviewController;
 import clinic.system.address.view.MainMenuOverviewController;
+import clinic.system.address.view.MedicineOverviewController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -75,7 +77,36 @@ public class MainApp extends Application {
 			Scene scene = new Scene(page);
 			dialogStage.setScene(scene);
 
-			
+			MedicineOverviewController controller = loader.getController();
+            controller.setMainApp(this);
+
+			// Show the dialog and wait until the user closes it
+			dialogStage.showAndWait();
+
+			//return controller.isOkClicked();
+		} catch (IOException e) {
+			e.printStackTrace();
+			//return false;
+		}
+	}
+	
+	public void showDiseaseOverview() {
+		try {
+			// Load the fxml file and create a new stage for the popup dialog.
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(MainApp.class.getResource("view/DiseaseOverview.fxml"));
+			AnchorPane page = (AnchorPane) loader.load();
+
+			// Create the dialog Stage.
+			Stage dialogStage = new Stage();
+			dialogStage.setTitle("Disease");
+			dialogStage.initModality(Modality.WINDOW_MODAL);
+			dialogStage.initOwner(primaryStage);
+			Scene scene = new Scene(page);
+			dialogStage.setScene(scene);
+
+			//DiseaseOverviewController controller = loader.getController();
+            //controller.setMainApp(this);
 
 			// Show the dialog and wait until the user closes it
 			dialogStage.showAndWait();

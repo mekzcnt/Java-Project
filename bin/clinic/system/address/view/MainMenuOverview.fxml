@@ -18,7 +18,7 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="80.0" prefWidth="218.0" text="สถิติโรค&#10;ที่ตรวจพบ" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS" GridPane.columnIndex="1">
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleDisease" prefHeight="80.0" prefWidth="218.0" text="สถิติโรค&#10;ที่ตรวจพบ" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS" GridPane.columnIndex="1">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
