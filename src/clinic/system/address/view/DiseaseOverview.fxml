@@ -28,7 +28,7 @@
                             <MenuItem mnemonicParsing="false" text="ตั้งค่า" />
                           </items>
                         </MenuButton>
-                        <TextField layoutX="111.0" layoutY="14.0" prefHeight="25.0" prefWidth="213.0" />
+                        <TextField fx:id="search" layoutX="111.0" layoutY="14.0" prefHeight="25.0" prefWidth="213.0" />
                         <Button layoutX="331.0" layoutY="14.0" mnemonicParsing="false" text="Search" />
                         <Button layoutX="637.0" layoutY="14.0" mnemonicParsing="false" text="Add" />
                         <Button layoutX="684.0" layoutY="14.0" mnemonicParsing="false" text="Edit" />
