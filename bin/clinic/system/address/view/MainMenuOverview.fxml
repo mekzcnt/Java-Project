@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clinic.system.address.view.MainMenuOverviewController">
    <children>
       <GridPane alignment="CENTER" layoutX="104.0" layoutY="268.0" prefHeight="273.0" prefWidth="609.0">
         <columnConstraints>
@@ -33,19 +33,19 @@
                   <Font name="System Bold" size="20.0" />
                </font>
             </Button>
-            <Button alignment="CENTER" lineSpacing="2.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="218.0" text="ระบบจัดการยา&#10;และเวชภัณฑ์" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS">
+            <Button alignment="CENTER" lineSpacing="2.0" mnemonicParsing="false" onAction="#handleMedicine" prefHeight="80.0" prefWidth="218.0" text="ระบบจัดการยา&#10;และเวชภัณฑ์" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Button>
          </children>
       </GridPane>
-      <Text layoutX="151.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Clinic Management System" AnchorPane.leftAnchor="151.0" AnchorPane.rightAnchor="134.44873046875">
+      <Text layoutX="151.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Clinic Management System" AnchorPane.leftAnchor="151.0" AnchorPane.rightAnchor="134.44873046875">
          <font>
             <Font size="43.0" />
          </font>
       </Text>
-      <TextField fx:id="MainSearch" layoutX="213.0" layoutY="197.0" prefHeight="25.0" prefWidth="319.0" />
-      <Button layoutX="552.0" layoutY="197.0" mnemonicParsing="false" text="Search" />
+      <TextField fx:id="MainSearch" layoutX="215.0" layoutY="193.0" prefHeight="25.0" prefWidth="319.0" />
+      <Button layoutX="541.0" layoutY="193.0" mnemonicParsing="false" text="Search" />
    </children>
 </AnchorPane>

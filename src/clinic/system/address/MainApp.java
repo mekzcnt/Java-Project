@@ -2,6 +2,7 @@ package clinic.system.address;
 
 import java.io.IOException;
 
+import clinic.system.address.view.MainMenuOverviewController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -21,7 +22,7 @@ public class MainApp extends Application {
 
         initRootLayout();
         showMainMenuOverview();
-        showMedicineOverview();
+        
 	}
 
 	public void initRootLayout() {
@@ -50,6 +51,8 @@ public class MainApp extends Application {
             // Set person overview into the center of root layout.
             rootLayout.setCenter(MainMenuOverview);
             
+            MainMenuOverviewController controller = loader.getController();
+            controller.setMainApp(this);
        
             
         } catch (IOException e) {
