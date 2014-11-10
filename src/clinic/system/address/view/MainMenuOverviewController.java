@@ -20,6 +20,10 @@ public class MainMenuOverviewController {
     public void handleDisease() {
     	mainApp.showDiseaseOverview();
     }
+    
+    public void handleProfile() {
+    	mainApp.showProfileOverview();
+    }
 
 	public void setMainApp(MainApp mainApp) {
 		// TODO Auto-generated method stub

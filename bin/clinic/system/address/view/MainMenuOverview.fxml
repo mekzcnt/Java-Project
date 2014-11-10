@@ -23,7 +23,7 @@
                   <Font name="System Bold" size="20.0" />
                </font>
             </Button>
-            <Button alignment="CENTER" lineSpacing="2.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="218.0" text="ระบบจัดการ&#10;ข้อมูลคนไข้" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Button alignment="CENTER" lineSpacing="2.0" mnemonicParsing="false" onAction="#handleProfile" prefHeight="80.0" prefWidth="218.0" text="ระบบจัดการ&#10;ข้อมูลคนไข้" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
