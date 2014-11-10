@@ -22,7 +22,7 @@
                               <TableColumn fx:id="PatientDetails" prefWidth="167.0" text="โรคที่พบ" />
                           </columns>
                         </TableView>
-                        <MenuButton fx:id="MainMenuDisease" layoutX="22.0" layoutY="14.0" mnemonicParsing="false" text="สถิติโรค">
+                        <MenuButton fx:id="DiseaseMenu" layoutX="22.0" layoutY="14.0" mnemonicParsing="false" text="สถิติโรค">
                           <items>
                             <MenuItem mnemonicParsing="false" text="เรียงข้อมูลจาก..." />
                             <MenuItem mnemonicParsing="false" text="ตั้งค่า" />

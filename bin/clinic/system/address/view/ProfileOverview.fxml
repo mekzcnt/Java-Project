@@ -23,15 +23,70 @@
                     <columns>
                       <TableColumn fx:id="Name" prefWidth="116.0" text="ชื่อ" />
                       <TableColumn fx:id="Surname" minWidth="0.0" prefWidth="115.0" text="นามสกุล" />
-                        <TableColumn minWidth="0.0" prefWidth="120.0" text="รหัสคนไข้" />
+                        <TableColumn fx:id="ID" minWidth="0.0" prefWidth="120.0" text="รหัสคนไข้" />
                     </columns>
                   </TableView>
                </children>
             </AnchorPane>
           <AnchorPane fx:id="ProfileSplitPane" prefHeight="536.0" prefWidth="441.0">
                <children>
-                  <Button fx:id="EditButton" layoutX="376.0" layoutY="503.0" mnemonicParsing="false" text="Edit" />
-                  <Button fx:id="DeleteButton" layoutX="305.0" layoutY="503.0" mnemonicParsing="false" text="Delete" />
+                  <Button fx:id="EditButton" layoutX="314.0" layoutY="503.0" mnemonicParsing="false" text="Edit" />
+                  <Button fx:id="DeleteButton" layoutX="362.0" layoutY="503.0" mnemonicParsing="false" text="Delete" />
+                  <GridPane layoutX="23.0" layoutY="15.0" prefHeight="473.0" prefWidth="390.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="ชื่อ" />
+                        <Label fx:id="Name1" text="Label" GridPane.columnIndex="1" />
+                        <Label fx:id="Surname1" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="ID1" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label fx:id="BirthDate" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label fx:id="Age" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label fx:id="Address" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <Label fx:id="SubDistrict" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <Label fx:id="District" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                        <Label fx:id="Province" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                        <Label fx:id="PostalCode" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                        <Label fx:id="Weight" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                        <Label fx:id="Height" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                        <Label fx:id="BloodPressure" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                        <Label fx:id="PatientDisease" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+                        <Label fx:id="HistoryDisease" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="14" />
+                        <Label text="นามสกุล" GridPane.rowIndex="1" />
+                        <Label text="รหัสคนไข้" GridPane.rowIndex="2" />
+                        <Label text="วันเกิด" GridPane.rowIndex="3" />
+                        <Label text="อายุ" GridPane.rowIndex="4" />
+                        <Label text="ที่อยู่" GridPane.rowIndex="5" />
+                        <Label text="ตำบล/แขวง" GridPane.rowIndex="6" />
+                        <Label text="อำเภอ/เขต" GridPane.rowIndex="7" />
+                        <Label text="จังหวัด" GridPane.rowIndex="8" />
+                        <Label text="รหัสไปรษณีย์" GridPane.rowIndex="9" />
+                        <Label text="โรคประจำตัว" GridPane.rowIndex="13" />
+                        <Label text="โรค/อาการที่เคยรักษา" GridPane.rowIndex="14" />
+                        <Label text="น้ำหนัก" GridPane.rowIndex="10" />
+                        <Label text="ส่วนสูง" GridPane.rowIndex="11" />
+                        <Label text="ความดัน" GridPane.rowIndex="12" />
+                     </children>
+                  </GridPane>
                </children>
             </AnchorPane>
         </items>
