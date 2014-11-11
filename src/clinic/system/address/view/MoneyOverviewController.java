@@ -1,5 +1,6 @@
-package clinic;
+package clinic.system.address.view;
 
+import clinic.system.address.MainApp;
 import javafx.fxml.FXML;
 import javafx.scene.chart.PieChart;
 import javafx.scene.control.Button;
@@ -10,7 +11,10 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 
 public class MoneyOverviewController {
-
+	
+	private MainApp mainApp;
+	@FXML
+	private TextField search;
     @FXML
     private Button EditButton;
 
@@ -52,5 +56,12 @@ public class MoneyOverviewController {
 
     @FXML
     private TableColumn<?, ?> MoneyID;
+    public void setMainApp(MainApp mainApp) {
+		// TODO Auto-generated method stub
+		this.mainApp = mainApp;
+
+        // Add observable list data to the table
+
+	}
 
 }

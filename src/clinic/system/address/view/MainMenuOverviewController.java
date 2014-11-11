@@ -26,6 +26,11 @@ public class MainMenuOverviewController {
     public void handleProfile() {
     	mainApp.showProfileOverview();
     }
+    
+    public void handlemoney() {
+    	mainApp.showMoneyOverview();
+    }
+    
 
 	public void setMainApp(MainApp mainApp) {
 		// TODO Auto-generated method stub
