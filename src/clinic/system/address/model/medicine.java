@@ -29,6 +29,9 @@ public class medicine {
 	public int getAmount() {
 		return amount;
 	}
+	public void setMID(int mID) {
+		MID = mID;
+	}
 	public void setAmount(int amount) {
 		this.amount = amount;
 	}
