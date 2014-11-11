@@ -12,7 +12,7 @@
       <Label layoutX="22.0" layoutY="26.0" text="ชื่อเวชภัณฑ์" />
       <Label layoutX="22.0" layoutY="65.0" text="รหัสเวชภัณฑ์" />
       <TextField fx:id="MedicineID" layoutX="107.0" layoutY="61.0" prefHeight="25.0" prefWidth="268.0" />
-      <TextField fx:id="MedicineAmount" layoutX="107.0" layoutY="100.0" prefHeight="25.0" prefWidth="268.0" />
+      <TextField fx:id="MedicineAmount" layoutX="105.0" layoutY="100.0" prefHeight="25.0" prefWidth="268.0" />
       <Label layoutX="22.0" layoutY="103.0" text="จำนวนเวชภัณฑ์" />
       <Label layoutX="23.0" layoutY="143.0" text="ราคาเวชภัณฑ์" />
       <Label layoutX="24.0" layoutY="180.0" text="รายละเอียด" />

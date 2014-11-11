@@ -2,6 +2,7 @@ package clinic.system.address.view;
 
 import clinic.system.address.MainApp;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
 public class MainMenuOverviewController {
@@ -11,6 +12,7 @@ public class MainMenuOverviewController {
 
     @FXML
     private TextField MainSearch;
+    
     
     @FXML
 	public void handleMedicine() {

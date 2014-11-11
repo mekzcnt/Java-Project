@@ -25,6 +25,8 @@ public class MainApp extends Application {
         initRootLayout();
         showMainMenuOverview();
         
+       // this.primaryStage
+        
 	}
 
 	public void initRootLayout() {
@@ -162,6 +164,7 @@ public class MainApp extends Application {
 			dialogStage.setResizable(false);
 			//DiseaseOverviewController controller = loader.getController();
             //controller.setMainApp(this);
+			//dialogStage.
 
 			// Show the dialog and wait until the user closes it
 			dialogStage.showAndWait();

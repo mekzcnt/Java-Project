@@ -1,4 +1,4 @@
-package clinic;
+package clinic.system.address.view;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
