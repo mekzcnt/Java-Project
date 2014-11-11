@@ -121,13 +121,13 @@ public class MainApp extends Application {
 			//return false;
 		}
 	}
-	public void showProfileOverview() {
+	public void showProfileOverview(String string) {
 		try {
 			// Load the fxml file and create a new stage for the popup dialog.
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(MainApp.class.getResource("view/ProfileOverview.fxml"));
 			AnchorPane page = (AnchorPane) loader.load();
-
+			
 			// Create the dialog Stage.
 			Stage dialogStage = new Stage();
 			dialogStage.setTitle("Profile");
@@ -138,7 +138,7 @@ public class MainApp extends Application {
 			dialogStage.setResizable(false);
 			//DiseaseOverviewController controller = loader.getController();
             //controller.setMainApp(this);
-
+			
 			// Show the dialog and wait until the user closes it
 			dialogStage.showAndWait();
 

@@ -24,7 +24,7 @@ public class MainMenuOverviewController {
     }
     
     public void handleProfile() {
-    	mainApp.showProfileOverview();
+    	mainApp.showProfileOverview(MainSearch.getText());
     }
     
     public void handlemoney() {
