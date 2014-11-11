@@ -12,7 +12,7 @@ public class MainMenuOverviewController {
 
     @FXML
     private TextField MainSearch;
-    
+    //test
     
     @FXML
 	public void handleMedicine() {
@@ -24,7 +24,7 @@ public class MainMenuOverviewController {
     }
     
     public void handleProfile() {
-    	mainApp.showProfileOverview();
+    	mainApp.showProfileOverview(MainSearch.getText());
     }
     
     public void handlemoney() {
