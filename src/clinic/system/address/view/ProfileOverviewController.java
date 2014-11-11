@@ -10,14 +10,8 @@ public class ProfileOverviewController {
 	
 	 @FXML
 	 private TextField search;
-	 @FXML
-	 private  Button edit;
-	 @FXML
-	 private  Button SearchButton;
-	 @FXML
-	 private  Button delete;
-	 @FXML
-	 private  Button add;
+	 
+	
 	 
 	 public void setMainApp(MainApp mainApp) {
 			// TODO Auto-generated method stub
