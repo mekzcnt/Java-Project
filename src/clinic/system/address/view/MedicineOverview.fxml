@@ -22,9 +22,9 @@
         </items>
       </MenuButton>
       <Button fx:id="AddMedicineButton" layoutX="637.0" layoutY="27.0" mnemonicParsing="false" onAction="#handleADD" text="Add" />
-      <Button fx:id="EditMedicineButton" layoutX="682.0" layoutY="27.0" mnemonicParsing="false" text="Edit" />
-      <Button fx:id="DeleteMedicineButton" layoutX="727.0" layoutY="27.0" mnemonicParsing="false" text="Delete" />
+      <Button fx:id="EditMedicineButton" layoutX="682.0" layoutY="27.0" mnemonicParsing="false" onAction="#handleEdit" text="Edit" />
+      <Button fx:id="DeleteMedicineButton" layoutX="727.0" layoutY="27.0" mnemonicParsing="false" onAction="#handleDelete" text="Delete" />
       <TextField fx:id="SearchBox" layoutX="133.0" layoutY="27.0" prefHeight="25.0" prefWidth="213.0" />
-      <Button fx:id="SearchButton" layoutX="354.0" layoutY="27.0" mnemonicParsing="false" text="Search" />
+      <Button fx:id="SearchButton" layoutX="354.0" layoutY="27.0" mnemonicParsing="false" onAction="#handleSearch" text="Search" />
    </children>
 </AnchorPane>
