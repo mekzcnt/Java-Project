@@ -20,7 +20,7 @@
         <items>
           <AnchorPane>
                <children>
-                  <TableView fx:id="TableSplitPane" layoutY="-2.0" prefHeight="544.0" prefWidth="365.0">
+                  <TableView fx:id="TableSplitPane" editable="true" layoutY="-2.0" prefHeight="544.0">
                     <columns>
                       <TableColumn fx:id="Name" prefWidth="116.0" text="ชื่อ" />
                       <TableColumn fx:id="Surname" minWidth="0.0" prefWidth="115.0" text="นามสกุล" />
