@@ -1,7 +1,5 @@
 package clinic.system.address.view;
 
-
-import clinic.system.address.MainApp;
 import clinic.system.address.model.medicine;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
