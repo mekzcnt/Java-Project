@@ -86,10 +86,33 @@ public class MedicineOverviewController {
     }
     public void handleDelete() {
     	int selectedIndex = medicineList.getSelectionModel().getSelectedIndex();
-    	System.out.println(selectedIndex);
-    	System.out.println(medicineList.getSelectionModel().getSelectedItem().getMID());
+
 		if (selectedIndex >= 0) {
+			
+			data.remove(medicineList.getSelectionModel().getSelectedItem());
 			medicineList.getItems().remove(selectedIndex);
+			
+			Connection c = null;
+		    Statement stmt = null;
+		    try {
+		      Class.forName("org.sqlite.JDBC");
+		      c = DriverManager.getConnection("jdbc:sqlite:CMSDatabase.db");
+		      c.setAutoCommit(false);
+
+		      stmt = c.createStatement();
+		      String sql = "DELETE from Medicine where ID="+medicineList.getSelectionModel().getSelectedItem().getMID().intValue()+";";
+		      stmt.executeUpdate(sql);
+		      c.commit();
+
+		      
+		      stmt.close();
+		      c.close();
+		    } catch ( Exception e ) {
+		      System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+		      System.exit(0);
+		    }
+		    
+			
 		} else {
 			// Nothing selected.
 			Dialogs.create()
@@ -100,6 +123,7 @@ public class MedicineOverviewController {
 		}
     	
     }
+    
     public void handleSearch() {
     	Connection c = null;
         Statement stmt = null;
@@ -128,7 +152,7 @@ public class MedicineOverviewController {
     @FXML
     private void initialize() {
     	// Initialize the person table with the two columns.
-    	data.add(new medicine("aa","ff"));
+    	display();
     	MedicineID.setCellValueFactory(cellData -> cellData.getValue().getMID());
     	MedicineName.setCellValueFactory(cellData -> cellData.getValue().getMName());
     	MedicinePrice.setCellValueFactory(cellData -> cellData.getValue().getPrice());
@@ -149,10 +173,10 @@ public class MedicineOverviewController {
 
           stmt = c.createStatement();
           String sql = "INSERT INTO Medicine (ID,NAME,Amout,Price,Details) " +
-                  "VALUES ("+medicine.getMID()+", '"+medicine.getMName()+"', "+medicine.getAmount()+", "+medicine.getPrice()+", '"+medicine.getDescription()+"' );";
+                  "VALUES ("+medicine.getMID().intValue()+", '"+medicine.getMName().getValue()+"', "+medicine.getAmount().intValue()+", "+medicine.getPrice().intValue()+", '"+medicine.getDescription().getValue()+"' );";
           System.out.print(sql);
-          //stmt.executeUpdate(sql);
-          //c.commit();
+          stmt.executeUpdate(sql);
+          c.commit();
           stmt.close();
           c.close();
         } catch ( Exception e ) {
@@ -178,18 +202,9 @@ public class MedicineOverviewController {
           stmt = c.createStatement();
           ResultSet rs = stmt.executeQuery( "SELECT * FROM Medicine;" );//ID,NAME,Amout,Price,Details
           while ( rs.next() ) {
-             int id = rs.getInt("ID");
-             String  name = rs.getString("NAME");
-             int amout  = rs.getInt("Amout");
-             int price  = rs.getInt("Price");
-             String  Details = rs.getString("Details");
             
-             System.out.println( "ID = " + id );
-             System.out.println( "NAME = " + name );
-             System.out.println( "AGE = " + amout );
-             System.out.println( "ADDRESS = " + price );
-             System.out.println( "SALARY = " + Details );
-             System.out.println();
+             data.add(new medicine(rs.getInt("ID"),rs.getString("NAME"),rs.getInt("Price"),rs.getInt("Amout"),rs.getString("Details")));
+
           }
           rs.close();
           stmt.close();

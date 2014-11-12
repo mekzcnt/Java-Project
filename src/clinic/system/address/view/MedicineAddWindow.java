@@ -37,7 +37,7 @@ public class MedicineAddWindow {
     }
     
     public void handleADD() {
-    	medicine med = new medicine("eiei","eiei");
+    	medicine med = new medicine(Integer.parseInt(MedicineID.getText()),MedicineName.getText(),Integer.parseInt(MedicinePrice.getText()),Integer.parseInt(MedicineAmount.getText()),MedicineDetails.getText());
     	//med.setMName(MedicineName.getText());
     	//med.setDescription(MedicineDetails.getText());
     	//med.setAmount(Integer.parseInt(MedicineAmount.getText()));
