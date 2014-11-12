@@ -4,13 +4,18 @@ import java.io.IOException;
 
 import clinic.system.address.MainApp;
 import clinic.system.address.model.medicine;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+
+import org.controlsfx.dialog.Dialogs;
 
 import java.sql.*;
 
@@ -19,20 +24,25 @@ public class MedicineOverviewController {
     
 	private MainApp mainApp;
     @FXML
-    private TableColumn<medicine, String> MedicineID;
+    private TableView<medicine> medicineList;
+    
+	@FXML
+    private TableColumn<medicine, Number> MedicineID;
 
     @FXML
     private TableColumn<medicine, String> MedicineName;
     
     @FXML
-    private TableColumn<medicine, String> MedicinePrice;
+    private TableColumn<medicine, Number> MedicinePrice;
 
     @FXML
-    private TableColumn<medicine, String> MedicineQuatity;
+    private TableColumn<medicine, Number> MedicineQuatity;
 
     @FXML
     private TextField search; 
 
+    private ObservableList<medicine> data = FXCollections.observableArrayList();
+    
     @FXML
     public void handleADD() {
     	
@@ -75,7 +85,19 @@ public class MedicineOverviewController {
     	
     }
     public void handleDelete() {
-    	
+    	int selectedIndex = medicineList.getSelectionModel().getSelectedIndex();
+    	System.out.println(selectedIndex);
+    	System.out.println(medicineList.getSelectionModel().getSelectedItem().getMID());
+		if (selectedIndex >= 0) {
+			medicineList.getItems().remove(selectedIndex);
+		} else {
+			// Nothing selected.
+			Dialogs.create()
+		        .title("No Selection")
+		        .masthead("No Person Selected")
+		        .message("Please select a person in the table.")
+		        .showWarning();
+		}
     	
     }
     public void handleSearch() {
@@ -106,12 +128,20 @@ public class MedicineOverviewController {
     @FXML
     private void initialize() {
     	// Initialize the person table with the two columns.
-
-   
+    	data.add(new medicine("aa","ff"));
+    	MedicineID.setCellValueFactory(cellData -> cellData.getValue().getMID());
+    	MedicineName.setCellValueFactory(cellData -> cellData.getValue().getMName());
+    	MedicinePrice.setCellValueFactory(cellData -> cellData.getValue().getPrice());
+    	MedicineQuatity.setCellValueFactory(cellData -> cellData.getValue().getAmount());
+    	medicineList.getItems().setAll(data);
+    	
     }
     public void addMedicine(medicine medicine) {
     	Connection c = null;
         Statement stmt = null;
+        data.add(medicine);
+        medicineList.getItems().clear();
+        medicineList.getItems().setAll(data);
         try {
           Class.forName("org.sqlite.JDBC");
           c = DriverManager.getConnection("jdbc:sqlite:CMSDatabase.db");
@@ -121,8 +151,8 @@ public class MedicineOverviewController {
           String sql = "INSERT INTO Medicine (ID,NAME,Amout,Price,Details) " +
                   "VALUES ("+medicine.getMID()+", '"+medicine.getMName()+"', "+medicine.getAmount()+", "+medicine.getPrice()+", '"+medicine.getDescription()+"' );";
           System.out.print(sql);
-          stmt.executeUpdate(sql);
-          c.commit();
+          //stmt.executeUpdate(sql);
+          //c.commit();
           stmt.close();
           c.close();
         } catch ( Exception e ) {

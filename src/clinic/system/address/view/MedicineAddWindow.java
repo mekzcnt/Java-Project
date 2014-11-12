@@ -37,12 +37,12 @@ public class MedicineAddWindow {
     }
     
     public void handleADD() {
-    	medicine med = new medicine();
-    	med.setMName(MedicineName.getText());
-    	med.setDescription(MedicineDetails.getText());
-    	med.setAmount(Integer.parseInt(MedicineAmount.getText()));
-    	med.setPrice(Integer.parseInt(MedicinePrice.getText()));
-    	med.setMID(Integer.parseInt(MedicineID.getText()));
+    	medicine med = new medicine("eiei","eiei");
+    	//med.setMName(MedicineName.getText());
+    	//med.setDescription(MedicineDetails.getText());
+    	//med.setAmount(Integer.parseInt(MedicineAmount.getText()));
+    	//med.setPrice(Integer.parseInt(MedicinePrice.getText()));
+    	//med.setMID(Integer.parseInt(MedicineID.getText()));
     	
     	MedicineOverviewController.addMedicine(med);
     	dialogStage.close();
