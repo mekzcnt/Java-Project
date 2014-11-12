@@ -5,6 +5,7 @@ import java.io.IOException;
 import clinic.system.address.view.DiseaseOverviewController;
 import clinic.system.address.view.MainMenuOverviewController;
 import clinic.system.address.view.MedicineOverviewController;
+import clinic.system.address.view.ProfileOverviewController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -19,6 +20,15 @@ public class MainApp extends Application {
 	
 	private Stage primaryStage;
 	private BorderPane rootLayout;
+	private String search;
+	
+	public void setSearch(String search) {
+		this.search = search;
+	}
+	
+	public String getSearch() {
+		return this.search;
+	}
 	@Override
 	public void start(Stage primaryStage) {
 		this.primaryStage = primaryStage;
@@ -80,9 +90,11 @@ public class MainApp extends Application {
 			dialogStage.initOwner(primaryStage);
 			Scene scene = new Scene(page);
 			dialogStage.setScene(scene);
+			dialogStage.setWidth(800);
+			dialogStage.setHeight(600);
 			dialogStage.setResizable(false);
-			MedicineOverviewController controller = loader.getController();
-            controller.setMainApp(this);
+			//MedicineOverviewController controller = loader.getController();
+            //controller.setMainApp(this);
 
 			// Show the dialog and wait until the user closes it
 			dialogStage.showAndWait();
@@ -108,9 +120,13 @@ public class MainApp extends Application {
 			dialogStage.initOwner(primaryStage);
 			Scene scene = new Scene(page);
 			dialogStage.setScene(scene);
+			dialogStage.setWidth(800);
+			dialogStage.setHeight(600);
 			dialogStage.setResizable(false);
 			//DiseaseOverviewController controller = loader.getController();
             //controller.setMainApp(this);
+			
+			
 
 			// Show the dialog and wait until the user closes it
 			dialogStage.showAndWait();
@@ -121,7 +137,7 @@ public class MainApp extends Application {
 			//return false;
 		}
 	}
-	public void showProfileOverview(String string) {
+	public void showProfileOverview() {
 		try {
 			// Load the fxml file and create a new stage for the popup dialog.
 			FXMLLoader loader = new FXMLLoader();
@@ -135,12 +151,17 @@ public class MainApp extends Application {
 			dialogStage.initOwner(primaryStage);
 			Scene scene = new Scene(page);
 			dialogStage.setScene(scene);
+			dialogStage.setWidth(800);
+			dialogStage.setHeight(600);
 			dialogStage.setResizable(false);
 			//DiseaseOverviewController controller = loader.getController();
             //controller.setMainApp(this);
 			
 			// Show the dialog and wait until the user closes it
 			dialogStage.showAndWait();
+			
+			
+			//Profilecontroller.setMainApp(this);
 
 			//return controller.isOkClicked();
 		} catch (IOException e) {
@@ -163,11 +184,13 @@ public class MainApp extends Application {
 			dialogStage.initOwner(primaryStage);
 			Scene scene = new Scene(page);
 			dialogStage.setScene(scene);
+			dialogStage.setWidth(800);
+			dialogStage.setHeight(600);
 			dialogStage.setResizable(false);
 			//DiseaseOverviewController controller = loader.getController();
             //controller.setMainApp(this);
 			//dialogStage.
-
+			
 			// Show the dialog and wait until the user closes it
 			dialogStage.showAndWait();
 

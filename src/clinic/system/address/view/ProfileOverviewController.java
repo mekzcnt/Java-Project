@@ -11,8 +11,14 @@ public class ProfileOverviewController {
 	 @FXML
 	 private TextField search;
 	 
+
+	public void search(String searchtxt) {
+		search.setText(searchtxt);
+	}
+	private void initialize(){
+		
+	}
 	
-	 
 	 public void setMainApp(MainApp mainApp) {
 			// TODO Auto-generated method stub
 			this.mainApp = mainApp;
