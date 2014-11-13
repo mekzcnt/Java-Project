@@ -9,6 +9,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -42,11 +43,14 @@ public class MedicineOverviewController {
     private TextField SearchBox; 
 
     private ObservableList<medicine> data = FXCollections.observableArrayList();
+    private Button AddMedicineButton;
     
     @FXML
     public void handleADD() {
     	
+    	
 		try {
+			
 			
 			Stage dialogStage = new Stage();
 	    	FXMLLoader loader = new FXMLLoader(getClass().getResource("MedicineAddWindow.fxml"));
@@ -171,6 +175,12 @@ public class MedicineOverviewController {
     	
     }
     public void addMedicine(medicine medicine) {
+    	Dialogs.create()
+        .owner(AddMedicineButton)
+        .title("Information Dialog")
+        .masthead("Look, an Information Dialog")
+        .message("I have a great message for you!")
+        .showInformation();
     	Connection c = null;
         Statement stmt = null;
         data.add(medicine);

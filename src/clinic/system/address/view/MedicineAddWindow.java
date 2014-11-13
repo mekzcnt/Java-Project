@@ -1,6 +1,11 @@
 package clinic.system.address.view;
 
+import org.controlsfx.control.action.Action;
+import org.controlsfx.dialog.Dialog;
+import org.controlsfx.dialog.Dialogs;
+
 import clinic.system.address.model.medicine;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
@@ -29,12 +34,28 @@ public class MedicineAddWindow {
     
     private MedicineOverviewController MedicineOverviewController;
     private Stage dialogStage;
+
+	
     
     public void setDialogStage(Stage dialogStage) {
         this.dialogStage = dialogStage;
     }
     
+   
+    
     public void handleADD() {
+    	
+    	Dialogs.create()
+        .owner(AddMedicineButton)
+        .title("Information Dialog")
+        .masthead("Look, an Information Dialog")
+        .message("I have a great message for you!")
+        .showInformation();
+    			
+    	
+    	
+    		
+    	
     	medicine med = new medicine(Integer.parseInt(MedicineID.getText()),MedicineName.getText(),Integer.parseInt(MedicinePrice.getText()),Integer.parseInt(MedicineAmount.getText()),MedicineDetails.getText());
     	//med.setMName(MedicineName.getText());
     	//med.setDescription(MedicineDetails.getText());
@@ -44,8 +65,9 @@ public class MedicineAddWindow {
     	
     	MedicineOverviewController.addMedicine(med);
     	dialogStage.close();
+    	
+    	
     }
-    
     public void setMainApp(MedicineOverviewController MedicineOverviewController) {
 		// TODO Auto-generated method stub
 		this.MedicineOverviewController = MedicineOverviewController;

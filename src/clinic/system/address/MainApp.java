@@ -78,6 +78,7 @@ public class MainApp extends Application {
 	
 	public void showMedicineOverview() {
 		try {
+			
 			// Load the fxml file and create a new stage for the popup dialog.
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(MainApp.class.getResource("view/MedicineOverview.fxml"));

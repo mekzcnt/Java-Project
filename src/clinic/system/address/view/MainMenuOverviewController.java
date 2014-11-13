@@ -2,6 +2,8 @@ package clinic.system.address.view;
 
 import java.io.IOException;
 
+import org.controlsfx.dialog.Dialogs;
+
 import clinic.system.address.MainApp;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -28,6 +30,12 @@ public class MainMenuOverviewController {
     }
     
     public void handleDisease() {
+    	Dialogs.create()
+        .owner(mainApp)
+        .title("Information Dialog")
+        .masthead("Look, an Information Dialog")
+        .message("I have a great message for you!")
+        .showInformation();
     	mainApp.showDiseaseOverview();
     }
     
