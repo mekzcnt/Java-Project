@@ -70,10 +70,15 @@ public class MedicineOverviewController {
 		try {
 			
 			Stage dialogStage = new Stage();
-	    	FXMLLoader loader = new FXMLLoader(getClass().getResource("MedicineAddWindow.fxml"));
+	    	FXMLLoader loader = new FXMLLoader(getClass().getResource("MedicineEditWindow.fxml"));
 	    	AnchorPane root;
 			root = (AnchorPane)loader.load();
-			//DialogController controller = (DialogController) loader.getController();
+			
+			MedicineEditWindowController controller1 = loader.getController();
+			controller1.setDialogStage(dialogStage);
+            controller1.setMainApp(this);
+            controller1.setMececine(medicineList.getSelectionModel().getSelectedItem());
+            
 	    	Scene scene = new Scene(root);
 	    	dialogStage.setScene(scene);
 	    	dialogStage.showAndWait();
@@ -191,6 +196,33 @@ public class MedicineOverviewController {
         // Add observable list data to the table
 
 	}
+    public void editMedicine(medicine medicine) {
+    	Connection c = null;
+        Statement stmt = null;
+        
+        
+        try {
+          Class.forName("org.sqlite.JDBC");
+          c = DriverManager.getConnection("jdbc:sqlite:CMSDatabase.db");
+          c.setAutoCommit(false);
+
+          stmt = c.createStatement();
+          
+          String sql = "UPDATE Medicine set NAME = '"+medicine.getMName().getValue()+"', Amout = "+medicine.getAmount().intValue()+" , Price = "+medicine.getPrice().intValue()+" , Details = '"+medicine.getDescription().getValue()+"'  where ID="+medicine.getMID().intValue()+";";
+          //System.out.print(sql);
+          stmt.executeUpdate(sql);
+          c.commit();
+          stmt.close();
+          c.close();
+        } catch ( Exception e ) {
+          System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+          System.exit(0);
+        }
+        medicineList.getItems().clear();
+        display();
+        medicineList.getItems().setAll(data);
+    }
+
     public void display() {
     	Connection c = null;
         Statement stmt = null;
@@ -201,6 +233,7 @@ public class MedicineOverviewController {
 
           stmt = c.createStatement();
           ResultSet rs = stmt.executeQuery( "SELECT * FROM Medicine;" );//ID,NAME,Amout,Price,Details
+          data.clear();
           while ( rs.next() ) {
             
              data.add(new medicine(rs.getInt("ID"),rs.getString("NAME"),rs.getInt("Price"),rs.getInt("Amout"),rs.getString("Details")));

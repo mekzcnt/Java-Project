@@ -17,6 +17,6 @@
       <Label layoutX="23.0" layoutY="143.0" text="ราคาเวชภัณฑ์" />
       <Label layoutX="24.0" layoutY="180.0" text="รายละเอียด" />
       <TextField fx:id="MedicinePrice" layoutX="107.0" layoutY="139.0" prefHeight="25.0" prefWidth="268.0" />
-      <Button fx:id="EditMedicineButton" layoutX="337.0" layoutY="292.0" mnemonicParsing="false" text="Edit" />
+      <Button fx:id="EditMedicineButton" layoutX="337.0" layoutY="292.0" mnemonicParsing="false" onAction="#handleEdit" text="Edit" />
    </children>
 </AnchorPane>
