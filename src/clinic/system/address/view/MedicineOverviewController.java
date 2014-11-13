@@ -39,7 +39,7 @@ public class MedicineOverviewController {
     private TableColumn<medicine, Number> MedicineQuatity;
 
     @FXML
-    private TextField search; 
+    private TextField SearchBox; 
 
     private ObservableList<medicine> data = FXCollections.observableArrayList();
     
@@ -137,20 +137,25 @@ public class MedicineOverviewController {
           c = DriverManager.getConnection("jdbc:sqlite:CMSDatabase.db");
 
           stmt = c.createStatement();
-          String sql = "CREATE TABLE Medicine " +
-                       "(ID INT PRIMARY KEY     NOT NULL," +
-                       " NAME           TEXT    NOT NULL, " + 
-                       " Amout          INT     NOT NULL, " + 
-                       " Price          INT, " + 
-                       " Details        CHAR(50))"; 
-          stmt.executeUpdate(sql);
+          String sql = "SELECT * FROM Medicine " +
+                       "WHERE NAME LIKE '%"+SearchBox.getText()+"%' OR ID LIKE '%"+SearchBox.getText()+"%';" ;
+          
+          ResultSet rs = stmt.executeQuery(sql);
+          data.clear();
+          while ( rs.next() ) {
+            
+             data.add(new medicine(rs.getInt("ID"),rs.getString("NAME"),rs.getInt("Price"),rs.getInt("Amout"),rs.getString("Details")));
+
+          }
+          rs.close();
           stmt.close();
           c.close();
         } catch ( Exception e ) {
           System.err.println( e.getClass().getName() + ": " + e.getMessage() );
           System.exit(0);
         }
-        System.out.println("Table created successfully");
+        medicineList.getItems().clear();
+        medicineList.getItems().setAll(data);
     	
     }
     
@@ -246,6 +251,6 @@ public class MedicineOverviewController {
           System.err.println( e.getClass().getName() + ": " + e.getMessage() );
           System.exit(0);
         }
-        System.out.println("Operation done successfully");
+        
     }
 }
