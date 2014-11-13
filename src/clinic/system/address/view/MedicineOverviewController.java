@@ -175,12 +175,7 @@ public class MedicineOverviewController {
     	
     }
     public void addMedicine(medicine medicine) {
-    	Dialogs.create()
-        .owner(AddMedicineButton)
-        .title("Information Dialog")
-        .masthead("Look, an Information Dialog")
-        .message("I have a great message for you!")
-        .showInformation();
+    	
     	Connection c = null;
         Statement stmt = null;
         data.add(medicine);
