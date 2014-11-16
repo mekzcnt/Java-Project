@@ -35,16 +35,24 @@ public class MedicineAddWindow {
     private MedicineOverviewController MedicineOverviewController;
     private Stage dialogStage;
 
-	
+   public void setPromtext(){
+	   //this.MedicineID.setText("Enter number");
+	   this.MedicineID.setPromptText("Enter number");
+	   this.MedicineDetails.setPromptText("Enter a detail of medicine");
+	   this.MedicineName.setPromptText("Enter words' name");
+	   this.MedicineAmount.setPromptText("Enter number");
+	   this.MedicinePrice.setPromptText("Enter number");
+   }
     
     public void setDialogStage(Stage dialogStage) {
         this.dialogStage = dialogStage;
+        setPromtext();
     }
     
    
     
     public void handleADD() {
-    	
+    /*	
     	Dialogs.create()
         .owner(AddMedicineButton)
         .title("Information Dialog")
@@ -52,7 +60,7 @@ public class MedicineAddWindow {
         .message("I have a great message for you!")
         .showInformation();
     			
-    	
+    	*/
     	
     		
     	
