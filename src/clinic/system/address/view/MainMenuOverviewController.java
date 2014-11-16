@@ -30,7 +30,7 @@ public class MainMenuOverviewController {
     }
     
     public void handleDisease() {
-    	
+    	mainApp.showDiseaseOverview();
     }
     
     public void handleProfile() {
