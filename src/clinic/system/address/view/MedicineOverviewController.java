@@ -15,9 +15,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-
 import org.controlsfx.dialog.Dialogs;
-
 import java.sql.*;
 
 public class MedicineOverviewController {

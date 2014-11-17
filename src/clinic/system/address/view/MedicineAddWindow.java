@@ -53,18 +53,7 @@ public class MedicineAddWindow {
    
     
     public void handleADD() {
-    /*	
-    	Dialogs.create()
-        .owner(AddMedicineButton)
-        .title("Information Dialog")
-        .masthead("Look, an Information Dialog")
-        .message("I have a great message for you!")
-        .showInformation();
-    			
-    	*/
-    	
-    		
-    	
+
     	medicine med = new medicine(Integer.parseInt(MedicineID.getText()),MedicineName.getText(),Integer.parseInt(MedicinePrice.getText()),Integer.parseInt(MedicineAmount.getText()),MedicineDetails.getText());
     	//med.setMName(MedicineName.getText());
     	//med.setDescription(MedicineDetails.getText());
