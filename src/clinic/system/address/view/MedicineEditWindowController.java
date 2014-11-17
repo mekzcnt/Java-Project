@@ -33,6 +33,7 @@ public class MedicineEditWindowController {
     
     public void setDialogStage(Stage dialogStage) {
         this.dialogStage = dialogStage;
+        this.dialogStage.setTitle("Edit medicnie");
     }
     
     public void setMececine(medicine med){
