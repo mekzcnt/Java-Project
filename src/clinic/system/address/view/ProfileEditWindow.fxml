@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="524.0" prefWidth="410.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clinic.system.address.view.MedicineEditWindowController">
+   <children>
+      <Button fx:id="EditPersonButton" layoutX="357.0" layoutY="485.0" mnemonicParsing="false" onAction="#handleEdit" text="Edit" />
+      <GridPane layoutX="15.0" layoutY="14.0" prefHeight="467.0" prefWidth="379.0">
+         <children>
+            <Label text="ชื่อ" />
+            <Label text="นามสกุล" GridPane.rowIndex="1" />
+            <Label text="รหัสคนไข้" GridPane.rowIndex="2" />
+            <Label text="วันเกิด" GridPane.rowIndex="3" />
+            <TextField fx:id="Address" prefHeight="25.0" prefWidth="268.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <TextField fx:id="Subdistrict" prefHeight="25.0" prefWidth="268.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <Label text="อายุ" GridPane.rowIndex="4" />
+            <Label text="ที่อยู่" GridPane.rowIndex="5" />
+            <Label text="ตำบล/แขวง" GridPane.rowIndex="6" />
+            <Label text="อำเภอ/เขต" GridPane.rowIndex="7" />
+            <Label text="จังหวัด" GridPane.rowIndex="8" />
+            <Label text="รหัสไปรษณีย์" GridPane.rowIndex="9" />
+            <Label text="น้ำหนัก" GridPane.rowIndex="10" />
+            <Label text="ส่วนสูง" GridPane.rowIndex="11" />
+            <Label text="ความดัน" GridPane.rowIndex="12" />
+            <Label text="โรคประจำตัว" GridPane.rowIndex="13" />
+            <Label text="โรค/อาการที่เคยรักษา" GridPane.rowIndex="14" />
+            <TextField fx:id="District" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <TextField fx:id="Province" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <TextField fx:id="PostalCode" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+            <TextField fx:id="Weight" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+            <TextField fx:id="Height" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+            <TextField fx:id="BloodPressure" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+            <TextField fx:id="PatientDisease" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+            <TextField fx:id="HistoryDisease" GridPane.columnIndex="1" GridPane.rowIndex="14" />
+            <TextField fx:id="Name" GridPane.columnIndex="1" />
+            <TextField fx:id="Surname" prefHeight="0.0" prefWidth="256.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="PatientID" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="Birthdate" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="Age" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+         </children>
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="173.0" minWidth="10.0" prefWidth="104.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="276.0" minWidth="10.0" prefWidth="254.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+      </GridPane>
+   </children>
+</AnchorPane>
