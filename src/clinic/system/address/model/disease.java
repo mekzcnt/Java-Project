@@ -12,7 +12,7 @@ public class disease {
 	private final StringProperty disease;
 	private final StringProperty description;
 	
-	public disease(String FName,String LName,int ID,String disease,String description) {
+	public disease(String FName, String LName, int ID, String disease, String description) {
 		this.FName = new SimpleStringProperty(FName);
 		this.LName = new SimpleStringProperty(LName);
 		this.ID = new SimpleIntegerProperty(ID);

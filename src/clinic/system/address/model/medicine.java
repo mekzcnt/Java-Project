@@ -12,7 +12,7 @@ public class medicine {
 	private final StringProperty description;
 	private final IntegerProperty amount;
 	
-	public medicine(int MID, String MName,int price,int amount,String description) {
+	public medicine(int MID, String MName, int price, int amount, String description) {
 		this.MID = new SimpleIntegerProperty(MID);
 		this.MName = new SimpleStringProperty(MName);
 		
