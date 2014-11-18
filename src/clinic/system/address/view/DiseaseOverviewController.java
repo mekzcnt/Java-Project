@@ -65,7 +65,7 @@ public class DiseaseOverviewController {
     	
     }
  public void handleEdit() {
-    	
+	 if (diseaseList.getSelectionModel().getSelectedIndex() >= 0) {
 		try {
 			
 			Stage dialogStage = new Stage();
@@ -86,6 +86,7 @@ public class DiseaseOverviewController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	 }
     	
     }
  public void handleDelete() {

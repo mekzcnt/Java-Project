@@ -5,18 +5,18 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="340.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clinic.system.address.view.MedicineEditWindowController">
+<AnchorPane prefHeight="340.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clinic.system.address.view.DiseaseEditWindowController">
    <children>
       <TextArea fx:id="DiseaseDetails" layoutX="107.0" layoutY="180.0" prefHeight="93.0" prefWidth="268.0" />
-      <TextField fx:id="PatientName" layoutX="107.0" layoutY="24.0" prefHeight="25.0" prefWidth="268.0" />
+      <TextField fx:id="DiseaseFname" layoutX="107.0" layoutY="24.0" prefHeight="25.0" prefWidth="268.0" />
       <Label layoutX="22.0" layoutY="26.0" text="ชื่อ" />
       <Label layoutX="22.0" layoutY="65.0" text="นามสกุล" />
-      <TextField fx:id="PatientSurname" layoutX="107.0" layoutY="61.0" prefHeight="25.0" prefWidth="268.0" />
-      <TextField fx:id="PatientID" layoutX="107.0" layoutY="99.0" prefHeight="25.0" prefWidth="268.0" />
+      <TextField fx:id="DiseaseLname" layoutX="107.0" layoutY="61.0" prefHeight="25.0" prefWidth="268.0" />
+      <TextField fx:id="DiseaseID" layoutX="107.0" layoutY="99.0" prefHeight="25.0" prefWidth="268.0" />
       <Label layoutX="22.0" layoutY="103.0" text="รหัสคนไข้" />
       <Label layoutX="23.0" layoutY="143.0" text="โรคที่พบ" />
       <Label layoutX="24.0" layoutY="180.0" text="รายละเอียด" />
-      <TextField fx:id="DiseasePatient" layoutX="107.0" layoutY="139.0" prefHeight="25.0" prefWidth="268.0" />
+      <TextField fx:id="DiseaseName" layoutX="107.0" layoutY="139.0" prefHeight="25.0" prefWidth="268.0" />
       <Button fx:id="EditDiseaseButton" layoutX="337.0" layoutY="292.0" mnemonicParsing="false" onAction="#handleEdit" text="Edit" />
    </children>
 </AnchorPane>
