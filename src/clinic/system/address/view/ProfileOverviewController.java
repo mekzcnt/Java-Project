@@ -12,6 +12,7 @@ public class ProfileOverviewController {
 	 private TextField search;
 	 
 
+	 
 	public void search(String searchtxt) {
 		search.setText(searchtxt);
 	}
