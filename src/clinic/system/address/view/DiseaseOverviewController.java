@@ -245,7 +245,30 @@ public class DiseaseOverviewController {
      }
      
  }
-    
+ public void setTable(){
+	 Connection c = null;
+	    Statement stmt = null;
+	    try {
+	      Class.forName("org.sqlite.JDBC");
+	      c = DriverManager.getConnection("jdbc:sqlite:CMSDatabase.db");
+	      System.out.println("Opened database successfully");
+
+	      stmt = c.createStatement();
+	      String sql = "CREATE TABLE Disease " +
+	                   "(ID 			  INT     PRIMARY KEY     NOT NULL," +
+	                   " FName           TEXT    NOT NULL, " + 
+	                   " LName           TEXT     NOT NULL, " + 
+	                   " Name            TEXT      NOT, " + 
+	                   " SALARY         REAL)"; 
+	      stmt.executeUpdate(sql);
+	      stmt.close();
+	      c.close();
+	    } catch ( Exception e ) {
+	      System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+	      System.exit(0);
+	    }
+	    System.out.println("Table created successfully");
+}    
 
     public void setMainApp(MainApp mainApp) {
 		// TODO Auto-generated method stub
