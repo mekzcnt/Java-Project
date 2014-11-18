@@ -236,7 +236,13 @@ public class MainApp extends Application {
                   " Price       INT, " +
                   " Details     CHAR(50)) " ; 
 
-     stmt.executeUpdate(sql);
+	      stmt.executeUpdate(sql);
+	      sql = "CREATE TABLE Disease " +
+                  "(ID 			INT PRIMARY KEY     NOT NULL," +
+                  " disease     TEXT, " +
+                  " description TEXT) " ; 
+
+	      stmt.executeUpdate(sql);
 	      stmt.close();
 	      c.close();
 	    } catch ( Exception e ) {

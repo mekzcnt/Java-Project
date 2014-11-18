@@ -10,7 +10,6 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -19,7 +18,7 @@ import javafx.stage.Stage;
 import java.sql.*;
 public class DiseaseOverviewController {
 	
-	private MainApp mainApp;
+
 	
 	@FXML
     private TableView<disease> diseaseList;
@@ -39,7 +38,7 @@ public class DiseaseOverviewController {
     private TextField SearchBox; 
     
     private ObservableList<disease> data = FXCollections.observableArrayList();
-    private Button AdddiseaseButton;
+    //private Button AdddiseaseButton;
     
     @FXML
     public void handleADD() {
@@ -182,8 +181,8 @@ public class DiseaseOverviewController {
        c.setAutoCommit(false);
 
        stmt = c.createStatement();
-       String sql = "INSERT INTO Disease (ID,FNAME,LName,Name,Details) " +
-               "VALUES ("+disease.getID().intValue()+", '"+disease.getFName().getValue()+"', "+disease.getLName().getValue()+", "+disease.getdisease().getValue()+", '"+disease.getdescription().getValue()+"' );";
+       String sql = "INSERT INTO Disease (ID,disease,description) " +
+               "VALUES ("+disease.getID().intValue()+", '"+disease.getdisease().getValue()+"', '"+disease.getdescription().getValue()+"' );";
        System.out.print(sql);
        stmt.executeUpdate(sql);
        c.commit();
@@ -206,7 +205,7 @@ public class DiseaseOverviewController {
 
        stmt = c.createStatement();
        
-       String sql = "UPDATE Disease set FNAME = '"+disease.getFName().getValue()+"', FName = "+disease.getFName().getValue()+" , LName = "+disease.getLName().getValue()+" , Disease = '"+disease.getdisease().getValue()+"'  Description="+disease.getdescription().getValue()+";";
+       String sql = "UPDATE Disease set Disease = '"+disease.getdisease().getValue()+"'  Description="+disease.getdescription().getValue()+"'  where ID="+disease.getID().intValue()+";";
        //System.out.print(sql);
        stmt.executeUpdate(sql);
        c.commit();
@@ -229,11 +228,11 @@ public class DiseaseOverviewController {
          c.setAutoCommit(false);
 
        stmt = c.createStatement();
-       ResultSet rs = stmt.executeQuery( "SELECT * FROM Disease;" );//ID,FNAME,LName,Name,Details
+       ResultSet rs = stmt.executeQuery( "SELECT * FROM Disease;" );
        data.clear();
        while ( rs.next() ) {
     	 //String FName,String LName,int ID,String disease,String description
-          data.add(new disease(rs.getString("FName"),rs.getString("LName"),rs.getInt("ID"),rs.getString("disease"),rs.getString("description")));
+          data.add(new disease("","",rs.getInt("ID"),rs.getString("disease"),rs.getString("description")));
 
        }
        rs.close();
@@ -272,7 +271,7 @@ public class DiseaseOverviewController {
 
     public void setMainApp(MainApp mainApp) {
 		// TODO Auto-generated method stub
-		this.mainApp = mainApp;
+		//this.mainApp = mainApp;
 
         // Add observable list data to the table
 

@@ -14,12 +14,12 @@
                <content>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0">
                      <children>
-                        <TableView fx:id="DiseaseTable" layoutX="22.0" layoutY="47.0" prefHeight="512.0" prefWidth="757.0">
+                        <TableView fx:id="diseaseList" layoutX="22.0" layoutY="47.0" prefHeight="512.0" prefWidth="757.0">
                           <columns>
-                            <TableColumn fx:id="PatientName" prefWidth="226.0" text="ชื่อ" />
-                            <TableColumn fx:id="PatientSurname" minWidth="0.0" prefWidth="188.0" text="นามสกุล" />
-                              <TableColumn fx:id="PatientID" minWidth="0.0" prefWidth="157.0" text="รหัสคนไข้" />
-                              <TableColumn fx:id="PatientDetails" prefWidth="167.0" text="โรคที่พบ" />
+                            <TableColumn fx:id="diseaseFname" prefWidth="226.0" text="ชื่อ" />
+                            <TableColumn fx:id="diseaseLName" minWidth="0.0" prefWidth="188.0" text="นามสกุล" />
+                              <TableColumn fx:id="diseaseID" minWidth="0.0" prefWidth="157.0" text="รหัสคนไข้" />
+                              <TableColumn fx:id="diseaseName" prefWidth="167.0" text="โรคที่พบ" />
                           </columns>
                         </TableView>
                         <MenuButton fx:id="DiseaseMenu" layoutX="22.0" layoutY="14.0" mnemonicParsing="false" text="สถิติโรค">

@@ -46,8 +46,8 @@ public class DiseaseAddWindow {
      
      public void setDialogStage(Stage dialogStage) {
          this.dialogStage = dialogStage;
-         setPromtext();
-         this.dialogStage.setTitle("ADD Disease");
+         //setPromtext();
+         //this.dialogStage.setTitle("ADD Disease");
      }
      public void handleADD() {
 
