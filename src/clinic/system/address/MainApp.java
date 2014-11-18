@@ -2,6 +2,7 @@ package clinic.system.address;
 //test
 //test 17/11/2557
 import java.io.IOException;
+import java.sql.*;
 
 import clinic.system.address.view.DiseaseOverviewController;
 import clinic.system.address.view.MainMenuOverviewController;
@@ -202,8 +203,51 @@ public class MainApp extends Application {
 			//return false;
 		}
 	}
+	private static void createDatabase() {
+		Connection c = null;
+	    Statement stmt = null;
+	    try {
+	      Class.forName("org.sqlite.JDBC");
+	      c = DriverManager.getConnection("jdbc:sqlite:CMSDatabase.db");
+	      System.out.println("Opened database successfully");
+
+	      stmt = c.createStatement();
+	      String sql = "CREATE TABLE Profile " +
+	                   "(ID 			INT PRIMARY KEY     NOT NULL," +
+	                   " FIRSTNAME      TEXT    NOT NULL, " + 
+	                   " LASTNAME       TEXT    NOT NULL, " + 
+	                   " Birthday       TEXT    NOT NULL, " +
+	                   " ADDRESS       	TEXT    NOT NULL, " + 
+	                   " CITY       	TEXT    NOT NULL, " + 
+	                   " Canton       	TEXT    NOT NULL, " + 
+	                   " District       TEXT    NOT NULL, " + 
+	                   " Province       TEXT    NOT NULL, " + 
+	                   " ZIP       		INT    NOT NULL, " + 
+	                   " Weight       	INT    NOT NULL, " + 
+	                   " Height       	INT    NOT NULL, " + 
+	                   " Pressure       INT , " +
+	                   " CongenitalDisease TEXT, " +
+	                   " Disease       	TEXT) ";
+	      stmt.executeUpdate(sql);
+	      sql = "CREATE TABLE Medicine " +
+                  "(ID 			INT PRIMARY KEY     NOT NULL," +
+                  " NAME      	TEXT    NOT NULL, " + 
+                  " Amout       INT    NOT NULL, " + 
+                  " Price       INT, " +
+                  " Details     CHAR(50)) " ; 
+
+     stmt.executeUpdate(sql);
+	      stmt.close();
+	      c.close();
+	    } catch ( Exception e ) {
+	      System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+	      System.exit(0);
+	    }
+	    System.out.println("Table created successfully");
+	}
 	
 	public static void main(String[] args) {
+		//createDatabase();
 		launch(args);
 	}
 }
