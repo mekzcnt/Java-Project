@@ -20,16 +20,20 @@
         <items>
           <AnchorPane SplitPane.resizableWithParent="false">
                <children>
-                  <TableView fx:id="profilelist" editable="true" onMouseClicked="#haddledisplaydetail" prefHeight="491.0" prefWidth="394.0">
-                    <columns>
-                      <TableColumn fx:id="Name" prefWidth="116.0" text="ชื่อ" />
-                      <TableColumn fx:id="Surname" minWidth="0.0" prefWidth="115.0" text="นามสกุล" />
-                        <TableColumn fx:id="ID" minWidth="0.0" prefWidth="120.0" text="รหัสคนไข้" />
-                    </columns>
-                     <columnResizePolicy>
-                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-                     </columnResizePolicy>
-                  </TableView>
+                  <ScrollPane prefHeight="489.0" prefViewportHeight="489.0" prefViewportWidth="382.0" prefWidth="382.0">
+                     <content>
+                        <TableView fx:id="profilelist" editable="true" onMouseClicked="#haddledisplaydetail" prefHeight="489.0" prefWidth="382.0">
+                          <columns>
+                            <TableColumn fx:id="Name" prefWidth="116.0" text="ชื่อ" />
+                            <TableColumn fx:id="Surname" minWidth="0.0" prefWidth="115.0" text="นามสกุล" />
+                              <TableColumn fx:id="ID" minWidth="0.0" prefWidth="120.0" text="รหัสคนไข้" />
+                          </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                     </content>
+                  </ScrollPane>
                </children>
             </AnchorPane>
           <AnchorPane fx:id="ProfileSplitPane" SplitPane.resizableWithParent="false">
