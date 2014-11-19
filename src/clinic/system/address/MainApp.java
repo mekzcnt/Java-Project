@@ -259,7 +259,7 @@ public class MainApp extends Application {
 	public static void main(String[] args) {
 		File f = new File("CMSDatabase.db");
 		if(f.exists()) { 
-			System.out.print("me");
+			System.out.print("Running Database...");
 		}
 		//createDatabase();
 		launch(args);
