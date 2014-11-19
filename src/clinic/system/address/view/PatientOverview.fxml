@@ -76,7 +76,7 @@
             <RowConstraints minHeight="10.0" prefHeight="61.0" vgrow="SOMETIMES" />
          </rowConstraints>
       </GridPane>
-      <TextField fx:id="MedicineSearchBox" layoutX="386.0" layoutY="27.0" onInputMethodTextChanged="#handleSearch" onKeyPressed="#handleSearch" onKeyReleased="#handleSearch" prefHeight="25.0" prefWidth="209.0" />
+      <TextField fx:id="MedicineSearchBox" layoutX="433.0" layoutY="28.0" onInputMethodTextChanged="#handleSearch" onKeyPressed="#handleSearch" onKeyReleased="#handleSearch" prefHeight="25.0" prefWidth="201.0" />
       <ScrollPane layoutX="385.0" layoutY="62.0" prefHeight="292.0" prefWidth="334.0">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="292.0" prefWidth="334.0">
@@ -104,7 +104,7 @@
          </font>
       </Label>
       <Button fx:id="AddMoneyButton" layoutX="386.0" layoutY="361.0" mnemonicParsing="false" onAction="#submit" text="เพิ่มการจ่ายเวชภัณฑ์ลงฐานข้อมูล" />
-      <ListView fx:id="MedicineList" layoutX="386.0" layoutY="56.0" onMouseClicked="#handleSubmit" prefHeight="96.0" prefWidth="248.0" visible="false" />
-      <TextField fx:id="AmountMedicine" layoutX="602.0" layoutY="27.0" prefHeight="25.0" prefWidth="39.0" />
+      <ListView fx:id="MedicineList" layoutX="433.0" layoutY="56.0" onMouseClicked="#handleSubmit" prefHeight="96.0" prefWidth="201.0" visible="false" />
+      <TextField fx:id="AmountMedicine" layoutX="386.0" layoutY="28.0" prefHeight="25.0" prefWidth="39.0" text="1" />
    </children>
 </AnchorPane>

@@ -6,11 +6,12 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 public class medicine {
-	private final IntegerProperty MID;
-	private final StringProperty MName;
-	private final IntegerProperty price;
-	private final StringProperty description;
-	private final IntegerProperty amount;
+	private IntegerProperty MID;
+	private StringProperty MName;
+	private IntegerProperty price;
+	private StringProperty description;
+	private IntegerProperty amount;
+	private IntegerProperty use;
 	
 	public medicine(int MID, String MName, int price, int amount, String description) {
 		this.MID = new SimpleIntegerProperty(MID);
@@ -22,7 +23,13 @@ public class medicine {
 		this.amount = new SimpleIntegerProperty(amount);
 		
 	}
-	
+	public IntegerProperty getUse() {
+		return use;
+	}
+	public void setuse(int use) {
+		this.use = new SimpleIntegerProperty(use);
+		this.amount = new SimpleIntegerProperty(this.amount.intValue()-use);
+	}
 	public IntegerProperty getMID() {
 		return MID;
 	}

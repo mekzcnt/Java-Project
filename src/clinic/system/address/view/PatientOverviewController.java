@@ -65,6 +65,12 @@ public class PatientOverviewController {
 
     @FXML
     private TableColumn<medicine, String> MedicineName;
+    
+    @FXML
+    private TextField AmountMedicine;
+
+    @FXML
+    private TableColumn<medicine, Number> MedicinePrice1;
 
     @FXML
     private Label ID1;
@@ -130,6 +136,7 @@ public class PatientOverviewController {
     	
     	MedicineName.setCellValueFactory(cellData -> cellData.getValue().getMName());
     	MedicinePrice.setCellValueFactory(cellData -> cellData.getValue().getPrice());
+    	MedicinePrice1.setCellValueFactory(cellData -> cellData.getValue().getUse());
     	
 	}
     @FXML
@@ -175,7 +182,10 @@ public class PatientOverviewController {
     public void handleSubmit() {
     	System.out.print("ss");
     	//System.out.print(MedicineList.getSelectionModel().getSelectedItem().getMName().getValue());
-    	data.add(MedicineList.getSelectionModel().getSelectedItem());
+    	medicine temp = MedicineList.getSelectionModel().getSelectedItem();
+    	temp.setuse(Integer.parseInt(AmountMedicine.getText()));
+    	data.add(temp);
+    	
     	MedicineSearchBox.setText("");
     	MedicineTable.getItems().clear();
     	MedicineTable.getItems().setAll(data);
@@ -187,7 +197,7 @@ public class PatientOverviewController {
     private void displayprice() {
     	int price = 0;
     	for (medicine each:data) {
-    		price += each.getPrice().intValue();
+    		price += each.getPrice().intValue()*each.getUse().intValue();
     	}
     	SumMedicinePrice.setText(""+price);
     }
