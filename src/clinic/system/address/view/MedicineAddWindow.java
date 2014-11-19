@@ -7,10 +7,12 @@ import org.controlsfx.dialog.Dialogs;
 import clinic.system.address.model.medicine;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 public class MedicineAddWindow {
 	@FXML
@@ -47,14 +49,26 @@ public class MedicineAddWindow {
    
     @FXML
     public void handleADD() {
+    	Iscorrect();
+    	if (Iscorrect()){
     	medicine med = new medicine(Integer.parseInt(MedicineID.getText()),MedicineName.getText(),Integer.parseInt(MedicinePrice.getText()),Integer.parseInt(MedicineAmount.getText()),MedicineDetails.getText());
-    	//med.setMName(MedicineName.getText());
-    	//med.setDescription(MedicineDetails.getText());
-    	//med.setAmount(Integer.parseInt(MedicineAmount.getText()));
-    	//med.setPrice(Integer.parseInt(MedicinePrice.getText()));
-    	//med.setMID(Integer.parseInt(MedicineID.getText()));
+
     	MedicineOverviewController.addMedicine(med);
     	dialogStage.close();
+    	}
+    	else {
+    		System.out.print("ffff");
+
+    	}
+    }
+    private boolean Iscorrect() {
+    	String number = "0123456789";
+    	if (MedicineID.getText().matches(number) && MedicineAmount.getText().matches(number) && MedicinePrice.getText().matches(number)){
+    		return true;
+    	}
+    	return !true;
+    	
+    	
     }
     public void setMainApp(MedicineOverviewController MedicineOverviewController) {
 		this.MedicineOverviewController = MedicineOverviewController;
