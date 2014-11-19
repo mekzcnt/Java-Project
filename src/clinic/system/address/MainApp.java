@@ -1,6 +1,5 @@
 package clinic.system.address;
-//test
-//test 17/11/2557
+
 import java.io.IOException;
 import java.sql.*;
 
@@ -15,8 +14,6 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-
-//test again again
 
 public class MainApp extends Application {
 	
