@@ -69,7 +69,7 @@ public class PatientOverviewController {
 
     public void setDialogStage(Stage dialogStage) {
         this.dialogStage = dialogStage;
-        this.dialogStage.setTitle("");
+        this.dialogStage.setTitle("PatientOverview");
     
     }
     public void setMainApp(MainMenuOverviewController MainMenuOverviewController) {
@@ -82,10 +82,25 @@ public class PatientOverviewController {
     
     private void initialize() {
     	Name1.setText(( this.profile).getFName().getValue());
+    	Surname1.setText(( this.profile).getLName().getValue());
+    	ID1.setText(""+( this.profile).getID().getValue());
+    	Height.setText(""+( this.profile).getHeight().getValue());
+    	Age.setText(""+( this.profile).getOld().getValue());
+    	BirthDate.setText(( this.profile).getBirthday().getValue());
+    	Weight.setText(""+( this.profile).getWeight().getValue());
+    	BloodPressure.setText(""+( this.profile).getPressure().getValue());
+    	
     }
     public void setProfile(profile profile) {
 		this.profile = profile;
 		Name1.setText(profile.getFName().getValue());
+		Surname1.setText(( this.profile).getLName().getValue());
+    	ID1.setText(""+( this.profile).getID().getValue());
+    	Height.setText(""+( this.profile).getHeight().getValue());
+    	Age.setText(""+( this.profile).getOld().getValue());
+    	BirthDate.setText(( this.profile).getBirthday().getValue());
+    	Weight.setText(""+( this.profile).getWeight().getValue());
+    	BloodPressure.setText(""+( this.profile).getPressure().getValue());
 	}
 
 }
