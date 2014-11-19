@@ -215,4 +215,7 @@ public class PatientOverviewController {
         }
         dialogStage.close();
     }
+    public void handleDelete() {
+    	data.remove(MedicineTable.getSelectionModel().getSelectedItem());
+    }
 }
