@@ -7,9 +7,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clinic.system.address.view.MainMenuOverviewController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clinic.system.address.view.MainMenuOverviewController">
    <children>
-      <GridPane alignment="CENTER" layoutX="104.0" layoutY="237.0" prefHeight="304.0" prefWidth="609.0">
+      <GridPane alignment="CENTER" layoutX="104.0" layoutY="287.0" prefHeight="254.0" prefWidth="609.0">
         <columnConstraints>
           <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -41,10 +41,13 @@
             </Button>
          </children>
       </GridPane>
-      <Text layoutX="151.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Clinic Management System" AnchorPane.leftAnchor="151.0" AnchorPane.rightAnchor="134.44873046875">
+      <Text layoutX="151.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Clinic Management System" AnchorPane.leftAnchor="151.0" AnchorPane.rightAnchor="134.44873046875">
          <font>
             <Font size="43.0" />
          </font>
       </Text>
+      <TextField fx:id="SearchBox" layoutX="285.0" layoutY="203.0" prefHeight="25.0" prefWidth="275.0" />
+      <Label layoutX="193.0" layoutY="207.0" text="ค้นหาข้อมูลผู้ป่วย" />
+      <Button fx:id="SearchButton" layoutX="571.0" layoutY="203.0" mnemonicParsing="false" text="ค้นหา" />
    </children>
 </AnchorPane>
