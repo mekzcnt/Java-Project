@@ -8,7 +8,7 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clinic.system.address.view.DiseaseOverviewController">
    <children>
-      <TableView fx:id="diseaseList" editable="true" layoutX="22.0" layoutY="47.0" prefHeight="522.0" prefWidth="757.0">
+      <TableView fx:id="diseaseList" editable="true" layoutX="21.0" layoutY="72.0" prefHeight="460.0" prefWidth="757.0">
          <columns>
             <TableColumn fx:id="diseaseFname" prefWidth="226.0" text="ชื่อ" />
             <TableColumn fx:id="diseaseLName" minWidth="0.0" prefWidth="188.0" text="นามสกุล" />
@@ -16,8 +16,8 @@
             <TableColumn fx:id="diseaseName" prefWidth="167.0" text="โรคที่พบ" />
          </columns>
       </TableView>
-      <TextField fx:id="SearchBox" layoutX="22.0" layoutY="14.0" prefHeight="25.0" prefWidth="213.0" />
-      <Button fx:id="SearchButton" layoutX="243.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleSearch" text="Search" />
-      <Button fx:id="DeleteButton" layoutX="728.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleDelete" text="Delete" />
+      <TextField fx:id="SearchBox" layoutX="21.0" layoutY="27.0" prefHeight="25.0" prefWidth="213.0" />
+      <Button fx:id="SearchButton" layoutX="242.0" layoutY="27.0" mnemonicParsing="false" onAction="#handleSearch" text="Search" />
+      <Button fx:id="DeleteButton" layoutX="727.0" layoutY="27.0" mnemonicParsing="false" onAction="#handleDelete" text="Delete" />
    </children>
 </AnchorPane>
