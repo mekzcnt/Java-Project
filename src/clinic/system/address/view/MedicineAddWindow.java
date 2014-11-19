@@ -13,23 +13,12 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class MedicineAddWindow {
-
-    @FXML
+	@FXML
     private TextField MedicineID;
-
-    @FXML
     private TextArea MedicineDetails;
-
-    @FXML
     private TextField MedicineName;
-
-    @FXML
     private TextField MedicineAmount;
-
-    @FXML
     private TextField MedicinePrice;
-
-    @FXML
     private Button AddMedicineButton;
     
     private MedicineOverviewController MedicineOverviewController;
@@ -53,25 +42,18 @@ public class MedicineAddWindow {
    
     
     public void handleADD() {
-
     	medicine med = new medicine(Integer.parseInt(MedicineID.getText()),MedicineName.getText(),Integer.parseInt(MedicinePrice.getText()),Integer.parseInt(MedicineAmount.getText()),MedicineDetails.getText());
     	//med.setMName(MedicineName.getText());
     	//med.setDescription(MedicineDetails.getText());
     	//med.setAmount(Integer.parseInt(MedicineAmount.getText()));
     	//med.setPrice(Integer.parseInt(MedicinePrice.getText()));
     	//med.setMID(Integer.parseInt(MedicineID.getText()));
-    	
     	MedicineOverviewController.addMedicine(med);
     	dialogStage.close();
-    	
-    	
     }
     public void setMainApp(MedicineOverviewController MedicineOverviewController) {
-		// TODO Auto-generated method stub
 		this.MedicineOverviewController = MedicineOverviewController;
-
         // Add observable list data to the table
-
 	}
     
 

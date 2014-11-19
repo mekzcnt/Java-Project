@@ -20,36 +20,19 @@ import java.sql.*;
 
 public class MedicineOverviewController {
 
-    
 	private MainApp mainApp;
     @FXML
     private TableView<medicine> medicineList;
-    
-	@FXML
     private TableColumn<medicine, Number> MedicineID;
-
-    @FXML
     private TableColumn<medicine, String> MedicineName;
-    
-    @FXML
     private TableColumn<medicine, Number> MedicinePrice;
-
-    @FXML
     private TableColumn<medicine, Number> MedicineQuatity;
-
-    @FXML
     private TextField SearchBox; 
-
     private ObservableList<medicine> data = FXCollections.observableArrayList();
     private Button AddMedicineButton;
     
-    @FXML
     public void handleADD() {
-    	
-    	
 		try {
-			
-			
 			Stage dialogStage = new Stage();
 	    	FXMLLoader loader = new FXMLLoader(getClass().getResource("MedicineAddWindow.fxml"));
 	    	AnchorPane root;
@@ -60,17 +43,13 @@ public class MedicineOverviewController {
 	    	Scene scene = new Scene(root);
 	    	dialogStage.setScene(scene);
 	    	dialogStage.showAndWait();
-	    	
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
     	
     }
-    public void handleEdit() {
-    	
+    public void handleEdit() {	
 		try {
-			
 			Stage dialogStage = new Stage();
 	    	FXMLLoader loader = new FXMLLoader(getClass().getResource("MedicineEditWindow.fxml"));
 	    	AnchorPane root;
@@ -83,10 +62,8 @@ public class MedicineOverviewController {
             
 	    	Scene scene = new Scene(root);
 	    	dialogStage.setScene(scene);
-	    	dialogStage.showAndWait();
-	    	
+	    	dialogStage.showAndWait();   	
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
     	
@@ -95,7 +72,6 @@ public class MedicineOverviewController {
     	int selectedIndex = medicineList.getSelectionModel().getSelectedIndex();
 
 		if (selectedIndex >= 0) {
-			
 			data.remove(medicineList.getSelectionModel().getSelectedItem());
 			medicineList.getItems().remove(selectedIndex);
 			
@@ -111,7 +87,6 @@ public class MedicineOverviewController {
 		      stmt.executeUpdate(sql);
 		      c.commit();
 
-		      
 		      stmt.close();
 		      c.close();
 		    } catch ( Exception e ) {
@@ -198,16 +173,12 @@ public class MedicineOverviewController {
         }
     }
     public void setMainApp(MainApp mainApp) {
-		// TODO Auto-generated method stub
 		this.mainApp = mainApp;
-
         // Add observable list data to the table
-
 	}
     public void editMedicine(medicine medicine) {
     	Connection c = null;
         Statement stmt = null;
-        
         
         try {
           Class.forName("org.sqlite.JDBC");

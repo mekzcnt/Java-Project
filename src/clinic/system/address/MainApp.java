@@ -161,9 +161,7 @@ public class MainApp extends Application {
 			// Show the dialog and wait until the user closes it
 			dialogStage.showAndWait();
 			
-			
 			//Profilecontroller.setMainApp(this);
-
 			//return controller.isOkClicked();
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -259,7 +257,7 @@ public class MainApp extends Application {
 	public static void main(String[] args) {
 		File f = new File("CMSDatabase.db");
 		if(f.exists()) { 
-			System.out.print("me");
+			System.out.print("Running Database...");
 		}
 		//createDatabase();
 		launch(args);

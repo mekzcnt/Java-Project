@@ -11,22 +11,11 @@ public class MedicineEditWindowController {
 
     @FXML
     private TextField MedicineID;
-
-    @FXML
     private TextArea MedicineDetails;
-
-    @FXML
     private TextField MedicineName;
-
-    @FXML
     private TextField MedicineAmount;
-
-    @FXML
     private TextField MedicinePrice;
-
-    @FXML
     private Button EditMedicineButton;
-
 
     private Stage dialogStage;
     private MedicineOverviewController MedicineOverviewController;
