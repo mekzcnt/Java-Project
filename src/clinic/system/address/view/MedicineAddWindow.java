@@ -15,10 +15,15 @@ import javafx.stage.Stage;
 public class MedicineAddWindow {
 	@FXML
     private TextField MedicineID;
+	@FXML
     private TextArea MedicineDetails;
+	@FXML
     private TextField MedicineName;
+	@FXML
     private TextField MedicineAmount;
+	@FXML
     private TextField MedicinePrice;
+	@FXML
     private Button AddMedicineButton;
     
     private MedicineOverviewController MedicineOverviewController;
@@ -40,7 +45,7 @@ public class MedicineAddWindow {
     }
     
    
-    
+    @FXML
     public void handleADD() {
     	medicine med = new medicine(Integer.parseInt(MedicineID.getText()),MedicineName.getText(),Integer.parseInt(MedicinePrice.getText()),Integer.parseInt(MedicineAmount.getText()),MedicineDetails.getText());
     	//med.setMName(MedicineName.getText());

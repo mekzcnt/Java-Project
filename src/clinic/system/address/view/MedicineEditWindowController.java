@@ -11,10 +11,15 @@ public class MedicineEditWindowController {
 
     @FXML
     private TextField MedicineID;
+    @FXML
     private TextArea MedicineDetails;
+    @FXML
     private TextField MedicineName;
+    @FXML
     private TextField MedicineAmount;
+    @FXML
     private TextField MedicinePrice;
+    @FXML
     private Button EditMedicineButton;
 
     private Stage dialogStage;
@@ -32,7 +37,7 @@ public class MedicineEditWindowController {
     	MedicineAmount.setText(""+med.getAmount().getValue());
     	MedicineDetails.setText(""+med.getDescription().getValue());
     }
-    
+    @FXML
     public void handleEdit() {
     	medicine med = new medicine(Integer.parseInt(MedicineID.getText()),MedicineName.getText(),Integer.parseInt(MedicinePrice.getText()),Integer.parseInt(MedicineAmount.getText()),MedicineDetails.getText());
     	//med.setMName(MedicineName.getText());
