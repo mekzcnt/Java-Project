@@ -53,9 +53,9 @@
             <Label text="ความดัน" GridPane.rowIndex="7" />
             <Label text="รายละเอียด" GridPane.rowIndex="9" />
             <ScrollPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="9">
-              <content>
-                <AnchorPane fx:id="DiseaseDetails" minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
-              </content>
+               <content>
+                  <TextField fx:id="DiseaseDetails" prefHeight="70.0" prefWidth="208.0" />
+               </content>
             </ScrollPane>
             <TextField fx:id="DiseaseSearch" GridPane.columnIndex="1" GridPane.rowIndex="8" />
          </children>
@@ -102,7 +102,7 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Button fx:id="AddMoneyButton" layoutX="386.0" layoutY="361.0" mnemonicParsing="false" text="เพิ่มการจ่ายเวชภัณฑ์ลงฐานข้อมูล" />
+      <Button fx:id="AddMoneyButton" layoutX="386.0" layoutY="361.0" mnemonicParsing="false" onAction="#submit" text="เพิ่มการจ่ายเวชภัณฑ์ลงฐานข้อมูล" />
       <ListView fx:id="MedicineList" layoutX="386.0" layoutY="56.0" onMouseClicked="#handleSubmit" prefHeight="96.0" prefWidth="248.0" visible="false" />
    </children>
 </AnchorPane>

@@ -234,7 +234,7 @@ public class MainApp extends Application {
 
 	      stmt.executeUpdate(sql);
 	      sql = "CREATE TABLE Disease " +
-                  "(ID 			INT PRIMARY KEY     NOT NULL," +
+                  "(ID 			INT NOT NULL," +
                   " disease     TEXT, " +
                   " description TEXT) " ; 
 

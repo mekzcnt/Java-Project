@@ -58,7 +58,7 @@ public class PatientOverviewController {
     private TextField MedicineSearchBox;
 
     @FXML
-    private AnchorPane DiseaseDetails;
+    private TextField DiseaseDetails;
 
     @FXML
     private Label SumMedicinePrice;
@@ -190,5 +190,28 @@ public class PatientOverviewController {
     		price += each.getPrice().intValue();
     	}
     	SumMedicinePrice.setText(""+price);
+    }
+    
+    @FXML
+    public void submit() {
+    	Connection c = null;
+        Statement stmt = null;
+        try {
+          Class.forName("org.sqlite.JDBC");
+          c = DriverManager.getConnection("jdbc:sqlite:CMSDatabase.db");
+          c.setAutoCommit(false);
+
+          stmt = c.createStatement();
+          String sql = "INSERT INTO Disease (ID,disease,description) " +
+                  "VALUES ("+profile.getID().intValue()+", '"+DiseaseSearch.getText()+"', '"+DiseaseDetails.getText()+"' );";
+          System.out.print(sql);
+          stmt.executeUpdate(sql);
+          c.commit();
+          stmt.close();
+          c.close();
+        } catch ( Exception e ) {
+          System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+          System.exit(0);
+        }
     }
 }
