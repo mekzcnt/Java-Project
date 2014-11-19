@@ -57,6 +57,9 @@ public class MedicineOverviewController {
     }
     @FXML
     public void handleEdit() {	
+    	int selectedIndex = medicineList.getSelectionModel().getSelectedIndex();
+
+		if (selectedIndex >= 0) {
 		try {
 			Stage dialogStage = new Stage();
 	    	FXMLLoader loader = new FXMLLoader(getClass().getResource("MedicineEditWindow.fxml"));
@@ -73,6 +76,7 @@ public class MedicineOverviewController {
 	    	dialogStage.showAndWait();   	
 		} catch (IOException e) {
 			e.printStackTrace();
+		}
 		}
     	
     }
