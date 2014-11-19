@@ -76,12 +76,12 @@
             <RowConstraints minHeight="10.0" prefHeight="61.0" vgrow="SOMETIMES" />
          </rowConstraints>
       </GridPane>
-      <TextField fx:id="MedicineSearchBox" layoutX="386.0" layoutY="27.0" prefHeight="25.0" prefWidth="248.0" />
+      <TextField fx:id="MedicineSearchBox" layoutX="386.0" layoutY="27.0" onInputMethodTextChanged="#handleSearch" onKeyPressed="#handleSearch" onKeyReleased="#handleSearch" prefHeight="25.0" prefWidth="248.0" />
       <ScrollPane layoutX="385.0" layoutY="62.0" prefHeight="292.0" prefWidth="334.0">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="292.0" prefWidth="334.0">
                <children>
-                  <TableView prefHeight="292.0" prefWidth="334.0">
+                  <TableView fx:id="MedicineTable" prefHeight="292.0" prefWidth="334.0">
                     <columns>
                       <TableColumn fx:id="MedicineName" prefWidth="225.0" text="ชื่อเวชภัณฑ์" />
                       <TableColumn fx:id="MedicinePrice" prefWidth="94.0" text="ราคา" />
@@ -91,7 +91,7 @@
             </AnchorPane>
         </content>
       </ScrollPane>
-      <Button fx:id="MedicineAddButton" layoutX="641.0" layoutY="27.0" mnemonicParsing="false" text="เพิ่มเวชภัณฑ์" />
+      <Button fx:id="MedicineAddButton" layoutX="641.0" layoutY="27.0" mnemonicParsing="false" onAction="#handleSubmit" text="เพิ่มเวชภัณฑ์" />
       <Label fx:id="SumMedicinePrice" layoutX="604.0" layoutY="365.0" prefHeight="17.0" prefWidth="113.0" text="-">
          <font>
             <Font name="System Bold" size="12.0" />
@@ -103,5 +103,6 @@
          </font>
       </Label>
       <Button fx:id="AddMoneyButton" layoutX="386.0" layoutY="361.0" mnemonicParsing="false" text="เพิ่มการจ่ายเวชภัณฑ์ลงฐานข้อมูล" />
+      <ListView fx:id="MedicineList" layoutX="386.0" layoutY="56.0" onMouseClicked="#handleSubmit" prefHeight="96.0" prefWidth="248.0" visible="false" />
    </children>
 </AnchorPane>
