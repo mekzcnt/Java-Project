@@ -127,6 +127,26 @@ public class MainMenuOverviewController {
     	System.out.print(ListSearch.getSelectionModel().getSelectedItem().getFName().getValue());
     	MainSearch.setText("");
     	handleSearch();
+    	
+    	try {
+			
+			
+			Stage dialogStage = new Stage();
+	    	FXMLLoader loader = new FXMLLoader(getClass().getResource("PatientOverview.fxml"));
+	    	AnchorPane root;
+			root = (AnchorPane)loader.load();
+			PatientOverviewController controller = loader.getController();
+			controller.setDialogStage(dialogStage);
+			controller.setProfile(ListSearch.getSelectionModel().getSelectedItem());
+            controller.setMainApp(this);
+	    	Scene scene = new Scene(root);
+	    	dialogStage.setScene(scene);
+	    	dialogStage.showAndWait();
+	    	
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
 
 	public void setMainApp(MainApp mainApp) {

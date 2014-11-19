@@ -64,9 +64,9 @@ public class MedicineAddWindow {
     private boolean Iscorrect() {
     	String number = "0123456789";
     	if (MedicineID.getText().matches(number) && MedicineAmount.getText().matches(number) && MedicinePrice.getText().matches(number)){
-    		return true;
+    		return !true;
     	}
-    	return !true;
+    	return true;
     	
     	
     }
