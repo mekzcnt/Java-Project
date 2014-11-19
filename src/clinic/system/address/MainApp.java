@@ -1,5 +1,6 @@
 package clinic.system.address;
 
+import java.io.File;
 import java.io.IOException;
 import java.sql.*;
 
@@ -240,6 +241,12 @@ public class MainApp extends Application {
                   " description TEXT) " ; 
 
 	      stmt.executeUpdate(sql);
+	      sql = "CREATE TABLE Money " +
+                  "(ID 			INT PRIMARY KEY     NOT NULL," +
+                  " disease     TEXT, " +
+                  " description TEXT) " ; 
+
+	      stmt.executeUpdate(sql);
 	      stmt.close();
 	      c.close();
 	    } catch ( Exception e ) {
@@ -250,6 +257,10 @@ public class MainApp extends Application {
 	}
 	
 	public static void main(String[] args) {
+		File f = new File("CMSDatabase.db");
+		if(f.exists()) { 
+			System.out.print("me");
+		}
 		//createDatabase();
 		launch(args);
 	}
