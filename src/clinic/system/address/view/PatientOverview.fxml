@@ -76,22 +76,23 @@
             <RowConstraints minHeight="10.0" prefHeight="61.0" vgrow="SOMETIMES" />
          </rowConstraints>
       </GridPane>
-      <TextField fx:id="MedicineSearchBox" layoutX="386.0" layoutY="27.0" onInputMethodTextChanged="#handleSearch" onKeyPressed="#handleSearch" onKeyReleased="#handleSearch" prefHeight="25.0" prefWidth="255.0" />
+      <TextField fx:id="MedicineSearchBox" layoutX="386.0" layoutY="27.0" onInputMethodTextChanged="#handleSearch" onKeyPressed="#handleSearch" onKeyReleased="#handleSearch" prefHeight="25.0" prefWidth="209.0" />
       <ScrollPane layoutX="385.0" layoutY="62.0" prefHeight="292.0" prefWidth="334.0">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="292.0" prefWidth="334.0">
                <children>
                   <TableView fx:id="MedicineTable" prefHeight="292.0" prefWidth="334.0">
                     <columns>
-                      <TableColumn fx:id="MedicineName" prefWidth="225.0" text="ชื่อเวชภัณฑ์" />
-                      <TableColumn fx:id="MedicinePrice" prefWidth="94.0" text="ราคา" />
+                      <TableColumn fx:id="MedicineName" prefWidth="155.0" text="ชื่อเวชภัณฑ์" />
+                        <TableColumn fx:id="MedicinePrice1" maxWidth="300.0" prefWidth="81.0" text="จำนวน" />
+                      <TableColumn fx:id="MedicinePrice" prefWidth="78.0" text="ราคา" />
                     </columns>
                   </TableView>
                </children>
             </AnchorPane>
         </content>
       </ScrollPane>
-      <Button fx:id="MedicineDeleteButton" layoutX="645.0" layoutY="27.0" mnemonicParsing="false" onAction="#handleSubmit" text="ลบเวชภัณฑ์" />
+      <Button fx:id="MedicineDeleteButton" layoutX="647.0" layoutY="27.0" mnemonicParsing="false" onAction="#handleSubmit" text="ลบเวชภัณฑ์" />
       <Label fx:id="SumMedicinePrice" layoutX="604.0" layoutY="365.0" prefHeight="17.0" prefWidth="113.0" text="-">
          <font>
             <Font name="System Bold" size="12.0" />
@@ -104,5 +105,6 @@
       </Label>
       <Button fx:id="AddMoneyButton" layoutX="386.0" layoutY="361.0" mnemonicParsing="false" onAction="#submit" text="เพิ่มการจ่ายเวชภัณฑ์ลงฐานข้อมูล" />
       <ListView fx:id="MedicineList" layoutX="386.0" layoutY="56.0" onMouseClicked="#handleSubmit" prefHeight="96.0" prefWidth="248.0" visible="false" />
+      <TextField fx:id="AmountMedicine" layoutX="602.0" layoutY="27.0" prefHeight="25.0" prefWidth="39.0" />
    </children>
 </AnchorPane>
