@@ -3,6 +3,7 @@ package clinic.system.address.view;
 import java.io.IOException;
 
 import org.controlsfx.dialog.Dialogs;
+
 import clinic.system.address.MainApp;
 import clinic.system.address.model.disease;
 import javafx.collections.FXCollections;
@@ -15,6 +16,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+
 import java.sql.*;
 public class DiseaseOverviewController {
 	
@@ -237,6 +239,17 @@ public class DiseaseOverviewController {
 
        }
        rs.close();
+       stmt.close();
+       
+       for (disease each:data) {
+    	   ResultSet rs1 = stmt.executeQuery( "SELECT * FROM Profile WHERE ID Like "+each.getID().intValue()+";" );
+    	   while ( rs1.next() ) {
+    		   System.out.print(rs1.getString("LASTNAME"));
+    		  each.name(rs1.getString("FIRSTNAME"),rs1.getString("LASTNAME"));
+    	   }
+    	   rs1.close();
+       }
+       
        stmt.close();
        c.close();
      } catch ( Exception e ) {
