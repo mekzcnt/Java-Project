@@ -76,7 +76,7 @@
             <RowConstraints minHeight="10.0" prefHeight="61.0" vgrow="SOMETIMES" />
          </rowConstraints>
       </GridPane>
-      <TextField fx:id="MedicineSearchBox" layoutX="386.0" layoutY="27.0" onInputMethodTextChanged="#handleSearch" onKeyPressed="#handleSearch" onKeyReleased="#handleSearch" prefHeight="25.0" prefWidth="248.0" />
+      <TextField fx:id="MedicineSearchBox" layoutX="386.0" layoutY="27.0" onInputMethodTextChanged="#handleSearch" onKeyPressed="#handleSearch" onKeyReleased="#handleSearch" prefHeight="25.0" prefWidth="255.0" />
       <ScrollPane layoutX="385.0" layoutY="62.0" prefHeight="292.0" prefWidth="334.0">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="292.0" prefWidth="334.0">
@@ -91,7 +91,7 @@
             </AnchorPane>
         </content>
       </ScrollPane>
-      <Button fx:id="MedicineAddButton" layoutX="641.0" layoutY="27.0" mnemonicParsing="false" onAction="#handleSubmit" text="เพิ่มเวชภัณฑ์" />
+      <Button fx:id="MedicineDeleteButton" layoutX="645.0" layoutY="27.0" mnemonicParsing="false" onAction="#handleSubmit" text="ลบเวชภัณฑ์" />
       <Label fx:id="SumMedicinePrice" layoutX="604.0" layoutY="365.0" prefHeight="17.0" prefWidth="113.0" text="-">
          <font>
             <Font name="System Bold" size="12.0" />
