@@ -1,7 +1,7 @@
 package clinic.system.address.view;
 
 import clinic.system.address.MainApp;
-import clinic.system.address.model.medicine;
+import clinic.system.address.model.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -10,13 +10,13 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-public class PatientOverviewController<profile> {
+public class PatientOverviewController {
 
 	private MainMenuOverviewController MainMenuOverviewController;
 	
 	private Stage dialogStage;
 	
-	private profile profile1;
+	private profile profile;
 	
     @FXML
     private Label BloodPressure;
@@ -81,10 +81,11 @@ public class PatientOverviewController<profile> {
 	}
     
     private void initialize() {
-    	Name1.setText(( this.profile1).getFName().getValue());
+    	Name1.setText(( this.profile).getFName().getValue());
     }
     public void setProfile(profile profile) {
-		this.profile1 = profile;
+		this.profile = profile;
+		Name1.setText(profile.getFName().getValue());
 	}
 
 }
