@@ -37,13 +37,13 @@ public class ProfileOverviewController {
 	    private Label BloodPressure;
 
 	    @FXML
-	    private Label Address;
+	    private Label Address; 
 
 	    @FXML
-	    private Label PostalCode;
+	    private Label PostalCode; 
 
 	    @FXML
-	    private Label HistoryDisease;
+	    private Label HistoryDisease; 
 
 	    @FXML
 	    private TextField SearchBox;
@@ -58,7 +58,7 @@ public class ProfileOverviewController {
 	    private Button DeleteButton;
 
 	    @FXML
-	    private Button AddButton;
+	    private Button AddButton; 
 
 	    @FXML
 	    private Button SearchButton;
@@ -282,8 +282,8 @@ public class ProfileOverviewController {
 
 	          stmt = c.createStatement();
 	          
-	          //String sql = "UPDATE Profile set ID = '"+profile.getID().getValue()+"', FIRSTNAME = "++"', LASTNAME = "++"', ADDRESS = "++"', CITY = "++"', Canton = "++"', District = "++"', Province = "++"', ZIP = "++"', Weight = "++"', Height = "++"', CongenitalDisease = "++" , Disease = "++";";
-	          //System.out.print(sql);
+	          String sql = "UPDATE Profile set ID = '"+profile.getID().getValue()+"', FIRSTNAME = "++"', LASTNAME = "++"', ADDRESS = "++"', CITY = "++"', Canton = "++"', District = "++"', Province = "++"', ZIP = "++"', Weight = "++"', Height = "++"', CongenitalDisease = "++" , Disease = "++";";
+	          System.out.print(sql);
 	          stmt.executeUpdate(sql);
 	          c.commit();
 	          stmt.close();
@@ -329,6 +329,20 @@ public class ProfileOverviewController {
 	    }
 	    private void displaydetail(profile profile) {
 	    	Name1.setText(profile.getFName().getValue());
+	    	BloodPressure.setText(""+profile.getPressure().getValue());
+	    	Address .setText(profile.getAddress().getValue());
+	    	PostalCode .setText(""+profile.getMailAddress().getValue());
+	    	HistoryDisease .setText(profile.getCongenitalDisease().getValue());
+	    	PatientDisease .setText(profile.getDisease().getValue());
+	    	Height.setText(""+profile.getHeight().getValue());
+	    	Age .setText(""+profile.getOld().getValue());
+	    	Surname1.setText(profile.getLName().getValue());
+	    	Province.setText(profile.getProvince().getValue());
+	    	Weight.setText(""+profile.getWeight().getValue());
+	    	SubDistrict .setText(profile.getCanton().getValue());
+	    	ID1.setText(""+profile.getID().getValue());
+	    	District .setText(profile.getDistrict().getValue());
+	    	BirthDate.setText(profile.getBirthday().getValue());
 	    }
 	 public void setMainApp(MainApp mainApp) {
 			// TODO Auto-generated method stub
