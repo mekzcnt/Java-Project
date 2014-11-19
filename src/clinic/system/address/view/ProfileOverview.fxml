@@ -14,8 +14,8 @@
           <MenuItem mnemonicParsing="false" text="ตั้งค่า" />
         </items>
       </MenuButton>
-      <TextField fx:id="SearchBox" layoutX="133.0" layoutY="19.0" prefHeight="25.0" prefWidth="175.0" />
-      <Button fx:id="SearchButton" layoutX="317.0" layoutY="19.0" mnemonicParsing="false" text="Search" />
+      <TextField fx:id="search" layoutX="133.0" layoutY="19.0" prefHeight="25.0" prefWidth="175.0" />
+      <Button fx:id="SearchButton" layoutX="317.0" layoutY="19.0" mnemonicParsing="false" onAction="#handleSearch" text="Search" />
       <SplitPane dividerPositions="0.5" layoutX="14.0" layoutY="56.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="491.0" prefWidth="772.0">
         <items>
           <AnchorPane SplitPane.resizableWithParent="false">

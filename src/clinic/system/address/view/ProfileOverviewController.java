@@ -160,6 +160,7 @@ public class ProfileOverviewController {
 	    	}
 	    	
 	    }
+	    @FXML
 	    public void handleDelete() {
 	    	int selectedIndex = profilelist.getSelectionModel().getSelectedIndex();
 	    	
@@ -203,25 +204,27 @@ public class ProfileOverviewController {
 			}
 	    	
 	    }
-	 
+	    @FXML
 	    public void handleSearch() {
 	    	Connection c = null;
 	        Statement stmt = null;
 	        try {
-	          Class.forName("org.sqlite.JDBC");
-	          c = DriverManager.getConnection("jdbc:sqlite:CMSDatabase.db");
+	        	Class.forName("org.sqlite.JDBC");
+	            c = DriverManager.getConnection("jdbc:sqlite:CMSDatabase.db");
+	            c.setAutoCommit(false);
 
 	          stmt = c.createStatement();
+	          
 	          String sql = "SELECT * FROM Profile " +
-	                       "WHERE NAME LIKE '%"+SearchBox.getText()+"%' OR ID LIKE '%"+SearchBox.getText()+"%';" ;
+	                  "WHERE FIRSTNAME LIKE '%"+search.getText()+"%' OR LASTNAME LIKE '%"+search.getText()+"%';" ;
 	          
 	          ResultSet rs = stmt.executeQuery(sql);
 	          data.clear();
 	          while ( rs.next() ) {
 	            
 	        	  data.add(new profile(rs.getString("FIRSTNAME"), rs.getString("LASTNAME"),rs.getInt("ID"),rs.getString("Birthday"),10,rs.getString("ADDRESS"),rs.getString("Canton"),
-		            		 rs.getString("District"), rs.getString("Province"),rs.getInt("ZIP"),rs.getInt("Weight"),rs.getInt("Height"),rs.getInt("Pressure"), 
-		            		 rs.getString("CongenitalDisease"),rs.getString("Disease")));
+	            		 rs.getString("District"), rs.getString("Province"),rs.getInt("ZIP"),rs.getInt("Weight"),rs.getInt("Height"),rs.getInt("Pressure"), 
+	            		 rs.getString("CongenitalDisease"),rs.getString("Disease")));
 
 	          }
 	          rs.close();
