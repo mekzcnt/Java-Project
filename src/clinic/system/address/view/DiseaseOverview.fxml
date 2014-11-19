@@ -8,22 +8,20 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clinic.system.address.view.DiseaseOverviewController">
    <children>
-      <TableView fx:id="diseaseList" layoutX="22.0" layoutY="47.0" prefHeight="512.0" prefWidth="757.0">
-         <columns>
-            <TableColumn fx:id="diseaseFname" prefWidth="226.0" text="ชื่อ" />
-            <TableColumn fx:id="diseaseLName" minWidth="0.0" prefWidth="188.0" text="นามสกุล" />
-            <TableColumn fx:id="diseaseID" minWidth="0.0" prefWidth="157.0" text="รหัสคนไข้" />
-            <TableColumn fx:id="diseaseName" prefWidth="167.0" text="โรคที่พบ" />
-         </columns>
-      </TableView>
-      <MenuButton fx:id="DiseaseMenu" layoutX="22.0" layoutY="14.0" mnemonicParsing="false" text="สถิติโรค">
-         <items>
-            <MenuItem mnemonicParsing="false" text="เรียงข้อมูลจาก..." />
-            <MenuItem mnemonicParsing="false" text="ตั้งค่า" />
-         </items>
-      </MenuButton>
-      <TextField fx:id="SearchBox" layoutX="111.0" layoutY="14.0" prefHeight="25.0" prefWidth="213.0" />
-      <Button fx:id="SearchButton" layoutX="331.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleSearch" text="Search" />
+      <ScrollPane layoutX="22.0" layoutY="47.0" prefViewportHeight="522.0" prefViewportWidth="757.0">
+         <content>
+            <TableView fx:id="diseaseList" layoutX="22.0" layoutY="47.0" prefHeight="522.0" prefWidth="757.0">
+               <columns>
+                  <TableColumn fx:id="diseaseFname" prefWidth="226.0" text="ชื่อ" />
+                  <TableColumn fx:id="diseaseLName" minWidth="0.0" prefWidth="188.0" text="นามสกุล" />
+                  <TableColumn fx:id="diseaseID" minWidth="0.0" prefWidth="157.0" text="รหัสคนไข้" />
+                  <TableColumn fx:id="diseaseName" prefWidth="167.0" text="โรคที่พบ" />
+               </columns>
+            </TableView>
+         </content>
+      </ScrollPane>
+      <TextField fx:id="SearchBox" layoutX="22.0" layoutY="14.0" prefHeight="25.0" prefWidth="213.0" />
+      <Button fx:id="SearchButton" layoutX="243.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleSearch" text="Search" />
       <Button fx:id="AddButton" layoutX="637.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleADD" text="Add" />
       <Button fx:id="EditButton" layoutX="684.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleEdit" text="Edit" />
       <Button fx:id="DeleteButton" layoutX="728.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleDelete" text="Delete" />
