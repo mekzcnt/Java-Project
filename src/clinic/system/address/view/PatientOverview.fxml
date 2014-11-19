@@ -92,7 +92,7 @@
             </AnchorPane>
         </content>
       </ScrollPane>
-      <Button fx:id="MedicineDeleteButton" layoutX="647.0" layoutY="27.0" mnemonicParsing="false" onAction="#handleSubmit" text="ลบเวชภัณฑ์" />
+      <Button fx:id="MedicineDeleteButton" layoutX="647.0" layoutY="27.0" mnemonicParsing="false" onAction="#handleDelete" text="ลบเวชภัณฑ์" />
       <Label fx:id="SumMedicinePrice" layoutX="604.0" layoutY="365.0" prefHeight="17.0" prefWidth="113.0" text="-">
          <font>
             <Font name="System Bold" size="12.0" />
