@@ -256,10 +256,10 @@ public class MainApp extends Application {
 	
 	public static void main(String[] args) {
 		File f = new File("CMSDatabase.db");
-		if(f.exists()) { 
-			System.out.print("Running Database...");
+		if(!f.exists()) { 
+			createDatabase();
 		}
-		//createDatabase();
+		
 		launch(args);
 	}
 }
