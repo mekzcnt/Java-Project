@@ -1,6 +1,10 @@
 package clinic.system.address.view;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
@@ -82,13 +86,41 @@ public class MainMenuOverviewController {
     	}
     	else {
     		ListSearch.setVisible(true);
-    		listViewData.add(new profile("Lydia", "Kunz",1,"",1,"","","","",1,1,1,1,"",""));
-    		listViewData.add(new profile("Anna", "Best",1,"",1,"","","","",1,1,1,1,"",""));
-    		listViewData.add(new profile("Stefan", "Meier",1,"",1,"","","","",1,1,1,1,"",""));
-    		listViewData.add(new profile("Martin", "Mueller",1,"",1,"","","","",1,1,1,1,"",""));
+    		find(MainSearch.getText());
         	//ListSearch.setItems(FXCollections.observableList(values));
     	}
     	
+    }
+    public void find(String word) {
+    	Connection c = null;
+        Statement stmt = null;
+        try {
+        	Class.forName("org.sqlite.JDBC");
+            c = DriverManager.getConnection("jdbc:sqlite:CMSDatabase.db");
+            c.setAutoCommit(false);
+
+          stmt = c.createStatement();
+          
+          String sql = "SELECT * FROM Profile " +
+                  "WHERE FIRSTNAME LIKE '%"+word+"%' OR LASTNAME LIKE '%"+word+"%';" ;
+          
+          ResultSet rs = stmt.executeQuery(sql);
+          listViewData.clear();
+          while ( rs.next() ) {
+            
+        	  listViewData.add(new profile(rs.getString("FIRSTNAME"), rs.getString("LASTNAME"),rs.getInt("ID"),rs.getString("Birthday"),10,rs.getString("ADDRESS"),rs.getString("Canton"),
+            		 rs.getString("District"), rs.getString("Province"),rs.getInt("ZIP"),rs.getInt("Weight"),rs.getInt("Height"),rs.getInt("Pressure"), 
+            		 rs.getString("CongenitalDisease"),rs.getString("Disease")));
+
+          }
+          rs.close();
+          stmt.close();
+          c.close();
+        } catch ( Exception e ) {
+          System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+          System.exit(0);
+        }
+        
     }
     
     public void handleSubmit() {
