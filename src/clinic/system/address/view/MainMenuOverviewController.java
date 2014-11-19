@@ -87,7 +87,6 @@ public class MainMenuOverviewController {
     	else {
     		ListSearch.setVisible(true);
     		find(MainSearch.getText());
-        	//ListSearch.setItems(FXCollections.observableList(values));
     	}
     	
     }
