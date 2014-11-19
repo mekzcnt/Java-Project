@@ -41,14 +41,13 @@
             </Button>
          </children>
       </GridPane>
-      <Text layoutX="151.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Clinic Management System" AnchorPane.leftAnchor="151.0" AnchorPane.rightAnchor="134.44873046875">
+      <Text layoutX="164.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Clinic Management System" AnchorPane.leftAnchor="164.0" AnchorPane.rightAnchor="121.44873046875">
          <font>
             <Font size="43.0" />
          </font>
       </Text>
-      <TextField fx:id="MainSearch" layoutX="284.0" layoutY="147.0" onInputMethodTextChanged="#handleSearch" onKeyReleased="#handleSearch" prefHeight="25.0" prefWidth="275.0" />
-      <Label layoutX="193.0" layoutY="151.0" text="ค้นหาข้อมูลผู้ป่วย" />
-      <Button fx:id="SearchButton" layoutX="571.0" layoutY="147.0" mnemonicParsing="false" onAction="#handleSearch" text="ค้นหา" />
+      <TextField fx:id="MainSearch" layoutX="330.0" layoutY="173.0" onInputMethodTextChanged="#handleSearch" onKeyReleased="#handleSearch" prefHeight="25.0" prefWidth="275.0" />
+      <Label layoutX="239.0" layoutY="177.0" text="ค้นหาข้อมูลผู้ป่วย" />
       <ListView fx:id="ListSearch" layoutX="284.0" layoutY="173.0" onMouseClicked="#handleSubmit" prefHeight="123.0" prefWidth="275.0" visible="false" />
    </children>
 </AnchorPane>
