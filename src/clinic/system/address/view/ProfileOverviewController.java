@@ -1,7 +1,21 @@
 package clinic.system.address.view;
 
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+import org.controlsfx.dialog.Dialogs;
+
 import clinic.system.address.MainApp;
+import clinic.system.address.model.medicine;
+import clinic.system.address.model.profile;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
@@ -9,6 +23,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 public class ProfileOverviewController {
 	private MainApp mainApp;
@@ -34,7 +49,7 @@ public class ProfileOverviewController {
 	    private TextField SearchBox;
 
 	    @FXML
-	    private TableColumn<?, ?> Name;
+	    private TableColumn<profile, String> Name;  
 
 	    @FXML
 	    private Label PatientDisease;
@@ -52,7 +67,7 @@ public class ProfileOverviewController {
 	    private Label Height;
 
 	    @FXML
-	    private TableColumn<?, ?> ID;
+	    private TableColumn<profile, Number> ID;
 
 	    @FXML
 	    private AnchorPane ProfileSplitPane;
@@ -82,26 +97,232 @@ public class ProfileOverviewController {
 	    private Label ID1;
 
 	    @FXML
-	    private TableColumn<?, ?> Surname;
+	    private TableColumn<profile, String> Surname;
 
 	    @FXML
 	    private Label District;
 
 	    @FXML
-	    private TableView<?> TableSplitPane;
+	    private TableView<profile> profilelist;
 
 	    @FXML
 	    private Label BirthDate;
+	    
+	    private ObservableList<profile> data = FXCollections.observableArrayList();
 
+	    @FXML
+	    public void handleADD() {
+	    	
+	    	
+			try {
+				
+				
+				Stage dialogStage = new Stage();
+		    	FXMLLoader loader = new FXMLLoader(getClass().getResource("ProfileAddWindow.fxml"));
+		    	AnchorPane root;
+				root = (AnchorPane)loader.load();
+				ProfileAddWindow controller = loader.getController();
+				controller.setDialogStage(dialogStage);
+	            controller.setMainApp(this);
+		    	Scene scene = new Scene(root);
+		    	dialogStage.setScene(scene);
+		    	dialogStage.showAndWait();
+		    	
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+	    	
+	    }
+	    public void handleEdit() {
+	    	
+			try {
+				
+				Stage dialogStage = new Stage();
+		    	FXMLLoader loader = new FXMLLoader(getClass().getResource("ProfileEditWindow.fxml"));
+		    	AnchorPane root;
+				root = (AnchorPane)loader.load();
+				
+				ProfileEditWindowController controller1 = loader.getController();
+				controller1.setDialogStage(dialogStage);
+	            controller1.setMainApp(this);
+	            controller1.setProfile(profilelist.getSelectionModel().getSelectedItem());
+	        
+		    	Scene scene = new Scene(root);
+		    	dialogStage.setScene(scene);
+		    	dialogStage.showAndWait();
+		    	
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+	    	
+	    }
+	    public void handleDelete() {
+	    	int selectedIndex = profilelist.getSelectionModel().getSelectedIndex();
+
+			if (selectedIndex >= 0) {
+				
+				data.remove(profilelist.getSelectionModel().getSelectedItem());
+				profilelist.getItems().remove(selectedIndex);
+				
+				Connection c = null;
+			    Statement stmt = null;
+			    try {
+			      Class.forName("org.sqlite.JDBC");
+			      c = DriverManager.getConnection("jdbc:sqlite:CMSDatabase.db");
+			      c.setAutoCommit(false);
+
+			      stmt = c.createStatement();
+			      String sql = "DELETE from Profile where ID="+profilelist.getSelectionModel().getSelectedItem().getID().intValue()+";";
+			      stmt.executeUpdate(sql);
+			      c.commit();
+
+			      
+			      stmt.close();
+			      c.close();
+			    } catch ( Exception e ) {
+			      System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+			      System.exit(0);
+			    }
+			    
+				
+			} else {
+				// Nothing selected.
+				Dialogs.create()
+			        .title("No Selection")
+			        .masthead("No Person Selected")
+			        .message("Please select a person in the table.")
+			        .showWarning();
+			}
+	    	
+	    }
 	 
-	 
-	public void search(String searchtxt) {
-		search.setText(searchtxt);
-	}
-	private void initialize(){
-		
-	}
-	
+	    public void handleSearch() {
+	    	Connection c = null;
+	        Statement stmt = null;
+	        try {
+	          Class.forName("org.sqlite.JDBC");
+	          c = DriverManager.getConnection("jdbc:sqlite:CMSDatabase.db");
+
+	          stmt = c.createStatement();
+	          String sql = "SELECT * FROM Profile " +
+	                       "WHERE NAME LIKE '%"+SearchBox.getText()+"%' OR ID LIKE '%"+SearchBox.getText()+"%';" ;
+	          
+	          ResultSet rs = stmt.executeQuery(sql);
+	          data.clear();
+	          while ( rs.next() ) {
+	            
+	             data.add(new profile(rs.getInt("ID"),
+	            		 rs.getString("NAME"),
+	            		 rs.getInt("Price"),
+	            		 rs.getInt("Amout"),
+	            		 rs.getString("Details")));
+
+	          }
+	          rs.close();
+	          stmt.close();
+	          c.close();
+	        } catch ( Exception e ) {
+	          System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+	          System.exit(0);
+	        }
+	        profilelist.getItems().clear();
+	        profilelist.getItems().setAll(data);
+	    	
+	    }
+	    @FXML
+	    private void initialize() {
+	    	// Initialize the person table with the two columns.
+	    	
+	    	display();
+	    	Name.setCellValueFactory(cellData -> cellData.getValue().getFName());
+	    	ID.setCellValueFactory(cellData -> cellData.getValue().getID());
+	    	Surname.setCellValueFactory(cellData -> cellData.getValue().getLName());
+	    	
+	    	profilelist.getItems().setAll(data);
+	    	
+	    }
+	    public void addProfile(profile profile) {
+	    	
+	    	Connection c = null;
+	        Statement stmt = null;
+	        data.add(profile);
+	        profilelist.getItems().clear();
+	        profilelist.getItems().setAll(data);
+	        try {
+	          Class.forName("org.sqlite.JDBC");
+	          c = DriverManager.getConnection("jdbc:sqlite:CMSDatabase.db");
+	          c.setAutoCommit(false);
+
+	          stmt = c.createStatement();
+	          String sql = "INSERT INTO Profile (NAME,ID,Surname) " +
+	                  "VALUES ("+profile.getFName().getValue()+", '"+profile.getID().getValue()+"', "+profile.getLName().getValue()+";";
+	          System.out.print(sql);
+	          stmt.executeUpdate(sql);
+	          c.commit();
+	          stmt.close();
+	          c.close();
+	        } catch ( Exception e ) {
+	          System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+	          System.exit(0);
+	        }
+	    }
+	    public void editProfile(profile profile) {
+	    	Connection c = null;
+	        Statement stmt = null;
+	        
+	        
+	        try {
+	          Class.forName("org.sqlite.JDBC");
+	          c = DriverManager.getConnection("jdbc:sqlite:CMSDatabase.db");
+	          c.setAutoCommit(false);
+
+	          stmt = c.createStatement();
+	          
+	          String sql = "UPDATE Profile set NAME = '"+profile.getFName().getValue()+"', ID = "+profile.getID().intValue()+" , SurName = "+profile.getLName().getValue()+";";
+	          //System.out.print(sql);
+	          stmt.executeUpdate(sql);
+	          c.commit();
+	          stmt.close();
+	          c.close();
+	        } catch ( Exception e ) {
+	          System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+	          System.exit(0);
+	        }
+	        profilelist.getItems().clear();
+	        display();
+	        profilelist.getItems().setAll(data);
+	    }
+	    public void display() {
+	    	Connection c = null;
+	        Statement stmt = null;
+	        try {
+	        	Class.forName("org.sqlite.JDBC");
+	            c = DriverManager.getConnection("jdbc:sqlite:CMSDatabase.db");
+	            c.setAutoCommit(false);
+
+	          stmt = c.createStatement();
+	          ResultSet rs = stmt.executeQuery( "SELECT * FROM Profile;" );
+	          data.clear();
+	          while ( rs.next() ) {
+	            
+	             data.add(new profile(rs.getInt("ID"),
+	            		 rs.getString("NAME"),
+	            		 rs.getInt("Price"),
+	            		 rs.getInt("Amout"),
+	            		 rs.getString("Details")));
+
+	          }
+	          rs.close();
+	          stmt.close();
+	          c.close();
+	        } catch ( Exception e ) {
+	          System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+	          System.exit(0);
+	        }
+	        
+	    }
 	 public void setMainApp(MainApp mainApp) {
 			// TODO Auto-generated method stub
 			this.mainApp = mainApp;
