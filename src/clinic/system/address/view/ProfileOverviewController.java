@@ -160,11 +160,10 @@ public class ProfileOverviewController {
 	    }
 	    public void handleDelete() {
 	    	int selectedIndex = profilelist.getSelectionModel().getSelectedIndex();
-
+	    	System.out.print(selectedIndex);
 			if (selectedIndex >= 0) {
 				
-				data.remove(profilelist.getSelectionModel().getSelectedItem());
-				profilelist.getItems().remove(selectedIndex);
+				
 				
 				Connection c = null;
 			    Statement stmt = null;
@@ -175,15 +174,20 @@ public class ProfileOverviewController {
 
 			      stmt = c.createStatement();
 			      String sql = "DELETE from Profile where ID="+profilelist.getSelectionModel().getSelectedItem().getID().intValue()+";";
+			      System.out.print(sql);
 			      stmt.executeUpdate(sql);
 			      c.commit();
 
 			      
 			      stmt.close();
 			      c.close();
+			      
+			      data.remove(profilelist.getSelectionModel().getSelectedItem());
+				  profilelist.getItems().remove(selectedIndex);
 			    } catch ( Exception e ) {
 			      System.err.println( e.getClass().getName() + ": " + e.getMessage() );
 			      System.exit(0);
+			      
 			    }
 			    
 				
@@ -213,11 +217,9 @@ public class ProfileOverviewController {
 	          data.clear();
 	          while ( rs.next() ) {
 	            
-	             data.add(new profile(rs.getInt("ID"),
-	            		 rs.getString("NAME"),
-	            		 rs.getInt("Price"),
-	            		 rs.getInt("Amout"),
-	            		 rs.getString("Details")));
+	        	  data.add(new profile(rs.getString("FIRSTNAME"), rs.getString("LASTNAME"),rs.getInt("ID"),rs.getString("Birthday"),10,rs.getString("ADDRESS"),rs.getString("Canton"),
+		            		 rs.getString("District"), rs.getString("Province"),rs.getInt("ZIP"),rs.getInt("Weight"),rs.getInt("Height"),rs.getInt("Pressure"), 
+		            		 rs.getString("CongenitalDisease"),rs.getString("Disease")));
 
 	          }
 	          rs.close();
@@ -239,7 +241,7 @@ public class ProfileOverviewController {
 	    	Name.setCellValueFactory(cellData -> cellData.getValue().getFName());
 	    	ID.setCellValueFactory(cellData -> cellData.getValue().getID());
 	    	Surname.setCellValueFactory(cellData -> cellData.getValue().getLName());
-	    	
+	   
 	    	profilelist.getItems().setAll(data);
 	    	
 	    }
@@ -256,8 +258,8 @@ public class ProfileOverviewController {
 	          c.setAutoCommit(false);
 
 	          stmt = c.createStatement();
-	          String sql = "INSERT INTO Profile (NAME,ID,Surname) " +
-	                  "VALUES ("+profile.getFName().getValue()+", '"+profile.getID().getValue()+"', "+profile.getLName().getValue()+";";
+	          String sql = "INSERT INTO Profile (ID,FIRSTNAME,LASTNAME,Birthday,ADDRESS,CITY,Canton,District,Province,ZIP,Weight,Height,Pressure,CongenitalDisease,Disease) " +
+	                  "VALUES ("+profile.getID().getValue()+", '"+profile.getFName().getValue()+"', '"+profile.getLName().getValue()+"', '"+profile.getBirthday().getValue()+"', '"+profile.getAddress().getValue()+"', '"+profile.getProvince().getValue()+"', '"+profile.getCanton().getValue()+"', '"+profile.getDisease().getValue()+"', '"+profile.getProvince().getValue()+"', "+profile.getMailAddress().getValue()+", "+profile.getWeight().getValue()+", "+profile.getHeight().getValue()+", "+profile.getPressure().getValue()+", '"+profile.getCongenitalDisease().getValue()+"', '"+profile.getDisease().getValue() +"');";
 	          System.out.print(sql);
 	          stmt.executeUpdate(sql);
 	          c.commit();
@@ -307,11 +309,9 @@ public class ProfileOverviewController {
 	          data.clear();
 	          while ( rs.next() ) {
 	            
-	             data.add(new profile(rs.getInt("ID"),
-	            		 rs.getString("NAME"),
-	            		 rs.getInt("Price"),
-	            		 rs.getInt("Amout"),
-	            		 rs.getString("Details")));
+	             data.add(new profile(rs.getString("FIRSTNAME"), rs.getString("LASTNAME"),rs.getInt("ID"),rs.getString("Birthday"),10,rs.getString("ADDRESS"),rs.getString("Canton"),
+	            		 rs.getString("District"), rs.getString("Province"),rs.getInt("ZIP"),rs.getInt("Weight"),rs.getInt("Height"),rs.getInt("Pressure"), 
+	            		 rs.getString("CongenitalDisease"),rs.getString("Disease")));
 
 	          }
 	          rs.close();
@@ -322,6 +322,13 @@ public class ProfileOverviewController {
 	          System.exit(0);
 	        }
 	        
+	    }
+	    @FXML
+	    public void haddledisplaydetail() {
+	    	displaydetail(profilelist.getSelectionModel().getSelectedItem());
+	    }
+	    private void displaydetail(profile profile) {
+	    	Name1.setText(profile.getFName().getValue());
 	    }
 	 public void setMainApp(MainApp mainApp) {
 			// TODO Auto-generated method stub

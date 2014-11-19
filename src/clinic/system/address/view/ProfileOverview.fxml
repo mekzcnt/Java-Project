@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clinic.system.address.view.ProfileOverviewController">
    <children>
       <MenuButton fx:id="ProfileMenu" layoutX="14.0" layoutY="19.0" mnemonicParsing="false" text="ฐานข้อมูลคนไข้">
         <items>
@@ -20,7 +20,7 @@
         <items>
           <AnchorPane SplitPane.resizableWithParent="false">
                <children>
-                  <TableView fx:id="TableSplitPane" editable="true" prefHeight="491.0" prefWidth="394.0">
+                  <TableView fx:id="profilelist" editable="true" onMouseClicked="#haddledisplaydetail" prefHeight="491.0" prefWidth="394.0">
                     <columns>
                       <TableColumn fx:id="Name" prefWidth="116.0" text="ชื่อ" />
                       <TableColumn fx:id="Surname" minWidth="0.0" prefWidth="115.0" text="นามสกุล" />
@@ -96,8 +96,8 @@
             <Insets />
          </opaqueInsets>
       </SplitPane>
-      <Button fx:id="AddButton" layoutX="641.0" layoutY="19.0" mnemonicParsing="false" text="Add" />
-      <Button fx:id="DeleteButton" layoutX="735.0" layoutY="19.0" mnemonicParsing="false" text="Delete" />
-      <Button fx:id="EditButton" layoutX="689.0" layoutY="19.0" mnemonicParsing="false" text="Edit" />
+      <Button fx:id="AddButton" layoutX="641.0" layoutY="19.0" mnemonicParsing="false" onAction="#handleADD" text="Add" />
+      <Button fx:id="DeleteButton" layoutX="735.0" layoutY="19.0" mnemonicParsing="false" onAction="#handleDelete" text="Delete" />
+      <Button fx:id="EditButton" layoutX="689.0" layoutY="19.0" mnemonicParsing="false" onAction="#handleEdit" text="Edit" />
    </children>
 </AnchorPane>
