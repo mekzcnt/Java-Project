@@ -23,14 +23,21 @@ public class MedicineOverviewController {
 	private MainApp mainApp;
     @FXML
     private TableView<medicine> medicineList;
+    @FXML
     private TableColumn<medicine, Number> MedicineID;
+    @FXML
     private TableColumn<medicine, String> MedicineName;
+    @FXML
     private TableColumn<medicine, Number> MedicinePrice;
+    @FXML
     private TableColumn<medicine, Number> MedicineQuatity;
+    @FXML
     private TextField SearchBox; 
+   
     private ObservableList<medicine> data = FXCollections.observableArrayList();
+    @FXML
     private Button AddMedicineButton;
-    
+    @FXML
     public void handleADD() {
 		try {
 			Stage dialogStage = new Stage();
@@ -48,6 +55,7 @@ public class MedicineOverviewController {
 		}
     	
     }
+    @FXML
     public void handleEdit() {	
 		try {
 			Stage dialogStage = new Stage();
@@ -68,6 +76,7 @@ public class MedicineOverviewController {
 		}
     	
     }
+    @FXML
     public void handleDelete() {
     	int selectedIndex = medicineList.getSelectionModel().getSelectedIndex();
 
@@ -105,7 +114,7 @@ public class MedicineOverviewController {
 		}
     	
     }
-    
+    @FXML
     public void handleSearch() {
     	Connection c = null;
         Statement stmt = null;
