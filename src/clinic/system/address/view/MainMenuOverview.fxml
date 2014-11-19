@@ -46,8 +46,9 @@
             <Font size="43.0" />
          </font>
       </Text>
-      <TextField fx:id="SearchBox" layoutX="285.0" layoutY="203.0" prefHeight="25.0" prefWidth="275.0" />
-      <Label layoutX="193.0" layoutY="207.0" text="ค้นหาข้อมูลผู้ป่วย" />
-      <Button fx:id="SearchButton" layoutX="571.0" layoutY="203.0" mnemonicParsing="false" text="ค้นหา" />
+      <TextField fx:id="MainSearch" layoutX="284.0" layoutY="147.0" onInputMethodTextChanged="#handleSearch" onKeyReleased="#handleSearch" prefHeight="25.0" prefWidth="275.0" />
+      <Label layoutX="193.0" layoutY="151.0" text="ค้นหาข้อมูลผู้ป่วย" />
+      <Button fx:id="SearchButton" layoutX="571.0" layoutY="147.0" mnemonicParsing="false" onAction="#handleSearch" text="ค้นหา" />
+      <ListView fx:id="ListSearch" layoutX="284.0" layoutY="173.0" onMouseClicked="#handleSubmit" prefHeight="123.0" prefWidth="275.0" visible="false" />
    </children>
 </AnchorPane>
