@@ -214,9 +214,18 @@ public class PatientOverviewController {
           stmt = c.createStatement();
           String sql = "INSERT INTO Disease (ID,disease,description) " +
                   "VALUES ("+profile.getID().intValue()+", '"+DiseaseSearch.getText()+"', '"+DiseaseDetails.getText()+"' );";
-          System.out.print(sql);
+          
           stmt.executeUpdate(sql);
           c.commit();
+          
+          for (medicine each:data) {
+        	  sql = "UPDATE Medicine set Amout = "+each.getAmount().intValue() +"  where ID = "+each.getMID().intValue()+";";
+              //System.out.print(sql);
+              stmt.executeUpdate(sql);
+             
+              c.commit();
+          }
+           
           stmt.close();
           c.close();
         } catch ( Exception e ) {
