@@ -140,16 +140,30 @@ public class DiseaseOverviewController {
 
        stmt = c.createStatement();
        String sql = "SELECT * FROM Disease " +
-                    "WHERE NAME LIKE '%"+SearchBox.getText()+"%' OR ID LIKE '%"+SearchBox.getText()+"%';" ;
+                    "WHERE disease LIKE '%"+SearchBox.getText()+"%' ;" ;
        
        ResultSet rs = stmt.executeQuery(sql);
        data.clear();
+       stmt = c.createStatement();
+       
+       data.clear();
        while ( rs.next() ) {
-    	   //String FName,String LName,int ID,String disease,String description
-          data.add(new disease(rs.getString("FName"),rs.getString("LName"),rs.getInt("ID"),rs.getString("disease"),rs.getString("description")));
+    	 //String FName,String LName,int ID,String disease,String description
+          data.add(new disease("","",rs.getInt("ID"),rs.getString("disease"),rs.getString("description")));
 
        }
        rs.close();
+       stmt.close();
+       
+       for (disease each:data) {
+    	   ResultSet rs1 = stmt.executeQuery( "SELECT * FROM Profile WHERE ID Like "+each.getID().intValue()+";" );
+    	   while ( rs1.next() ) {
+    		   System.out.print(rs1.getString("LASTNAME"));
+    		  each.name(rs1.getString("FIRSTNAME"),rs1.getString("LASTNAME"));
+    	   }
+    	   rs1.close();
+       }
+       
        stmt.close();
        c.close();
      } catch ( Exception e ) {
