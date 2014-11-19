@@ -107,7 +107,7 @@ public class DiseaseOverviewController {
 		      c.setAutoCommit(false);
 
 		      stmt = c.createStatement();
-		      String sql = "DELETE from Medicine where ID="+diseaseList.getSelectionModel().getSelectedItem().getID().intValue()+";";
+		      String sql = "DELETE from disease where disese = '"+diseaseList.getSelectionModel().getSelectedItem().getdisease().getValue()+"' AND ID="+diseaseList.getSelectionModel().getSelectedItem().getID().intValue()+";";
 		      stmt.executeUpdate(sql);
 		      c.commit();
 
