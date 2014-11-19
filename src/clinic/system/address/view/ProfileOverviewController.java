@@ -135,7 +135,8 @@ public class ProfileOverviewController {
 	    	
 	    }
 	    public void handleEdit() {
-	    	
+	    	int selectedIndex = profilelist.getSelectionModel().getSelectedIndex();
+	    	if (selectedIndex >= 0) {
 			try {
 				
 				Stage dialogStage = new Stage();
@@ -156,11 +157,12 @@ public class ProfileOverviewController {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+	    	}
 	    	
 	    }
 	    public void handleDelete() {
 	    	int selectedIndex = profilelist.getSelectionModel().getSelectedIndex();
-	    	System.out.print(selectedIndex);
+	    	
 			if (selectedIndex >= 0) {
 				
 				
@@ -282,21 +284,20 @@ public class ProfileOverviewController {
 
 	          stmt = c.createStatement();
 	          
-	          String sql = "UPDATE Profile set ID = '"+profile.getID().getValue()+
-	        		  "', FIRSTNAME = "+profile.getFName().getValue()+
-	        		  "', LASTNAME = "+profile.getLName().getValue()+
-	        		  "', ADDRESS = "+profile.getAddress().getValue()+
-	        		  ", Age = "+profile.getOld().getValue()+
-	        		  "', Canton = "+profile.getCanton().getValue()+
-	        		  "', District = "+profile.getDistrict().getValue()+
-	        		  "', Province = "+profile.getProvince().getValue()+
-	        		  ", ZIP = "+profile.getMailAddress().getValue()+
+	          String sql = "UPDATE Profile set ID = "+profile.getID().getValue()+
+	        		  ", FIRSTNAME = '"+profile.getFName().getValue()+
+	        		  "', LASTNAME = '"+profile.getLName().getValue()+
+	        		  "', ADDRESS = '"+profile.getAddress().getValue()+
+	        		  "', Canton = '"+profile.getCanton().getValue()+
+	        		  "', District = '"+profile.getDistrict().getValue()+
+	        		  "', Province = '"+profile.getProvince().getValue()+
+	        		  "', ZIP = "+profile.getMailAddress().getValue()+
 	        		  ", Weight = "+profile.getWeight().getValue()+
 	        		  ", Height = "+profile.getHeight().getValue()+
-	        		  "', CongenitalDisease = "+profile.getCongenitalDisease().getValue()+
-	        		  "', Disease = "+profile.getDisease().getValue()+";";
+	        		  ", CongenitalDisease = '"+profile.getCongenitalDisease().getValue()+
+	        		  "', Disease = '"+profile.getDisease().getValue()+"';";
 	          
-	          System.out.print(sql);
+	          //System.out.print(sql);
 	          stmt.executeUpdate(sql);
 	          c.commit();
 	          stmt.close();
