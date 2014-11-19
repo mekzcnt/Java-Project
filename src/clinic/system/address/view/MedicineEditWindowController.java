@@ -40,16 +40,19 @@ public class MedicineEditWindowController {
     @FXML
     public void handleEdit() {
     	medicine med = new medicine(Integer.parseInt(MedicineID.getText()),MedicineName.getText(),Integer.parseInt(MedicinePrice.getText()),Integer.parseInt(MedicineAmount.getText()),MedicineDetails.getText());
-    	//med.setMName(MedicineName.getText());
-    	//med.setDescription(MedicineDetails.getText());
-    	//med.setAmount(Integer.parseInt(MedicineAmount.getText()));
-    	//med.setPrice(Integer.parseInt(MedicinePrice.getText()));
-    	//med.setMID(Integer.parseInt(MedicineID.getText()));
+    	Iscorrect();
     	
     	MedicineOverviewController.editMedicine(med);
     	dialogStage.close();
     }
-    
+    private boolean Iscorrect() {
+    	String number = "0123456789";
+    	if (MedicineID.getText().matches(number) && MedicineAmount.getText().matches(number) && MedicinePrice.getText().matches(number)){
+    		return !true;
+    	}
+    	return true;
+	
+    }
     public void setMainApp(MedicineOverviewController MedicineOverviewController) {
 		// TODO Auto-generated method stub
 		this.MedicineOverviewController = MedicineOverviewController;
