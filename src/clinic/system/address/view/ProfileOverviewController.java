@@ -282,7 +282,7 @@ public class ProfileOverviewController {
 
 	          stmt = c.createStatement();
 	          
-	          String sql = "UPDATE Profile set NAME = '"+profile.getFName().getValue()+"', ID = "+profile.getID().intValue()+" , SurName = "+profile.getLName().getValue()+";";
+	          //String sql = "UPDATE Profile set ID = '"+profile.getID().getValue()+"', FIRSTNAME = "++"', LASTNAME = "++"', ADDRESS = "++"', CITY = "++"', Canton = "++"', District = "++"', Province = "++"', ZIP = "++"', Weight = "++"', Height = "++"', CongenitalDisease = "++" , Disease = "++";";
 	          //System.out.print(sql);
 	          stmt.executeUpdate(sql);
 	          c.commit();
