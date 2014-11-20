@@ -10,7 +10,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clinic.system.address.view.MainMenuOverviewController">
    <children>
-      <GridPane alignment="CENTER" layoutX="384.0" layoutY="227.0" prefHeight="307.0" prefWidth="384.0" AnchorPane.bottomAnchor="66.0" AnchorPane.leftAnchor="384.0" AnchorPane.rightAnchor="32.0">
+      <GridPane alignment="CENTER" depthTest="DISABLE" layoutX="384.0" layoutY="227.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="307.0" prefWidth="384.0" AnchorPane.bottomAnchor="66.0" AnchorPane.leftAnchor="384.0" AnchorPane.rightAnchor="32.0">
         <columnConstraints>
           <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
@@ -20,14 +20,14 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button alignment="BASELINE_LEFT" graphicTextGap="25.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#handleDisease" prefHeight="60.0" prefWidth="373.0" text="สถิติโรคที่ตรวจพบ" textOverrun="WORD_ELLIPSIS" GridPane.rowIndex="1">
+            <Button alignment="BASELINE_LEFT" graphicTextGap="25.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#handleDisease" prefHeight="60.0" prefWidth="373.0" text="สถิติโรคที่ตรวจพบ" textOverrun="CENTER_WORD_ELLIPSIS" GridPane.rowIndex="1">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
                <graphic>
-                  <ImageView fitHeight="37.0" fitWidth="61.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="32.0" fitWidth="32.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@image/disease-button.png" />
+                        <Image url="@image/CMS-disease.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -43,9 +43,9 @@
                   <Font name="System Bold" size="20.0" />
                </font>
                <graphic>
-                  <ImageView fitHeight="37.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@image/patient-button.png" />
+                        <Image url="@image/CMS-patient.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -58,9 +58,9 @@
                   <Font name="System Bold" size="20.0" />
                </font>
                <graphic>
-                  <ImageView fitHeight="37.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@image/medicine-button.png" />
+                        <Image url="@image/CMS-medicine.png" />
                      </image>
                   </ImageView>
                </graphic>
