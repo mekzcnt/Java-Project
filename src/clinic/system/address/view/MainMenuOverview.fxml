@@ -73,21 +73,26 @@
             </Button>
          </children>
       </GridPane>
-      <Text layoutX="238.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Clinic Management System" textAlignment="RIGHT" wrappingWidth="530.0" AnchorPane.leftAnchor="238.0" AnchorPane.rightAnchor="32.0">
+      <Text layoutX="219.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Clinic Management System" wrappingWidth="530.0" AnchorPane.leftAnchor="219.0" AnchorPane.rightAnchor="51.0">
          <font>
             <Font size="42.0" />
          </font>
       </Text>
-      <TextField fx:id="MainSearch" layoutX="69.0" layoutY="269.0" onInputMethodTextChanged="#handleSearch" onKeyReleased="#handleSearch" prefHeight="25.0" prefWidth="281.0" />
-      <Label layoutX="69.0" layoutY="227.0" text="ค้นหาข้อมูลผู้ป่วย">
+      <TextField fx:id="MainSearch" layoutX="69.0" layoutY="269.0" onInputMethodTextChanged="#handleSearch" onKeyReleased="#handleSearch" prefHeight="25.0" prefWidth="281.0" AnchorPane.leftAnchor="55.0" />
+      <Label layoutX="55.0" layoutY="227.0" text="ค้นหาข้อมูลผู้ป่วย">
          <font>
             <Font size="20.0" />
          </font></Label>
-      <ListView fx:id="ListSearch" layoutX="69.0" layoutY="295.0" onMouseClicked="#handleSubmit" prefHeight="218.0" prefWidth="281.0" visible="false" />
+      <ListView fx:id="ListSearch" layoutX="55.0" layoutY="294.0" onMouseClicked="#handleSubmit" prefHeight="218.0" prefWidth="281.0" />
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="69.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@image/mainmenu-icon.png" />
          </image>
       </ImageView>
+      <Text layoutX="219.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ระบบจัดการภายในคลินิก" wrappingWidth="530.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>
