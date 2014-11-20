@@ -177,7 +177,6 @@ public class ProfileOverviewController {
 
 			      stmt = c.createStatement();
 			      String sql = "DELETE from Profile where ID="+profilelist.getSelectionModel().getSelectedItem().getID().intValue()+";";
-			      System.out.print(sql);
 			      stmt.executeUpdate(sql);
 			      c.commit();
 
@@ -265,7 +264,6 @@ public class ProfileOverviewController {
 	          stmt = c.createStatement();
 	          String sql = "INSERT INTO Profile (ID,FIRSTNAME,LASTNAME,Birthday,ADDRESS,CITY,Canton,District,Province,ZIP,Weight,Height,Pressure,CongenitalDisease,Disease) " +
 	                  "VALUES ("+profile.getID().getValue()+", '"+profile.getFName().getValue()+"', '"+profile.getLName().getValue()+"', '"+profile.getBirthday().getValue()+"', '"+profile.getAddress().getValue()+"', '"+profile.getProvince().getValue()+"', '"+profile.getCanton().getValue()+"', '"+profile.getDisease().getValue()+"', '"+profile.getProvince().getValue()+"', "+profile.getMailAddress().getValue()+", "+profile.getWeight().getValue()+", "+profile.getHeight().getValue()+", "+profile.getPressure().getValue()+", '"+profile.getCongenitalDisease().getValue()+"', '"+profile.getDisease().getValue() +"');";
-	          System.out.print(sql);
 	          stmt.executeUpdate(sql);
 	          c.commit();
 	          stmt.close();
@@ -300,7 +298,6 @@ public class ProfileOverviewController {
 	        		  ", CongenitalDisease = '"+profile.getCongenitalDisease().getValue()+
 	        		  "', Disease = '"+profile.getDisease().getValue()+"';";
 	          
-	          //System.out.print(sql);
 	          stmt.executeUpdate(sql);
 	          c.commit();
 	          stmt.close();

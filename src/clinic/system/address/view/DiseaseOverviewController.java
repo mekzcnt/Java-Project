@@ -158,7 +158,6 @@ public class DiseaseOverviewController {
        for (disease each:data) {
     	   ResultSet rs1 = stmt.executeQuery( "SELECT * FROM Profile WHERE ID Like "+each.getID().intValue()+";" );
     	   while ( rs1.next() ) {
-    		   System.out.print(rs1.getString("LASTNAME"));
     		  each.name(rs1.getString("FIRSTNAME"),rs1.getString("LASTNAME"));
     	   }
     	   rs1.close();
@@ -258,7 +257,6 @@ public class DiseaseOverviewController {
        for (disease each:data) {
     	   ResultSet rs1 = stmt.executeQuery( "SELECT * FROM Profile WHERE ID Like "+each.getID().intValue()+";" );
     	   while ( rs1.next() ) {
-    		   System.out.print(rs1.getString("LASTNAME"));
     		  each.name(rs1.getString("FIRSTNAME"),rs1.getString("LASTNAME"));
     	   }
     	   rs1.close();
