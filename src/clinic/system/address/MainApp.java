@@ -93,7 +93,7 @@ public class MainApp extends Application {
 			dialogStage.setTitle("Medicine");
 			dialogStage.initModality(Modality.WINDOW_MODAL);
 			dialogStage.initOwner(primaryStage);
-			Image icon = new Image(getClass().getResourceAsStream("view/image/medicine-button.png"));
+			Image icon = new Image(getClass().getResourceAsStream("view/image/CMS-medicine.png"));
 			dialogStage.getIcons().add(icon);
 			Scene scene = new Scene(page);
 			dialogStage.setScene(scene);
@@ -125,7 +125,7 @@ public class MainApp extends Application {
 			dialogStage.setTitle("Disease");
 			dialogStage.initModality(Modality.WINDOW_MODAL);
 			dialogStage.initOwner(primaryStage);
-			Image icon = new Image(getClass().getResourceAsStream("view/image/disease-button.png"));
+			Image icon = new Image(getClass().getResourceAsStream("view/image/CMS-disease.png"));
 			dialogStage.getIcons().add(icon);
 			Scene scene = new Scene(page);
 			dialogStage.setScene(scene);
@@ -158,7 +158,7 @@ public class MainApp extends Application {
 			dialogStage.setTitle("Profile");
 			dialogStage.initModality(Modality.WINDOW_MODAL);
 			dialogStage.initOwner(primaryStage);
-			Image icon = new Image(getClass().getResourceAsStream("view/image/patient-button.png"));
+			Image icon = new Image(getClass().getResourceAsStream("view/image/CMS-patient.png"));
 			dialogStage.getIcons().add(icon);
 			Scene scene = new Scene(page);
 			dialogStage.setScene(scene);

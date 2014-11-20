@@ -126,7 +126,7 @@ public class ProfileOverviewController {
 				controller.setDialogStage(dialogStage);
 	            controller.setMainApp(this);
 		    	Scene scene = new Scene(root);
-		    	Image icon = new Image(getClass().getResourceAsStream("image/patient-button.png"));
+		    	Image icon = new Image(getClass().getResourceAsStream("image/CMS-patient.png"));
 				dialogStage.getIcons().add(icon);
 		    	dialogStage.setScene(scene);
 		    	dialogStage.showAndWait();
@@ -153,7 +153,7 @@ public class ProfileOverviewController {
 	            controller1.setProfile(profilelist.getSelectionModel().getSelectedItem());
 	        
 		    	Scene scene = new Scene(root);
-		    	Image icon = new Image(getClass().getResourceAsStream("image/patient-button.png"));
+		    	Image icon = new Image(getClass().getResourceAsStream("image/CMS-patient.png"));
 				dialogStage.getIcons().add(icon);
 		    	dialogStage.setScene(scene);
 		    	dialogStage.showAndWait();
