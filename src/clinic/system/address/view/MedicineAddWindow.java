@@ -43,7 +43,7 @@ public class MedicineAddWindow {
     public void setDialogStage(Stage dialogStage) {
         this.dialogStage = dialogStage;
         setPromtext();
-        this.dialogStage.setTitle("ADD medicine");
+        this.dialogStage.setTitle("Add Medicine");
     }
     
    

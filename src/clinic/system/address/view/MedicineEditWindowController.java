@@ -27,7 +27,7 @@ public class MedicineEditWindowController {
     
     public void setDialogStage(Stage dialogStage) {
         this.dialogStage = dialogStage;
-        this.dialogStage.setTitle("Edit medicnie");
+        this.dialogStage.setTitle("Edit Medicine");
     }
     
     public void setMececine(medicine med){
