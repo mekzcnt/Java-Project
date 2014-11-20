@@ -52,7 +52,7 @@
             <Label text="ส่วนสูง" GridPane.rowIndex="6" />
             <Label text="ความดัน" GridPane.rowIndex="7" />
             <Label text="รายละเอียด" GridPane.rowIndex="9" />
-            <TextField fx:id="DiseaseDetails" prefHeight="70.0" prefWidth="208.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+            <TextField fx:id="DiseaseDetails" alignment="TOP_LEFT" prefHeight="70.0" prefWidth="208.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
             <TextField fx:id="DiseaseSearch" GridPane.columnIndex="1" GridPane.rowIndex="8" />
          </children>
          <columnConstraints>
