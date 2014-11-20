@@ -33,7 +33,6 @@ public class DiseaseAddWindow {
     private Stage dialogStage;
     
     public void setPromtext(){
- 	   //this.MedicineID.setText("Enter number");
  	   this.DiseaseID.setPromptText("Enter number");
  	   this.DiseaseDetails.setPromptText("Enter a detail of disease");
  	   this.DiseaseFname.setPromptText("Enter words' name");
@@ -49,11 +48,6 @@ public class DiseaseAddWindow {
      public void handleADD() {
 
      	disease med = new disease(DiseaseFname.getText(),DiseaseDetails.getText(),Integer.parseInt(DiseaseID.getText()),DiseaseLname.getText(),DiseaseName.getText());
-     	//med.setMName(MedicineName.getText());
-     	//med.setDescription(MedicineDetails.getText());
-     	//med.setAmount(Integer.parseInt(MedicineAmount.getText()));
-     	//med.setPrice(Integer.parseInt(MedicinePrice.getText()));
-     	//med.setMID(Integer.parseInt(MedicineID.getText()));
      	
      	DiseaseOverviewController.addDisease(med);
      	dialogStage.close();
@@ -62,7 +56,6 @@ public class DiseaseAddWindow {
  		// TODO Auto-generated method stub
  		this.DiseaseOverviewController = DiseaseOverviewController;
 
-         // Add observable list data to the table
 
  	}
 

@@ -51,10 +51,8 @@ public class MedicineEditWindowController {
 
 
     public void setMainApp(MedicineOverviewController MedicineOverviewController) {
-		// TODO Auto-generated method stub
 		this.MedicineOverviewController = MedicineOverviewController;
 
-        // Add observable list data to the table
 
 	}
 }

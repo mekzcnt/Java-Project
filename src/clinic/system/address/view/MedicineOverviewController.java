@@ -47,7 +47,7 @@ public class MedicineOverviewController {
 			controller.setDialogStage(dialogStage);
             controller.setMainApp(this);
 	    	Scene scene = new Scene(root);
-	    	Image icon = new Image(getClass().getResourceAsStream("image/CMS-medicine-16x16.png"));
+	    	Image icon = new Image(getClass().getResourceAsStream("image/medicine-16x16.png"));
 			dialogStage.getIcons().add(icon);
 	    	dialogStage.setScene(scene);
 	    	dialogStage.showAndWait();
@@ -73,7 +73,7 @@ public class MedicineOverviewController {
             controller1.setMececine(medicineList.getSelectionModel().getSelectedItem());
             
 	    	Scene scene = new Scene(root);
-	    	Image icon = new Image(getClass().getResourceAsStream("image/CMS-medicine-16x16.png"));
+	    	Image icon = new Image(getClass().getResourceAsStream("image/medicine-16x16.png"));
 			dialogStage.getIcons().add(icon);
 	    	dialogStage.setScene(scene);
 	    	dialogStage.showAndWait();   	
@@ -147,7 +147,6 @@ public class MedicineOverviewController {
     
     @FXML
     private void initialize() {
-    	// Initialize the person table with the two columns.
     	display();
     	MedicineID.setCellValueFactory(cellData -> cellData.getValue().getMID());
     	MedicineName.setCellValueFactory(cellData -> cellData.getValue().getMName());
@@ -216,7 +215,7 @@ public class MedicineOverviewController {
             c.setAutoCommit(false);
 
           stmt = c.createStatement();
-          ResultSet rs = stmt.executeQuery( "SELECT * FROM Medicine;" );//ID,NAME,Amout,Price,Details
+          ResultSet rs = stmt.executeQuery( "SELECT * FROM Medicine;" );
           data.clear();
           while ( rs.next() ) {
             

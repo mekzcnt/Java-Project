@@ -6,7 +6,6 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 public class profile {
-	//private final IntegerProperty MID;
 	private final StringProperty FName;
 	private final StringProperty LName;
 	private final IntegerProperty ID;

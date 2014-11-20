@@ -16,8 +16,6 @@ public class medicine {
 	public medicine(int MID, String MName, int price, int amount, String description) {
 		this.MID = new SimpleIntegerProperty(MID);
 		this.MName = new SimpleStringProperty(MName);
-		
-		// Some initial dummy data, just for convenient testing.
 		this.price = new SimpleIntegerProperty(price);
 		this.description = new SimpleStringProperty(description);
 		this.amount = new SimpleIntegerProperty(amount);

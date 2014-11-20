@@ -57,7 +57,6 @@ public class MedicineAddWindow {
 
     public void setMainApp(MedicineOverviewController MedicineOverviewController) {
 		this.MedicineOverviewController = MedicineOverviewController;
-        // Add observable list data to the table
 	}
     
 

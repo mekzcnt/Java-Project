@@ -36,7 +36,6 @@ public class MainApp extends Application {
         initRootLayout();
         showMainMenuOverview();
         
-       // this.primaryStage
         
 	}
 
@@ -97,16 +96,11 @@ public class MainApp extends Application {
 			dialogStage.setWidth(800);
 			dialogStage.setHeight(600);
 			dialogStage.setResizable(false);
-			//MedicineOverviewController controller = loader.getController();
-            //controller.setMainApp(this);
 
-			// Show the dialog and wait until the user closes it
 			dialogStage.showAndWait();
 
-			//return controller.isOkClicked();
 		} catch (IOException e) {
 			e.printStackTrace();
-			//return false;
 		}
 	}
 	
@@ -129,18 +123,11 @@ public class MainApp extends Application {
 			dialogStage.setWidth(800);
 			dialogStage.setHeight(600);
 			dialogStage.setResizable(false);
-			//DiseaseOverviewController controller = loader.getController();
-            //controller.setMainApp(this);
-			
-			
 
-			// Show the dialog and wait until the user closes it
 			dialogStage.showAndWait();
 
-			//return controller.isOkClicked();
 		} catch (IOException e) {
 			e.printStackTrace();
-			//return false;
 		}
 	}
 	public void showProfileOverview() {
@@ -162,23 +149,17 @@ public class MainApp extends Application {
 			dialogStage.setWidth(800);
 			dialogStage.setHeight(600);
 			dialogStage.setResizable(false);
-			//DiseaseOverviewController controller = loader.getController();
-            //controller.setMainApp(this);
-			
-			// Show the dialog and wait until the user closes it
+
 			dialogStage.showAndWait();
-			
-			//Profilecontroller.setMainApp(this);
-			//return controller.isOkClicked();
+
 		} catch (IOException e) {
 			e.printStackTrace();
-			//return false;
+
 		}
 	}
 	
 	public void showMoneyOverview() {
 		try {
-			// Load the fxml file and create a new stage for the popup dialog.
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(MainApp.class.getResource("view/MoneyOverview.fxml"));
 			AnchorPane page = (AnchorPane) loader.load();
@@ -193,17 +174,12 @@ public class MainApp extends Application {
 			dialogStage.setWidth(800);
 			dialogStage.setHeight(600);
 			dialogStage.setResizable(false);
-			//DiseaseOverviewController controller = loader.getController();
-            //controller.setMainApp(this);
-			//dialogStage.
 			
 			// Show the dialog and wait until the user closes it
 			dialogStage.showAndWait();
 
-			//return controller.isOkClicked();
 		} catch (IOException e) {
 			e.printStackTrace();
-			//return false;
 		}
 	}
 	private static void createDatabase() {

@@ -114,10 +114,8 @@ public class ProfileAddWindow {
 	    
 	    
 	    public void setMainApp(ProfileOverviewController ProfileOverviewController) {
-			// TODO Auto-generated method stub
 			this.ProfileOverviewController = ProfileOverviewController;
 
-	        // Add observable list data to the table
 
 		}
 	    

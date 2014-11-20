@@ -127,7 +127,6 @@ public class ProfileOverviewController {
 		    	dialogStage.showAndWait();
 		    	
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 	    	
@@ -154,7 +153,6 @@ public class ProfileOverviewController {
 		    	dialogStage.showAndWait();
 		    	
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 	    	}
@@ -232,8 +230,6 @@ public class ProfileOverviewController {
 	    }
 	    @FXML
 	    private void initialize() {
-	    	// Initialize the person table with the two columns.
-	    	
 	    	display();
 	    	Name.setCellValueFactory(cellData -> cellData.getValue().getFName());
 	    	ID.setCellValueFactory(cellData -> cellData.getValue().getID());

@@ -22,7 +22,6 @@ import javafx.stage.Stage;
 
 public class MainMenuOverviewController {
 
-	// Reference to the main application.
     private MainApp mainApp;
 
     @FXML
@@ -44,7 +43,6 @@ public class MainMenuOverviewController {
     }
     
     public void handleProfile() {
-    	//mainApp.setSearch(MainSearch.getText());
     	mainApp.showProfileOverview();
     }
     
@@ -146,17 +144,14 @@ public class MainMenuOverviewController {
 	    	dialogStage.showAndWait();
 	    	
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
     	}
     }
 
 	public void setMainApp(MainApp mainApp) {
-		// TODO Auto-generated method stub
 		this.mainApp = mainApp;
 
-        // Add observable list data to the table
 
 	}
 

@@ -2,7 +2,6 @@ package clinic.system.address.view;
 
 import java.io.IOException;
 
-import clinic.system.address.MainApp;
 import clinic.system.address.model.disease;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -38,7 +37,7 @@ public class DiseaseOverviewController {
     private TextField SearchBox; 
     
     private ObservableList<disease> data = FXCollections.observableArrayList();
-    //private Button AdddiseaseButton;
+
     
     @FXML
     public void handleADD() {
@@ -53,13 +52,12 @@ public class DiseaseOverviewController {
 			root = (AnchorPane)loader.load();
 			DiseaseAddWindow controller = loader.getController();
 			controller.setDialogStage(dialogStage);
-            controller.setMainApp(this);  /////// problem
+            controller.setMainApp(this);
 	    	Scene scene = new Scene(root);
 	    	dialogStage.setScene(scene);
 	    	dialogStage.showAndWait();
 	    	
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
     	
@@ -83,7 +81,6 @@ public class DiseaseOverviewController {
 	    	dialogStage.showAndWait();
 	    	
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	 }
@@ -167,7 +164,6 @@ public class DiseaseOverviewController {
  }
  @FXML
  private void initialize() {
- 	// Initialize the person table with the two columns.
  	display();
  	diseaseID.setCellValueFactory(cellData -> cellData.getValue().getID());
  	diseaseFname.setCellValueFactory(cellData -> cellData.getValue().getFName());
@@ -262,37 +258,7 @@ public class DiseaseOverviewController {
      }
      
  }
- public void setTable(){
-	 Connection c = null;
-	    Statement stmt = null;
-	    try {
-	      Class.forName("org.sqlite.JDBC");
-	      c = DriverManager.getConnection("jdbc:sqlite:CMSDatabase.db");
-	      
+ 
 
-	      stmt = c.createStatement();
-	      String sql = "CREATE TABLE Disease " +
-	                   "(ID 			  INT     PRIMARY KEY     NOT NULL," +
-	                   " FName           TEXT    NOT NULL, " + 
-	                   " LName           TEXT     NOT NULL, " + 
-	                   " Name            TEXT      NOT, " + 
-	                   " SALARY         REAL)"; 
-	      stmt.executeUpdate(sql);
-	      stmt.close();
-	      c.close();
-	    } catch ( Exception e ) {
-	      System.err.println( e.getClass().getName() + ": " + e.getMessage() );
-	      System.exit(0);
-	    }
-	    
-}    
-
-    public void setMainApp(MainApp mainApp) {
-		// TODO Auto-generated method stub
-		//this.mainApp = mainApp;
-
-        // Add observable list data to the table
-
-	}
 	
 }
