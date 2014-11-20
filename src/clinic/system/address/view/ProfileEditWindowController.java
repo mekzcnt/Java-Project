@@ -82,6 +82,7 @@ public class ProfileEditWindowController {
     	
     }
     public void handleEdit() {
+    	try {
     	profile med = new profile(
     			Name.getText(),
     	    	Surname.getText(),
@@ -100,33 +101,14 @@ public class ProfileEditWindowController {
     	    	PatientDisease.getText()
     			);
     	
-    	Iscorrect();
+    	
     	ProfileOverviewController.editProfile(med);
     	dialogStage.close();
-    }
-    private boolean Iscorrect() {
-    	String number = "0123456789";
-    	if (Name.getText().matches(number) && 
-    			Surname.getText().matches(number) && 
-    			PatientID.getText().matches(number) &&
-    					Age.getText().matches(number) &&	
-    							Address.getText().matches(number) &&
-    									Subdistrict.getText().matches(number )&&
-    											District.getText().matches(number )&&
-    													Province.getText().matches(number )&&
-    															PostalCode.getText().matches(number) &&
-    																Weight.getText().matches(number ) &&
-    																	Height.getText().matches(number ) &&
-    																		BloodPressure.getText().matches(number ) &&
-    																			HistoryDisease.getText().matches(number ) &&
-    																				PatientDisease.getText().matches(number ) 
-    															){
+    	}catch ( Exception e ) {
     		
-    		return !true;
     	}
-    	return true;
-	
     }
+
     public void setMainApp(ProfileOverviewController ProfileOverviewController) {
 		// TODO Auto-generated method stub
 		this.ProfileOverviewController = ProfileOverviewController;

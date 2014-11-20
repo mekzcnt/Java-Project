@@ -148,7 +148,7 @@ public class DiseaseOverviewController {
        
        data.clear();
        while ( rs.next() ) {
-    	 //String FName,String LName,int ID,String disease,String description
+    	 
           data.add(new disease("","",rs.getInt("ID"),rs.getString("disease"),rs.getString("description")));
 
        }
@@ -200,7 +200,7 @@ public class DiseaseOverviewController {
        stmt = c.createStatement();
        String sql = "INSERT INTO Disease (ID,disease,description) " +
                "VALUES ("+disease.getID().intValue()+", '"+disease.getdisease().getValue()+"', '"+disease.getdescription().getValue()+"' );";
-       System.out.print(sql);
+       
        stmt.executeUpdate(sql);
        c.commit();
        stmt.close();
@@ -223,7 +223,7 @@ public class DiseaseOverviewController {
        stmt = c.createStatement();
        
        String sql = "UPDATE Disease set Disease = '"+disease.getdisease().getValue()+"'  Description="+disease.getdescription().getValue()+"'  where ID="+disease.getID().intValue()+";";
-       //System.out.print(sql);
+       
        stmt.executeUpdate(sql);
        c.commit();
        stmt.close();
@@ -248,7 +248,7 @@ public class DiseaseOverviewController {
        ResultSet rs = stmt.executeQuery( "SELECT * FROM Disease;" );
        data.clear();
        while ( rs.next() ) {
-    	 //String FName,String LName,int ID,String disease,String description
+    	 
           data.add(new disease("","",rs.getInt("ID"),rs.getString("disease"),rs.getString("description")));
 
        }
@@ -278,7 +278,7 @@ public class DiseaseOverviewController {
 	    try {
 	      Class.forName("org.sqlite.JDBC");
 	      c = DriverManager.getConnection("jdbc:sqlite:CMSDatabase.db");
-	      System.out.println("Opened database successfully");
+	      
 
 	      stmt = c.createStatement();
 	      String sql = "CREATE TABLE Disease " +
@@ -294,7 +294,7 @@ public class DiseaseOverviewController {
 	      System.err.println( e.getClass().getName() + ": " + e.getMessage() );
 	      System.exit(0);
 	    }
-	    System.out.println("Table created successfully");
+	    
 }    
 
     public void setMainApp(MainApp mainApp) {

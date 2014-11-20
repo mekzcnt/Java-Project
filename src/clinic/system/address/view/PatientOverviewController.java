@@ -181,7 +181,6 @@ public class PatientOverviewController {
     }
     public void handleSubmit() {
     	System.out.print("ss");
-    	//System.out.print(MedicineList.getSelectionModel().getSelectedItem().getMName().getValue());
     	medicine temp = MedicineList.getSelectionModel().getSelectedItem();
     	temp.setuse(Integer.parseInt(AmountMedicine.getText()));
     	data.add(temp);
@@ -220,7 +219,6 @@ public class PatientOverviewController {
           
           for (medicine each:data) {
         	  sql = "UPDATE Medicine set Amout = "+each.getAmount().intValue() +"  where ID = "+each.getMID().intValue()+";";
-              //System.out.print(sql);
               stmt.executeUpdate(sql);
              
               c.commit();

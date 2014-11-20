@@ -32,7 +32,7 @@ public class MedicineAddWindow {
     private Stage dialogStage;
 
    public void setPromtext(){
-	   //this.MedicineID.setText("Enter number");
+	  
 	   this.MedicineID.setPromptText("Enter number");
 	   this.MedicineDetails.setPromptText("Enter a detail of medicine");
 	   this.MedicineName.setPromptText("Enter words' name");
@@ -49,27 +49,17 @@ public class MedicineAddWindow {
    
     @FXML
     public void handleADD() {
-    	Iscorrect();
-    	if (Iscorrect()){
+    	try {
     	medicine med = new medicine(Integer.parseInt(MedicineID.getText()),MedicineName.getText(),Integer.parseInt(MedicinePrice.getText()),Integer.parseInt(MedicineAmount.getText()),MedicineDetails.getText());
 
     	MedicineOverviewController.addMedicine(med);
     	dialogStage.close();
+    	}catch ( Exception e ) {
+    		
     	}
-    	else {
-    		System.out.print("ffff");
 
-    	}
     }
-    private boolean Iscorrect() {
-    	String number = "0123456789";
-    	if (MedicineID.getText().matches(number) && MedicineAmount.getText().matches(number) && MedicinePrice.getText().matches(number)){
-    		return !true;
-    	}
-    	return true;
-    	
-    	
-    }
+
     public void setMainApp(MedicineOverviewController MedicineOverviewController) {
 		this.MedicineOverviewController = MedicineOverviewController;
         // Add observable list data to the table

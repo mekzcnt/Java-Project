@@ -108,15 +108,7 @@ public class MedicineOverviewController {
 		    }
 		    
 			
-		} else {
-			// Nothing selected.
-			Dialogs.create()
-		        .title("No Selection")
-		        .masthead("No Person Selected")
-		        .message("Please select a person in the table.")
-		        .showWarning();
 		}
-    	
     }
     @FXML
     public void handleSearch() {
@@ -201,7 +193,6 @@ public class MedicineOverviewController {
           stmt = c.createStatement();
           
           String sql = "UPDATE Medicine set NAME = '"+medicine.getMName().getValue()+"', Amout = "+medicine.getAmount().intValue()+" , Price = "+medicine.getPrice().intValue()+" , Details = '"+medicine.getDescription().getValue()+"'  where ID="+medicine.getMID().intValue()+";";
-          //System.out.print(sql);
           stmt.executeUpdate(sql);
           c.commit();
           stmt.close();

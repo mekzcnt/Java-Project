@@ -48,6 +48,6 @@
       </Text>
       <TextField fx:id="MainSearch" layoutX="330.0" layoutY="173.0" onInputMethodTextChanged="#handleSearch" onKeyReleased="#handleSearch" prefHeight="25.0" prefWidth="275.0" />
       <Label layoutX="239.0" layoutY="177.0" text="ค้นหาข้อมูลผู้ป่วย" />
-      <ListView fx:id="ListSearch" layoutX="284.0" layoutY="173.0" onMouseClicked="#handleSubmit" prefHeight="123.0" prefWidth="275.0" visible="false" />
+      <ListView fx:id="ListSearch" layoutX="329.0" layoutY="201.0" onMouseClicked="#handleSubmit" prefHeight="95.0" prefWidth="275.0" visible="false" />
    </children>
 </AnchorPane>

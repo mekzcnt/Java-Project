@@ -205,7 +205,7 @@ public class MainApp extends Application {
 	    try {
 	      Class.forName("org.sqlite.JDBC");
 	      c = DriverManager.getConnection("jdbc:sqlite:CMSDatabase.db");
-	      System.out.println("Opened database successfully");
+	      
 
 	      stmt = c.createStatement();
 	      String sql = "CREATE TABLE Profile " +
@@ -251,7 +251,7 @@ public class MainApp extends Application {
 	      System.err.println( e.getClass().getName() + ": " + e.getMessage() );
 	      System.exit(0);
 	    }
-	    System.out.println("Table created successfully");
+	   ;
 	}
 	
 	public static void main(String[] args) {
