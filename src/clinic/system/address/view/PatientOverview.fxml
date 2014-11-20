@@ -75,9 +75,9 @@
       <TextField fx:id="MedicineSearchBox" layoutX="433.0" layoutY="28.0" onInputMethodTextChanged="#handleSearch" onKeyPressed="#handleSearch" onKeyReleased="#handleSearch" prefHeight="25.0" prefWidth="201.0" />
       <TableView fx:id="MedicineTable" layoutX="385.0" layoutY="62.0" prefHeight="292.0" prefWidth="334.0">
         <columns>
-          <TableColumn fx:id="MedicineName" prefWidth="155.0" text="ชื่อเวชภัณฑ์" />
-            <TableColumn fx:id="MedicinePrice1" maxWidth="300.0" prefWidth="81.0" text="จำนวน" />
-          <TableColumn fx:id="MedicinePrice" prefWidth="78.0" text="ราคา" />
+          <TableColumn fx:id="MedicineName" prefWidth="186.0" text="ชื่อเวชภัณฑ์" />
+            <TableColumn fx:id="MedicinePrice1" maxWidth="300.0" prefWidth="60.0" text="จำนวน" />
+          <TableColumn fx:id="MedicinePrice" prefWidth="87.0" text="ราคา" />
         </columns>
       </TableView>
       <Button fx:id="MedicineDeleteButton" layoutX="647.0" layoutY="27.0" mnemonicParsing="false" onAction="#handleDelete" text="ลบเวชภัณฑ์" />
