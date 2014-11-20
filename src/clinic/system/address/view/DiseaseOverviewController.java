@@ -2,8 +2,6 @@ package clinic.system.address.view;
 
 import java.io.IOException;
 
-import org.controlsfx.dialog.Dialogs;
-
 import clinic.system.address.MainApp;
 import clinic.system.address.model.disease;
 import javafx.collections.FXCollections;

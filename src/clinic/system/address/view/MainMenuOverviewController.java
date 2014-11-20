@@ -5,30 +5,20 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Set;
-
-import org.controlsfx.dialog.Dialogs;
-
 import clinic.system.address.MainApp;
 import clinic.system.address.model.profile;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.util.Callback;
 
 public class MainMenuOverviewController {
 
@@ -149,7 +139,6 @@ public class MainMenuOverviewController {
 			PatientOverviewController controller = loader.getController();
 			controller.setDialogStage(dialogStage);
 			controller.setProfile(ListSearch.getSelectionModel().getSelectedItem());
-            controller.setMainApp(this);
 	    	Scene scene = new Scene(root);
 	    	Image icon = new Image(getClass().getResourceAsStream("image/CMS-icon.png"));
 			dialogStage.getIcons().add(icon);

@@ -1,8 +1,6 @@
 package clinic.system.address.view;
 
 import java.io.IOException;
-
-import clinic.system.address.MainApp;
 import clinic.system.address.model.medicine;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -17,13 +15,11 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-import org.controlsfx.dialog.Dialogs;
 
 import java.sql.*;
 
 public class MedicineOverviewController {
 
-	private MainApp mainApp;
     @FXML
     private TableView<medicine> medicineList;
     @FXML
@@ -185,10 +181,7 @@ public class MedicineOverviewController {
           System.exit(0);
         }
     }
-    public void setMainApp(MainApp mainApp) {
-		this.mainApp = mainApp;
-        // Add observable list data to the table
-	}
+
     public void editMedicine(medicine medicine) {
     	Connection c = null;
         Statement stmt = null;

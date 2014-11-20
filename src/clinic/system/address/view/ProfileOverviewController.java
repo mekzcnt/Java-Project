@@ -6,10 +6,6 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-import org.controlsfx.dialog.Dialogs;
-
-import clinic.system.address.MainApp;
-import clinic.system.address.model.medicine;
 import clinic.system.address.model.profile;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -27,7 +23,6 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class ProfileOverviewController {
-	private MainApp mainApp;
 	
 	 @FXML
 	 private TextField search;
@@ -198,15 +193,8 @@ public class ProfileOverviewController {
 			    }
 			    
 				
-			} else {
-				// Nothing selected.
-				Dialogs.create()
-			        .title("No Selection")
-			        .masthead("No Person Selected")
-			        .message("Please select a person in the table.")
-			        .showWarning();
-			}
-	    	
+			} 
+			
 	    }
 	    @FXML
 	    public void handleSearch() {
@@ -363,11 +351,5 @@ public class ProfileOverviewController {
 	    	District .setText(profile.getDistrict().getValue());
 	    	BirthDate.setText(profile.getBirthday().getValue());
 	    }
-	 public void setMainApp(MainApp mainApp) {
-			// TODO Auto-generated method stub
-			this.mainApp = mainApp;
 
-	        // Add observable list data to the table
-
-		}
 }

@@ -1,18 +1,14 @@
 package clinic.system.address.view;
 
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-import clinic.system.address.MainApp;
 import clinic.system.address.model.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
@@ -20,13 +16,10 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class PatientOverviewController {
 
-	private MainMenuOverviewController MainMenuOverviewController;
-	
 	private Stage dialogStage;
 	
 	private profile profile;
@@ -98,14 +91,7 @@ public class PatientOverviewController {
         this.dialogStage.setTitle("Patient");
     
     }
-    public void setMainApp(MainMenuOverviewController MainMenuOverviewController) {
-		// TODO Auto-generated method stub
-		this.MainMenuOverviewController = MainMenuOverviewController;
 
-        // Add observable list data to the table
-
-	}
-    
 
     public void setProfile(profile profile) {
 		this.profile = profile;

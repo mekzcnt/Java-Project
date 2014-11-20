@@ -4,10 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.sql.*;
 
-import clinic.system.address.view.DiseaseOverviewController;
 import clinic.system.address.view.MainMenuOverviewController;
-import clinic.system.address.view.MedicineOverviewController;
-import clinic.system.address.view.ProfileOverviewController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
