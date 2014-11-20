@@ -19,15 +19,29 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleDisease" prefHeight="60.0" prefWidth="373.0" text="สถิติโรคที่ตรวจพบ" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS" GridPane.rowIndex="1">
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#handleDisease" prefHeight="60.0" prefWidth="373.0" text="สถิติโรคที่ตรวจพบ" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS" GridPane.rowIndex="1">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
+               <graphic>
+                  <ImageView fitHeight="37.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/disease-button.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
             </Button>
             <Button alignment="CENTER" lineSpacing="2.0" mnemonicParsing="false" onAction="#handleProfile" prefHeight="60.0" prefWidth="373.0" text="ระบบจัดการข้อมูลคนไข้" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS" GridPane.rowIndex="2">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
+               <graphic>
+                  <ImageView fitHeight="37.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/patient-button.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
             </Button>
             <Button alignment="CENTER" lineSpacing="2.0" mnemonicParsing="false" onAction="#handleMedicine" prefHeight="60.0" prefWidth="373.0" text="ระบบจัดการยาและเวชภัณฑ์" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS">
                <font>
@@ -36,7 +50,7 @@
                <graphic>
                   <ImageView fitHeight="37.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@image/myPhoto.jpg" />
+                        <Image url="@image/medicine-button.png" />
                      </image>
                   </ImageView>
                </graphic>
