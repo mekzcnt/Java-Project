@@ -92,8 +92,7 @@ public class MedicineOverviewController {
     	int selectedIndex = medicineList.getSelectionModel().getSelectedIndex();
 
 		if (selectedIndex >= 0) {
-			data.remove(medicineList.getSelectionModel().getSelectedItem());
-			medicineList.getItems().remove(selectedIndex);
+			
 			
 			Connection c = null;
 		    Statement stmt = null;
@@ -109,6 +108,8 @@ public class MedicineOverviewController {
 
 		      stmt.close();
 		      c.close();
+		      data.remove(medicineList.getSelectionModel().getSelectedItem());
+		      medicineList.getItems().remove(selectedIndex);
 		    } catch ( Exception e ) {
 		      System.err.println( e.getClass().getName() + ": " + e.getMessage() );
 		      System.exit(0);

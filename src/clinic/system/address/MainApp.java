@@ -53,7 +53,7 @@ public class MainApp extends Application {
             // Show the scene containing the root layout.
             Scene scene = new Scene(rootLayout);
             primaryStage.setScene(scene);
-            Image icon = new Image(getClass().getResourceAsStream("view/image/mainmenu-icon.png"));
+            Image icon = new Image(getClass().getResourceAsStream("view/image/CMS-icon.png"));
             primaryStage.getIcons().add(icon);
             primaryStage.show();
         } catch (IOException e) {
