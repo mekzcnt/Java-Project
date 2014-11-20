@@ -20,6 +20,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
@@ -37,7 +38,8 @@ public class MainMenuOverviewController {
     @FXML
     private TextField MainSearch;
     //test
-    
+    @FXML
+    private Label searchnotfound;
     @FXML
     private ListView<profile> ListSearch;
     private ObservableList<profile> listViewData = FXCollections.observableArrayList();
@@ -88,6 +90,12 @@ public class MainMenuOverviewController {
     	else {
     		ListSearch.setVisible(true);
     		find(MainSearch.getText());
+    		if (listViewData.isEmpty()) {
+    			searchnotfound.setVisible(true);
+    		}
+    		else {
+    			searchnotfound.setVisible(!true);
+    		}
     	}
     	
     }
@@ -124,8 +132,9 @@ public class MainMenuOverviewController {
     }
     
     public void handleSubmit() {
-    	System.out.print("ss");
-    	System.out.print(ListSearch.getSelectionModel().getSelectedItem().getFName().getValue());
+
+    	if (ListSearch.getSelectionModel().getSelectedIndex() >= 0) {
+    	
     	MainSearch.setText("");
     	handleSearch();
     	
@@ -150,6 +159,7 @@ public class MainMenuOverviewController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+    	}
     }
 
 	public void setMainApp(MainApp mainApp) {

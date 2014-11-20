@@ -84,6 +84,11 @@
             <Font size="20.0" />
          </font></Label>
       <ListView fx:id="ListSearch" layoutX="55.0" layoutY="309.0" onMouseClicked="#handleSubmit" prefHeight="204.0" prefWidth="281.0" visible="false" />
+      <Label fx:id="searchnotfound" layoutX="151.0" layoutY="396.0" text="ไม่พบข้อมูล" visible="false">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="67.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@image/mainmenu-icon.png" />
