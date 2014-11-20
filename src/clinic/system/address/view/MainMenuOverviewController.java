@@ -23,6 +23,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -140,6 +141,8 @@ public class MainMenuOverviewController {
 			controller.setProfile(ListSearch.getSelectionModel().getSelectedItem());
             controller.setMainApp(this);
 	    	Scene scene = new Scene(root);
+	    	Image icon = new Image(getClass().getResourceAsStream("image/myPhoto.jpg"));
+			dialogStage.getIcons().add(icon);
 	    	dialogStage.setScene(scene);
 	    	dialogStage.showAndWait();
 	    	

@@ -11,6 +11,7 @@ import clinic.system.address.view.ProfileOverviewController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
@@ -34,6 +35,7 @@ public class MainApp extends Application {
 		this.primaryStage = primaryStage;
         this.primaryStage.setTitle("Clinic Mangement System");
         this.primaryStage.setResizable(false);
+        
         initRootLayout();
         showMainMenuOverview();
         
@@ -51,6 +53,8 @@ public class MainApp extends Application {
             // Show the scene containing the root layout.
             Scene scene = new Scene(rootLayout);
             primaryStage.setScene(scene);
+            Image icon = new Image(getClass().getResourceAsStream("view/image/myPhoto.jpg"));
+            primaryStage.getIcons().add(icon);
             primaryStage.show();
         } catch (IOException e) {
             e.printStackTrace();
@@ -89,6 +93,8 @@ public class MainApp extends Application {
 			dialogStage.setTitle("Medicine");
 			dialogStage.initModality(Modality.WINDOW_MODAL);
 			dialogStage.initOwner(primaryStage);
+			Image icon = new Image(getClass().getResourceAsStream("view/image/myPhoto.jpg"));
+			dialogStage.getIcons().add(icon);
 			Scene scene = new Scene(page);
 			dialogStage.setScene(scene);
 			dialogStage.setWidth(800);
@@ -119,6 +125,8 @@ public class MainApp extends Application {
 			dialogStage.setTitle("Disease");
 			dialogStage.initModality(Modality.WINDOW_MODAL);
 			dialogStage.initOwner(primaryStage);
+			Image icon = new Image(getClass().getResourceAsStream("view/image/myPhoto.jpg"));
+			dialogStage.getIcons().add(icon);
 			Scene scene = new Scene(page);
 			dialogStage.setScene(scene);
 			dialogStage.setWidth(800);
@@ -150,6 +158,8 @@ public class MainApp extends Application {
 			dialogStage.setTitle("Profile");
 			dialogStage.initModality(Modality.WINDOW_MODAL);
 			dialogStage.initOwner(primaryStage);
+			Image icon = new Image(getClass().getResourceAsStream("view/image/myPhoto.jpg"));
+			dialogStage.getIcons().add(icon);
 			Scene scene = new Scene(page);
 			dialogStage.setScene(scene);
 			dialogStage.setWidth(800);

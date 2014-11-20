@@ -13,9 +13,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+
 import org.controlsfx.dialog.Dialogs;
+
 import java.sql.*;
 
 public class MedicineOverviewController {
@@ -48,6 +51,8 @@ public class MedicineOverviewController {
 			controller.setDialogStage(dialogStage);
             controller.setMainApp(this);
 	    	Scene scene = new Scene(root);
+	    	Image icon = new Image(getClass().getResourceAsStream("image/myPhoto.jpg"));
+			dialogStage.getIcons().add(icon);
 	    	dialogStage.setScene(scene);
 	    	dialogStage.showAndWait();
 		} catch (IOException e) {
@@ -72,6 +77,8 @@ public class MedicineOverviewController {
             controller1.setMececine(medicineList.getSelectionModel().getSelectedItem());
             
 	    	Scene scene = new Scene(root);
+	    	Image icon = new Image(getClass().getResourceAsStream("image/myPhoto.jpg"));
+			dialogStage.getIcons().add(icon);
 	    	dialogStage.setScene(scene);
 	    	dialogStage.showAndWait();   	
 		} catch (IOException e) {

@@ -22,6 +22,7 @@ import javafx.scene.control.MenuButton;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -125,6 +126,8 @@ public class ProfileOverviewController {
 				controller.setDialogStage(dialogStage);
 	            controller.setMainApp(this);
 		    	Scene scene = new Scene(root);
+		    	Image icon = new Image(getClass().getResourceAsStream("image/myPhoto.jpg"));
+				dialogStage.getIcons().add(icon);
 		    	dialogStage.setScene(scene);
 		    	dialogStage.showAndWait();
 		    	
@@ -150,6 +153,8 @@ public class ProfileOverviewController {
 	            controller1.setProfile(profilelist.getSelectionModel().getSelectedItem());
 	        
 		    	Scene scene = new Scene(root);
+		    	Image icon = new Image(getClass().getResourceAsStream("image/myPhoto.jpg"));
+				dialogStage.getIcons().add(icon);
 		    	dialogStage.setScene(scene);
 		    	dialogStage.showAndWait();
 		    	
