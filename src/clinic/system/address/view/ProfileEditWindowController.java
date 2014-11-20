@@ -60,7 +60,7 @@ public class ProfileEditWindowController {
     
     public void setDialogStage(Stage dialogStage) {
         this.dialogStage = dialogStage;
-        this.dialogStage.setTitle("Edit profile");
+        this.dialogStage.setTitle("Edit Profile");
     }
     public void setProfile(profile med){
     	BloodPressure.setText(""+med.getPressure().getValue());

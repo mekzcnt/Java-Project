@@ -80,7 +80,7 @@ public class ProfileAddWindow {
 	    public void setDialogStage(Stage dialogStage) {
 	        this.dialogStage = dialogStage;
 	        setPromtext();
-	        this.dialogStage.setTitle("ADD Profile");
+	        this.dialogStage.setTitle("Add Profile");
 	    
 	    }
 	    public void handleADD() {

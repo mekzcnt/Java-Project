@@ -328,7 +328,9 @@ public class ProfileOverviewController {
 	    }
 	    @FXML
 	    public void haddledisplaydetail() {
+	    	if (profilelist.getSelectionModel().getSelectedIndex() >= 0) {
 	    	displaydetail(profilelist.getSelectionModel().getSelectedItem());
+	    	}
 	    }
 	    private void displaydetail(profile profile) {
 	    	Name1.setText(profile.getFName().getValue());

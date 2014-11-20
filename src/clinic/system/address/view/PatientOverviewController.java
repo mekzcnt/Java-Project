@@ -166,7 +166,7 @@ public class PatientOverviewController {
         
     }
     public void handleSubmit() {
-    	System.out.print("ss");
+    	if (MedicineList.getSelectionModel().getSelectedIndex() >= 0) {
     	medicine temp = MedicineList.getSelectionModel().getSelectedItem();
     	temp.setuse(Integer.parseInt(AmountMedicine.getText()));
     	data.add(temp);
@@ -176,6 +176,7 @@ public class PatientOverviewController {
     	MedicineTable.getItems().setAll(data);
     	handleSearch();
     	displayprice();
+    	}
 
     }
     
