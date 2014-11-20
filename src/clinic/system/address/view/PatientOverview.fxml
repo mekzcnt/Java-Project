@@ -91,7 +91,7 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Button fx:id="AddMoneyButton" layoutX="386.0" layoutY="361.0" mnemonicParsing="false" onAction="#submit" text="เพิ่มการจ่ายเวชภัณฑ์ลงฐานข้อมูล" />
+      <Button fx:id="AddMoneyButton" layoutX="386.0" layoutY="361.0" mnemonicParsing="false" onAction="#submit" text="เพิ่มลงฐานข้อมูล" />
       <ListView fx:id="MedicineList" layoutX="433.0" layoutY="56.0" onMouseClicked="#handleSubmit" prefHeight="96.0" prefWidth="201.0" visible="false" />
       <TextField fx:id="AmountMedicine" layoutX="386.0" layoutY="28.0" prefHeight="25.0" prefWidth="39.0" text="1" />
    </children>
