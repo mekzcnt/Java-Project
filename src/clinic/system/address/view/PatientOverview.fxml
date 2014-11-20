@@ -52,11 +52,7 @@
             <Label text="ส่วนสูง" GridPane.rowIndex="6" />
             <Label text="ความดัน" GridPane.rowIndex="7" />
             <Label text="รายละเอียด" GridPane.rowIndex="9" />
-            <ScrollPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="9">
-               <content>
-                  <TextField fx:id="DiseaseDetails" prefHeight="70.0" prefWidth="208.0" />
-               </content>
-            </ScrollPane>
+            <TextField fx:id="DiseaseDetails" prefHeight="70.0" prefWidth="208.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
             <TextField fx:id="DiseaseSearch" GridPane.columnIndex="1" GridPane.rowIndex="8" />
          </children>
          <columnConstraints>
@@ -77,23 +73,15 @@
          </rowConstraints>
       </GridPane>
       <TextField fx:id="MedicineSearchBox" layoutX="433.0" layoutY="28.0" onInputMethodTextChanged="#handleSearch" onKeyPressed="#handleSearch" onKeyReleased="#handleSearch" prefHeight="25.0" prefWidth="201.0" />
-      <ScrollPane layoutX="385.0" layoutY="62.0" prefHeight="292.0" prefWidth="334.0">
-        <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="292.0" prefWidth="334.0">
-               <children>
-                  <TableView fx:id="MedicineTable" prefHeight="292.0" prefWidth="334.0">
-                    <columns>
-                      <TableColumn fx:id="MedicineName" prefWidth="155.0" text="ชื่อเวชภัณฑ์" />
-                        <TableColumn fx:id="MedicinePrice1" maxWidth="300.0" prefWidth="81.0" text="จำนวน" />
-                      <TableColumn fx:id="MedicinePrice" prefWidth="78.0" text="ราคา" />
-                    </columns>
-                  </TableView>
-               </children>
-            </AnchorPane>
-        </content>
-      </ScrollPane>
+      <TableView fx:id="MedicineTable" layoutX="385.0" layoutY="62.0" prefHeight="292.0" prefWidth="334.0">
+        <columns>
+          <TableColumn fx:id="MedicineName" prefWidth="155.0" text="ชื่อเวชภัณฑ์" />
+            <TableColumn fx:id="MedicinePrice1" maxWidth="300.0" prefWidth="81.0" text="จำนวน" />
+          <TableColumn fx:id="MedicinePrice" prefWidth="78.0" text="ราคา" />
+        </columns>
+      </TableView>
       <Button fx:id="MedicineDeleteButton" layoutX="647.0" layoutY="27.0" mnemonicParsing="false" onAction="#handleDelete" text="ลบเวชภัณฑ์" />
-      <Label fx:id="SumMedicinePrice" layoutX="604.0" layoutY="365.0" prefHeight="17.0" prefWidth="113.0" text="-">
+      <Label fx:id="SumMedicinePrice" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="604.0" layoutY="365.0" prefHeight="17.0" prefWidth="113.0" text="-" textAlignment="RIGHT">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
