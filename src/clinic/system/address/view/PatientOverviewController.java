@@ -95,7 +95,7 @@ public class PatientOverviewController {
 
     public void setDialogStage(Stage dialogStage) {
         this.dialogStage = dialogStage;
-        this.dialogStage.setTitle("PatientOverview");
+        this.dialogStage.setTitle("Patient");
     
     }
     public void setMainApp(MainMenuOverviewController MainMenuOverviewController) {
@@ -234,5 +234,7 @@ public class PatientOverviewController {
     }
     public void handleDelete() {
     	data.remove(MedicineTable.getSelectionModel().getSelectedItem());
+    	MedicineTable.getItems().remove(MedicineTable.getSelectionModel().getSelectedIndex());
+    	displayprice();
     }
 }

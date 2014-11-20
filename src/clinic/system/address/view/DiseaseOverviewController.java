@@ -96,8 +96,7 @@ public class DiseaseOverviewController {
 
 		if (selectedIndex >= 0) {
 			
-			data.remove(diseaseList.getSelectionModel().getSelectedItem());
-			diseaseList.getItems().remove(selectedIndex);
+			
 			
 			Connection c = null;
 		    Statement stmt = null;
@@ -118,16 +117,11 @@ public class DiseaseOverviewController {
 		      System.err.println( e.getClass().getName() + ": " + e.getMessage() );
 		      System.exit(0);
 		    }
-		    
+		    data.remove(diseaseList.getSelectionModel().getSelectedItem());
+			diseaseList.getItems().remove(selectedIndex);
 			
-		} else {
-			// Nothing selected.
-			Dialogs.create()
-		        .title("No Selection")
-		        .masthead("No Person Selected")
-		        .message("Please select a person in the table.")
-		        .showWarning();
-		}
+		} 
+		
 		
  	
  }
