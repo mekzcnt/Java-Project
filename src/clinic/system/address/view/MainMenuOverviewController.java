@@ -86,6 +86,7 @@ public class MainMenuOverviewController {
     public void handleSearch() {
     	if (MainSearch.getText().isEmpty()) {
     		ListSearch.setVisible(false);
+    		searchnotfound.setVisible(!true);
     	}
     	else {
     		ListSearch.setVisible(true);
