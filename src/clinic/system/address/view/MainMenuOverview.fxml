@@ -79,11 +79,11 @@
          </font>
       </Text>
       <TextField fx:id="MainSearch" layoutX="69.0" layoutY="269.0" onInputMethodTextChanged="#handleSearch" onKeyReleased="#handleSearch" prefHeight="25.0" prefWidth="281.0" AnchorPane.leftAnchor="55.0" />
-      <Label layoutX="55.0" layoutY="227.0" text="ค้นหาข้อมูลผู้ป่วย">
+      <Label layoutX="204.0" layoutY="227.0" text="ค้นหาข้อมูลผู้ป่วย">
          <font>
             <Font size="20.0" />
          </font></Label>
-      <ListView fx:id="ListSearch" layoutX="55.0" layoutY="294.0" onMouseClicked="#handleSubmit" prefHeight="218.0" prefWidth="281.0" />
+      <ListView fx:id="ListSearch" layoutX="55.0" layoutY="294.0" onMouseClicked="#handleSubmit" prefHeight="218.0" prefWidth="281.0" visible="false" />
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="69.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@image/mainmenu-icon.png" />
