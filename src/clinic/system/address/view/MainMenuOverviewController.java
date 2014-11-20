@@ -141,7 +141,7 @@ public class MainMenuOverviewController {
 			controller.setProfile(ListSearch.getSelectionModel().getSelectedItem());
             controller.setMainApp(this);
 	    	Scene scene = new Scene(root);
-	    	Image icon = new Image(getClass().getResourceAsStream("image/myPhoto.jpg"));
+	    	Image icon = new Image(getClass().getResourceAsStream("image/mainmenu-icon.png"));
 			dialogStage.getIcons().add(icon);
 	    	dialogStage.setScene(scene);
 	    	dialogStage.showAndWait();

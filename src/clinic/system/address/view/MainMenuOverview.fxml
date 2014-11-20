@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
@@ -9,7 +10,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clinic.system.address.view.MainMenuOverviewController">
    <children>
-      <GridPane alignment="CENTER" layoutX="147.0" layoutY="285.0" prefHeight="282.0" prefWidth="506.0" AnchorPane.bottomAnchor="61.0" AnchorPane.leftAnchor="147.0" AnchorPane.rightAnchor="147.0">
+      <GridPane alignment="CENTER" layoutX="384.0" layoutY="227.0" prefHeight="307.0" prefWidth="384.0" AnchorPane.bottomAnchor="66.0" AnchorPane.leftAnchor="384.0" AnchorPane.rightAnchor="32.0">
         <columnConstraints>
           <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
@@ -19,19 +20,25 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button alignment="CENTER" mnemonicParsing="false" onAction="#handleDisease" prefHeight="60.0" prefWidth="373.0" text="สถิติโรคที่ตรวจพบ" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS" GridPane.rowIndex="1">
+            <Button alignment="BASELINE_LEFT" graphicTextGap="25.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#handleDisease" prefHeight="60.0" prefWidth="373.0" text="สถิติโรคที่ตรวจพบ" textOverrun="WORD_ELLIPSIS" GridPane.rowIndex="1">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
                <graphic>
-                  <ImageView fitHeight="37.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="37.0" fitWidth="61.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@image/disease-button.png" />
                      </image>
                   </ImageView>
                </graphic>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
             </Button>
-            <Button alignment="CENTER" lineSpacing="2.0" mnemonicParsing="false" onAction="#handleProfile" prefHeight="60.0" prefWidth="373.0" text="ระบบจัดการข้อมูลคนไข้" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS" GridPane.rowIndex="2">
+            <Button alignment="BASELINE_LEFT" graphicTextGap="25.0" lineSpacing="2.0" mnemonicParsing="false" onAction="#handleProfile" prefHeight="60.0" prefWidth="373.0" text="ระบบจัดการข้อมูลคนไข้" textOverrun="CENTER_WORD_ELLIPSIS" GridPane.rowIndex="2">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
@@ -42,8 +49,11 @@
                      </image>
                   </ImageView>
                </graphic>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
             </Button>
-            <Button alignment="CENTER" lineSpacing="2.0" mnemonicParsing="false" onAction="#handleMedicine" prefHeight="60.0" prefWidth="373.0" text="ระบบจัดการยาและเวชภัณฑ์" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS">
+            <Button alignment="BASELINE_LEFT" graphicTextGap="25.0" lineSpacing="2.0" mnemonicParsing="false" onAction="#handleMedicine" prefHeight="60.0" prefWidth="373.0" text="ระบบจัดการยาและเวชภัณฑ์" textOverrun="CENTER_WORD_ELLIPSIS">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
@@ -54,16 +64,30 @@
                      </image>
                   </ImageView>
                </graphic>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
             </Button>
          </children>
       </GridPane>
-      <Text layoutX="164.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Clinic Management System" AnchorPane.leftAnchor="164.0" AnchorPane.rightAnchor="121.44873046875">
+      <Text layoutX="238.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Clinic Management System" textAlignment="RIGHT" wrappingWidth="530.0" AnchorPane.leftAnchor="238.0" AnchorPane.rightAnchor="32.0">
          <font>
-            <Font size="43.0" />
+            <Font size="42.0" />
          </font>
       </Text>
-      <TextField fx:id="MainSearch" layoutX="303.0" layoutY="173.0" onInputMethodTextChanged="#handleSearch" onKeyReleased="#handleSearch" prefHeight="25.0" prefWidth="281.0" />
-      <Label layoutX="211.0" layoutY="177.0" text="ค้นหาข้อมูลผู้ป่วย" />
-      <ListView fx:id="ListSearch" layoutX="304.0" layoutY="200.0" onMouseClicked="#handleSubmit" prefHeight="67.0" prefWidth="281.0" visible="false" />
+      <TextField fx:id="MainSearch" layoutX="69.0" layoutY="269.0" onInputMethodTextChanged="#handleSearch" onKeyReleased="#handleSearch" prefHeight="25.0" prefWidth="281.0" />
+      <Label layoutX="69.0" layoutY="227.0" text="ค้นหาข้อมูลผู้ป่วย">
+         <font>
+            <Font size="20.0" />
+         </font></Label>
+      <ListView fx:id="ListSearch" layoutX="69.0" layoutY="295.0" onMouseClicked="#handleSubmit" prefHeight="218.0" prefWidth="281.0" visible="false" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="69.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/mainmenu-icon.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
