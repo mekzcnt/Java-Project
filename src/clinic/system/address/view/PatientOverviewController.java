@@ -114,7 +114,7 @@ public class PatientOverviewController {
     	            if (item == null || empty) {
     	                setText(null);
     	            } else {
-    	                setText(item.getMName().getValue() + " " + item.getPrice().getValue());
+    	                setText(item.getMID().getValue() + "  " + item.getMName().getValue());
     	            }
     	        }
     	    };
