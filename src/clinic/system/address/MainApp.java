@@ -53,7 +53,7 @@ public class MainApp extends Application {
             // Show the scene containing the root layout.
             Scene scene = new Scene(rootLayout);
             primaryStage.setScene(scene);
-            Image icon = new Image(getClass().getResourceAsStream("view/image/myPhoto.jpg"));
+            Image icon = new Image(getClass().getResourceAsStream("view/image/mainmenu-icon.png"));
             primaryStage.getIcons().add(icon);
             primaryStage.show();
         } catch (IOException e) {
@@ -93,7 +93,7 @@ public class MainApp extends Application {
 			dialogStage.setTitle("Medicine");
 			dialogStage.initModality(Modality.WINDOW_MODAL);
 			dialogStage.initOwner(primaryStage);
-			Image icon = new Image(getClass().getResourceAsStream("view/image/myPhoto.jpg"));
+			Image icon = new Image(getClass().getResourceAsStream("view/image/medicine-button.png"));
 			dialogStage.getIcons().add(icon);
 			Scene scene = new Scene(page);
 			dialogStage.setScene(scene);
@@ -125,7 +125,7 @@ public class MainApp extends Application {
 			dialogStage.setTitle("Disease");
 			dialogStage.initModality(Modality.WINDOW_MODAL);
 			dialogStage.initOwner(primaryStage);
-			Image icon = new Image(getClass().getResourceAsStream("view/image/myPhoto.jpg"));
+			Image icon = new Image(getClass().getResourceAsStream("view/image/disease-button.png"));
 			dialogStage.getIcons().add(icon);
 			Scene scene = new Scene(page);
 			dialogStage.setScene(scene);
@@ -158,7 +158,7 @@ public class MainApp extends Application {
 			dialogStage.setTitle("Profile");
 			dialogStage.initModality(Modality.WINDOW_MODAL);
 			dialogStage.initOwner(primaryStage);
-			Image icon = new Image(getClass().getResourceAsStream("view/image/myPhoto.jpg"));
+			Image icon = new Image(getClass().getResourceAsStream("view/image/patient-button.png"));
 			dialogStage.getIcons().add(icon);
 			Scene scene = new Scene(page);
 			dialogStage.setScene(scene);

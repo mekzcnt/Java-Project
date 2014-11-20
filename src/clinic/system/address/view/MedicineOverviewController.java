@@ -51,7 +51,7 @@ public class MedicineOverviewController {
 			controller.setDialogStage(dialogStage);
             controller.setMainApp(this);
 	    	Scene scene = new Scene(root);
-	    	Image icon = new Image(getClass().getResourceAsStream("image/myPhoto.jpg"));
+	    	Image icon = new Image(getClass().getResourceAsStream("image/medicine-button.png"));
 			dialogStage.getIcons().add(icon);
 	    	dialogStage.setScene(scene);
 	    	dialogStage.showAndWait();
@@ -77,7 +77,7 @@ public class MedicineOverviewController {
             controller1.setMececine(medicineList.getSelectionModel().getSelectedItem());
             
 	    	Scene scene = new Scene(root);
-	    	Image icon = new Image(getClass().getResourceAsStream("image/myPhoto.jpg"));
+	    	Image icon = new Image(getClass().getResourceAsStream("image/medicine-button.png"));
 			dialogStage.getIcons().add(icon);
 	    	dialogStage.setScene(scene);
 	    	dialogStage.showAndWait();   	
