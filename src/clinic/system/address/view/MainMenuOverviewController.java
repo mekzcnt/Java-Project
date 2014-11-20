@@ -140,7 +140,7 @@ public class MainMenuOverviewController {
 			controller.setDialogStage(dialogStage);
 			controller.setProfile(ListSearch.getSelectionModel().getSelectedItem());
 	    	Scene scene = new Scene(root);
-	    	Image icon = new Image(getClass().getResourceAsStream("image/CMS-icon.png"));
+	    	Image icon = new Image(getClass().getResourceAsStream("image/special-16x16.png"));
 			dialogStage.getIcons().add(icon);
 	    	dialogStage.setScene(scene);
 	    	dialogStage.showAndWait();
