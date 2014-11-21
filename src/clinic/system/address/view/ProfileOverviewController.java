@@ -274,8 +274,7 @@ public class ProfileOverviewController {
 
 	          stmt = c.createStatement();
 	          
-	          String sql = "UPDATE Profile set ID = "+profile.getID().getValue()+
-	        		  ", FIRSTNAME = '"+profile.getFName().getValue()+
+	          String sql = "UPDATE Profile set FIRSTNAME = '"+profile.getFName().getValue()+
 	        		  "', LASTNAME = '"+profile.getLName().getValue()+
 	        		  "', ADDRESS = '"+profile.getAddress().getValue()+
 	        		  "', Canton = '"+profile.getCanton().getValue()+
@@ -285,7 +284,7 @@ public class ProfileOverviewController {
 	        		  ", Weight = "+profile.getWeight().getValue()+
 	        		  ", Height = "+profile.getHeight().getValue()+
 	        		  ", CongenitalDisease = '"+profile.getCongenitalDisease().getValue()+
-	        		  "', Disease = '"+profile.getDisease().getValue()+"';";
+	        		  "', Disease = '"+profile.getDisease().getValue()+"' where ID = " + profile.getID().getValue() + ";";
 	          
 	          stmt.executeUpdate(sql);
 	          c.commit();
